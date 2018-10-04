@@ -13,7 +13,7 @@ abstract class Model
 		self::$_bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		self::$_bdd->setAtribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	}
-	
+
 	//RECUPERATION DE LA CONNEXION A LA BDD;
 	protected function getBdd()
 	{
@@ -21,12 +21,12 @@ abstract class Model
 			self::setBdd();
 		return self::$_bdd;
 	}
-	
+
 	protected function getAll($table, $obj)
 	{
 	  $var = [];
 	  $req = $this->getBdd()->prepare('SELECT * FROM'.$table. 'ORDER BY id desc');
-	  $req->execue();
+	  $req->execute();
 	  while($data = $req->fetch(PDO::FETCH_ASSOC))
 	  {
 		$var[] = new $obj($data);
@@ -34,5 +34,5 @@ abstract class Model
 	  return $var;
 	  $req->closeCursor();
 	}
-	
+
 }
