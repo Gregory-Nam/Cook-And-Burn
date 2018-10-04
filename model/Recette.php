@@ -1,11 +1,11 @@
 <?php
 class Recette
 {
+	// TOUS LES CHAMPS DE LA TABLE
 	private $_id;
 	private $_title;
 	private $_description;
 	private $_auteur;
-	//ET TOUTES LES VALEURS QUE L'ON RECUPERER DANS LA TABLE
 
 	//CONSTRUCTEUR
 	public function __construct(array $data)
@@ -13,6 +13,8 @@ class Recette
 		$this->hydrate($data);
 	}
 
+	//HYDRATION CE QUI CORRESPOND A APPORTER AU OBJET CE QU'ILS ONT BESOIN
+	//POUR EXISTER
 	public function hydrate(array $data)
 	{
 		foreach($data as $key => $value)
@@ -24,8 +26,8 @@ class Recette
 		}
 	}
 
-	//SETTERS
 
+	// SETTER
 	public function setTitle($name)
 	{
 		if(is_string($name))

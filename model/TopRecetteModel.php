@@ -4,6 +4,7 @@ class TopRecetteModel extends Model
 {
 	public funcion getRecettes()
 	{
-		//A IMPLEMENTER
+		$this ->getBdd();
+		return $this->getAll('recettes', 'Recette');
 	}
 }

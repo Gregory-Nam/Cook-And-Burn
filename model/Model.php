@@ -1,5 +1,7 @@
 <?php
-
+// CLASSE ABSTRAITE
+// METHODE QUE L'ON UTILISERA SOUVENT
+// ETEND D'AUTRE CLASSE
 abstract class Model
 {
 	private static $_bdd;
@@ -22,6 +24,7 @@ abstract class Model
 		return self::$_bdd;
 	}
 
+	// RECUP TOUS LES ELEMENTS DE LA TABLE POUR L'OBJET
 	protected function getAll($table, $obj)
 	{
 	  $var = [];

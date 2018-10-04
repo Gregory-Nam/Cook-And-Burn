@@ -3,7 +3,7 @@ class Rooter
 {
 	private $_ctrl;
 	private $_view;
-	
+
 	public function routeReq()
 	{
 		try
@@ -13,17 +13,17 @@ class Rooter
 				require_once('model/'.$class'.php');
 			});
 			$url='';
-			
+
 			//LE CONTROLER EST INCLUS SELON L'ACTION DE L'UTILISATEUR
 			if(isset($_GET['url']))
 			{
 				$url = explode('/', filter_var($_GET['url'],
 				FILTER_SANITIZE_URL));
-				
+
 				$controller = ucfirst(strtolower($url[0]));
 				$controlerClass = "Controler".$controller;
 				$controllerFile = "controller/".controlerClass.".php";
-				
+
 				if(file_exists($controlerFile))
 				{
 					require_once($controlerFile);

@@ -2,5 +2,6 @@
 
 foreach($recette as $rec) :?>
 
-<h2> TITRE </h2>
+<h2> <?php echo $rec->title(); ?> </h2>
+
 <?php endforeach; ?>
