@@ -3,11 +3,14 @@
 abstract class Model
 {
 	private static $_bdd;
-	
+	private $servername = "mysql-cookandburn-gxaj.alwaysdata.net";
+	private $username = "167602";
+	private $password = "barbecue2018";
+	private $dbname = "cookandburn-gxaj_g2";
 	//INSTANCIATION DE LA CONNEXION A LA BDD
 	private static function setBdd()
 	{
-		self::$_bdd = new PDO();
+		self::$_bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		self::$_bdd->setAtribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	}
 	
