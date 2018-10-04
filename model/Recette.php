@@ -3,7 +3,7 @@ class Recette
 {
 	// TOUS LES CHAMPS DE LA TABLE
 	private $_id;
-	private $_title;
+	private $_titre;
 	private $_description;
 	private $_auteur;
 
@@ -28,23 +28,23 @@ class Recette
 
 
 	// SETTER
-	public function setTitle($name)
+	public function setTitre($name)
 	{
 		if(is_string($name))
-			$this->_title = $name;
+			$this->_titre = $name;
 	}
 
 	public function setDescription($name)
 	{
 		if(is_string($name))
-			$this->_title = $name;
+			$this->_description = $name;
 
 	}
 
 	public function setAuteur($name)
 	{
 		if(is_string($name))
-			$this->_title = $name;
+			$this->_auteur = $name;
 
 	}
 
@@ -54,9 +54,9 @@ class Recette
 		return $this->_id;
 	}
 
-	public function getTitle()
+	public function getTitre()
 	{
-		return $this->_title;
+		return $this->_titre;
 	}
 
 	public function getDescription()
