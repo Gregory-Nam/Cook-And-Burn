@@ -64,8 +64,8 @@ class Recette
 		return $this->_description;
 	}
 
-	public function getTitle()
+	public function getAuteur()
 	{
-		return $this->_title;
+		return $this->_auteur;
 	}
 }

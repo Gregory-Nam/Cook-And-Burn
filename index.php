@@ -1,5 +1,5 @@
 <?php
-require_once('controller/Rooter.php');
+require_once('controler/Rooter.php');
 
 $rooter = new Rooter();
 $rooter->routeReq();

@@ -10,31 +10,31 @@ class Rooter
 		{
 			//CHARGEMENT AUTOMATIQUE DES CLASSES
 			spl_autoload_register(function($class){
-				require_once('model/'.$class'.php');
+				require_once('model/'.$class.'.php');
 			});
 			$url='';
 
 			//LE CONTROLER EST INCLUS SELON L'ACTION DE L'UTILISATEUR
 			if(isset($_GET['url']))
 			{
-				$url = explode('/', filter_var($_GET['url'],
-				FILTER_SANITIZE_URL));
+				$url = explode('/', filter_var($_GET['url'],	FILTER_SANITIZE_URL));
 
 				$controller = ucfirst(strtolower($url[0]));
-				$controlerClass = "Controler".$controller;
-				$controllerFile = "controller/".controlerClass.".php";
+				$controlerClass = "Controller".$controller;
+				$controllerFile = 	"controler/".$controlerClass.".php";
 
-				if(file_exists($controlerFile))
+				if(file_exists($controllerFile))
 				{
-					require_once($controlerFile);
-					$this->_ctrl = new $controllerClass($url);
+					require_once($controllerFile);
+					$this->_ctrl = new $controlerClass($url);
 				}
 				else
-					throw new Exception('Page introuvable');
+					throw new Exception('Page introuvable ' . $controllerFile .
+					' ');
 			}
 			else
 			{
-				require_once('controller/ControllerIndex.php');
+				require_once('controler/ControllerIndex.php');
 				$this->_ctrl = new ControllerIndex($url);
 			}
 		}

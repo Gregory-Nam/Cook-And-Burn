@@ -2,7 +2,7 @@
 
 class TopRecetteModel extends Model
 {
-	public funcion getRecettes()
+	public function getRecettes()
 	{
 		$this ->getBdd();
 		return $this->getAll('recettes', 'Recette');
