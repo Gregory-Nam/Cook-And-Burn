@@ -28,6 +28,15 @@ class Recette
 
 
 	// SETTER
+    public function setId($number)
+    {
+
+        if(is_numeric($number))
+        {
+            $this->_id = $number;
+        }
+    }
+
 	public function setTitre($name)
 	{
 		if(is_string($name))

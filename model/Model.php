@@ -9,6 +9,7 @@ abstract class Model
 	private $username = "167602";
 	private $password = "barbecue2018";
 	private $dbname = "cookandburn-gxaj_g2";
+
 	//INSTANCIATION DE LA CONNEXION A LA BDD
 	private static function setBdd()
 	{
