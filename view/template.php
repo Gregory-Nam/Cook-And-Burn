@@ -212,7 +212,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--                </div>-->
 <!--                <div class="clearfix"> </div>-->
 <!--            </div>-->
-            <?php echo $content ?>
+    <div class="col-md-3 menu-grid">
+                          <div class="agile-menu-grid">
+                               <a href="single.html">
+                                   <img src="images/m6.jpg" alt="" />
+                                   <div class="agileits-caption">
+                                       <h4> <?php echo $content ?> </h4>
+                                       <p>$21</p>
+                          </div>
+                              </a>
+                           </div>
+                       </div>
+    <div class="col-md-3 menu-grid">
+        <div class="agile-menu-grid">
+            <a href="single.html">
+                <img src="images/m6.jpg" alt="" />
+                <div class="agileits-caption">
+                    <h4> <?php echo $content ?> </h4>
+                    <p>$21</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class ="clearfix"> </div>
+
         </div>
     </div>
 </div>
