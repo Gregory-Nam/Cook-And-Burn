@@ -9,7 +9,6 @@ abstract class Model
 	private $username = "167602";
 	private $password = "barbecue2018";
 	private $dbname = "cookandburn-gxaj_g2";
-
 	//INSTANCIATION DE LA CONNEXION A LA BDD
 	private static function setBdd()
 	{
@@ -29,7 +28,7 @@ abstract class Model
 	protected function getAll($table, $obj)
 	{
 	  $var = [];
-	  $req = $this->getBdd()->prepare('SELECT * FROM '.$table. ' ORDER BY id desc');
+	  $req = $this->getBdd()->prepare('SELECT * FROM '.$table. ' ORDER BY id asc');
 	  $req->execute();
 	  while($data = $req->fetch(PDO::FETCH_ASSOC))
 	  {
