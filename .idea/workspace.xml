@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11fa061d-dce6-44c5-a610-b587ea42401d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="11fa061d-dce6-44c5-a610-b587ea42401d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +35,12 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="htaccess" value="1" />
-          <entry key="php" value="31" />
+          <entry key="php" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="31" />
+          <entry key="PHP" value="32" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -108,13 +106,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="true" current-in-tab="true">
+      <file pinned="true" current-in-tab="false">
         <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/View.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="true">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/template.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
@@ -183,7 +186,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -257,7 +260,7 @@
       <option name="presentableId" value="Default" />
       <updated>1538738402014</updated>
       <workItem from="1538738403375" duration="2200000" />
-      <workItem from="1538740634921" duration="3306000" />
+      <workItem from="1538740634921" duration="3560000" />
     </task>
     <task id="LOCAL-00001" summary="correction bug ID qui s'affichait pas">
       <created>1538739969676</created>
@@ -270,7 +273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5506000" />
+    <option name="totallyTimeSpent" value="5760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,7 +308,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.07835821" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.17963752" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
     </layout>
   </component>
