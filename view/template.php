@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="header">
                 <div class="logo">
-                    <h1><a href="index.html">Tasty</a></h1>
+                    <h1><a href="index.html">Cook & Burn</a></h1>
                 </div>
                 <div class="top-nav">
                     <nav class="navbar navbar-default">
@@ -47,12 +47,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a class="active" href="menu.html">Menu</a></li>
-                                <li><a href="codes.html">Codes</a></li>
-                                <li><a href="news.html">News & Events</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about.php">About</a></li>
+                                <li><a class="active" href="menu.php">Menu</a></li>
+                                <li><a href="codes.php">Codes</a></li>
+                                <li><a href="news.php">News & Events</a></li>
+                                <li><a href="contact.php">Contact</a></li>
                                 <div class="clearfix"> </div>
                             </ul>
                         </div>
@@ -212,28 +212,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--                </div>-->
 <!--                <div class="clearfix"> </div>-->
 <!--            </div>-->
-    <div class="col-md-3 menu-grid">
-                          <div class="agile-menu-grid">
-                               <a href="single.html">
-                                   <img src="images/m6.jpg" alt="" />
-                                   <div class="agileits-caption">
-                                       <h4> <?php echo $content ?> </h4>
-                                       <p>$21</p>
-                          </div>
-                              </a>
-                           </div>
-                       </div>
-    <div class="col-md-3 menu-grid">
-        <div class="agile-menu-grid">
-            <a href="single.html">
-                <img src="images/m6.jpg" alt="" />
-                <div class="agileits-caption">
-                    <h4> <?php echo $content ?> </h4>
-                    <p>$21</p>
-                </div>
-            </a>
-        </div>
-    </div>
+    <?php echo $content; ?>
     <div class ="clearfix"> </div>
 
         </div>
