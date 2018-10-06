@@ -10,7 +10,10 @@ class Rooter
 		{
 			//CHARGEMENT AUTOMATIQUE DES CLASSES
 			spl_autoload_register(function($class){
-				require_once('model/'.$class.'.php');
+			    if(strpos($class, "Controller") === true)
+			        require_once ('controler/'.$class.'.php');
+			    else
+				    require_once('model/'.$class.'.php');
 			});
 			$url='';
 
@@ -19,7 +22,7 @@ class Rooter
 			{
 				$url = explode('/', filter_var($_GET['url'],	FILTER_SANITIZE_URL));
 
-				$controller = ucfirst(strtolower($url[0]));
+				$controller = ucfirst($url[0]);
 				$controlerClass = "Controller".$controller;
 				$controllerFile = 	"controler/".$controlerClass.".php";
 

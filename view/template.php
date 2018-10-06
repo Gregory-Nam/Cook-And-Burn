@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="header">
                 <div class="logo">
-                    <h1><a href="index.html">Cook & Burn</a></h1>
+                    <h1><a href="Index"> Cook & Burn</a></h1>
                 </div>
                 <div class="top-nav">
                     <nav class="navbar navbar-default">
@@ -47,10 +47,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="index.php">Home</a></li>
+                                <li><a class="active" href="Index">Home</a></li>
                                 <li><a href="about.php">About</a></li>
-                                <li><a class="active" href="menu.php">Menu</a></li>
-                                <li><a href="codes.php">Codes</a></li>
+                                <li><a href="menu.php">Menu</a></li>
+                                <li><a href="SignUp">Inscription</a></li>
                                 <li><a href="news.php">News & Events</a></li>
                                 <li><a href="contact.php">Contact</a></li>
                                 <div class="clearfix"> </div>
@@ -66,157 +66,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- menu -->
 <div class="menu">
-<!--    <div class="container">-->
-<!--        <div class="menu-heading">-->
-<!--            <h2>Our Menu</h2>-->
-<!--        </div>-->
-<!--        <div class="menu-top-grids">-->
-<!--            <div class="w3ls-menu-grids">-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m1.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Consectetur</h4>-->
-<!--                                <p>$10</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m2.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Suspendisse</h4>-->
-<!--                                <p>$15</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m3.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Phasellus</h4>-->
-<!--                                <p>$18</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m4.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Mauris </h4>-->
-<!--                                <p>$21</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="clearfix"> </div>-->
-<!--            </div>-->
-<!--            <div class="w3ls-menu-grids agileinfo">-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m5.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Consectetur</h4>-->
-<!--                                <p>$10</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m6.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Suspendisse</h4>-->
-<!--                                <p>$15</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m1.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Phasellus</h4>-->
-<!--                                <p>$18</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m2.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Mauris </h4>-->
-<!--                                <p>$21</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="clearfix"> </div>-->
-<!--            </div>-->
-<!--            <div class="w3ls-menu-grids wthree-menu-grids">-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m3.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Consectetur</h4>-->
-<!--                                <p>$10</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m4.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Suspendisse</h4>-->
-<!--                                <p>$15</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m5.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Phasellus</h4>-->
-<!--                                <p>$18</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-3 menu-grid">-->
-<!--                    <div class="agile-menu-grid">-->
-<!--                        <a href="single.html">-->
-<!--                            <img src="images/m6.jpg" alt="" />-->
-<!--                            <div class="agileits-caption">-->
-<!--                                <h4>Mauris </h4>-->
-<!--                                <p>$21</p>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="clearfix"> </div>-->
-<!--            </div>-->
     <?php echo $content; ?>
     <div class ="clearfix"> </div>
-
-        </div>
-    </div>
 </div>
 <!-- //menu -->
 <!-- footer -->
