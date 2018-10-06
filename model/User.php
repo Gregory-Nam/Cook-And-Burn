@@ -9,9 +9,12 @@ class User
     private $_inscriptionDate;
     private $_avatar;
 
-    public function __construct(array $data)
+    public function __construct($nom, $mdp,$mail)
     {
-        $this->hydrate($data);
+        $this->_nameUser =$nom;
+        $this->_mailAdress = $mail;
+        $this->_password = $mdp;
+        //$this->hydrate($data);
     }
 
     public function hydrate(array $data)

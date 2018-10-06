@@ -47,10 +47,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a class="active" href="Index">Home</a></li>
+                                <li><a class="<?php if($t == "Cook And Burn") echo active;?>" href="Index">Home</a></li>
                                 <li><a href="about.php">About</a></li>
                                 <li><a href="menu.php">Menu</a></li>
-                                <li><a href="SignUp">Inscription</a></li>
+                                <li><a class="<?php if($t == "Inscription") echo active;?>"" href="SignUp">Inscription</a></li>
                                 <li><a href="news.php">News & Events</a></li>
                                 <li><a href="contact.php">Contact</a></li>
                                 <div class="clearfix"> </div>
