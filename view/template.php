@@ -75,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="footer-grids">
             <div class="footer-heading">
-                <h3>Get in touch with us</h3>
+                <h3>Suivez-nous sur les réseaux !</h3>
             </div>
             <div class="footer-icons">
                 <ul>
