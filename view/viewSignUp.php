@@ -13,14 +13,27 @@
             <label for="password" style="display: inline-block; width: 120px;">
                 Mot de passe :
             </label>
-            <input type="text" name="password" id="firstname"/>
+            <input type="password" name="password" id="firstname"/>
+        </p>
+
+        <p>
+            <label for="password2" style="display: inline-block; width: 120px;">
+                Mot de passe à nouveau :
+            </label>
+            <input type="password" name="password2" id="firstname"/>
         </p>
 
         <p>
             <label for="mail" style="display: inline-block; width: 120px;">
                 Adresse mail :
             </label>
-            <input type="password" name="mail" id="password"/>
+            <input type="text" name="mail" id="password"/>
+        </p>
+        <p>
+            <label for="mail2" style="display: inline-block; width: 120px;">
+                Adresse mail confirmation :
+            </label>
+            <input type="text" name="mail2" id="password"/>
         </p>
 
 
