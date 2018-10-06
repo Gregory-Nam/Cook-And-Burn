@@ -1,6 +1,11 @@
 <?php
     $this->_t = "Inscription";
     ?>
+<!-- permet de fermer la banner -->
+</div>
+</div>
+</div>
+</div>
     <div class="contact-form">
                 <h3>Inscription</h3>
         <center><form action="SignUpAction" method="post">
