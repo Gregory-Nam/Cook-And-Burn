@@ -51,7 +51,20 @@ class ControllerSignUpAction
                                     {
                                         try
                                         {
-                                            
+                                            $to      = $mailUser;
+                                            $subject = 'Validation de l inscription';
+                                            $message = '
+                                            <html>
+                                                <body>
+                                                    <div align="center">
+                                                        <a href="http://cookandburn-gxaj.alwaysdata.net/Confirmation?pseudo='.urlencode($nameUser).'$key='.$key.'">Clique pour confirmer ton compte !<a/>
+                                                    </di>
+                                                </body>
+                                            </html>';
+                                            $headers = "From: \"Cook And Burn\"<cookandBurn@domaine.com>\n";
+                                            $headers .= "Reply-To: no-reply@domaine.com\n";
+                                            $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"";
+                                            mail($to, $subject, $message, $headers);
                                             $test->insertUser($aUser);
                                         }
                                         catch(PDOException $e)
