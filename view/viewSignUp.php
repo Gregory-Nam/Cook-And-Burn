@@ -19,11 +19,11 @@
             </p>
 
             <p>
-                <input type="text" name="password" placeholder="Mot de passe" id="firstname"/>
+                <input type="password" name="password" placeholder="Mot de passe" id="firstname"/>
             </p>
 
             <p>
-                <input type="text" name="password2" placeholder="Mot de passe à nouveau " id="firstname"/>
+                <input type="password" name="password2" placeholder="Mot de passe à nouveau " id="firstname"/>
             </p>
 
             <p>
