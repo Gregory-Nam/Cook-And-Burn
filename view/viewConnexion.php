@@ -14,7 +14,7 @@
             </p>
 
             <p>
-                <input type="text" name="password" placeholder="Mot de passe" id="firstname"/>
+                <input type="password" name="password" placeholder="Mot de passe" id="firstname"/>
             </p>
 
             <p>
