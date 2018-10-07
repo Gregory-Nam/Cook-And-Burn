@@ -57,7 +57,11 @@ class ControllerSignUpAction
                                             <html>
                                                 <body>
                                                     <div align="center">
-                                                        <a href="http://cookandburn-gxaj.alwaysdata.net/Confirmation?pseudo='.urlencode($nameUser).'$key='.$key.'">Clique pour confirmer ton compte !<a/>
+                                                        <a href="http://cookandburn-gxaj.alwaysdata.net/Confirmation?$pseudo='.urlencode($nameUser).'$key='.$key.'">Clique pour confirmer ton compte !<a/>
+                                                        <p> Votre pseudo : </p>
+                                                        ' . urlencode($nameUser) . ' 
+                                                        <p> Votre clé secréte : </p>
+                                                        '. $key . ' 
                                                     </di>
                                                 </body>
                                             </html>';
