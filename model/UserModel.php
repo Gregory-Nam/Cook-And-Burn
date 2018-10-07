@@ -79,4 +79,52 @@ class UserModel extends Model{
 
         return false;
     }
+
+    public function verifUserValid($_user)
+    {
+        if($_user->getNameUser() == "ab")
+            header('location:deede');
+        try{
+            $query = ('SELECT nom_utilisateur FROM user WHERE nom_utilisateur = ? AND confirmkey = ?');
+
+            $stmt = $this->getBdd()->prepare($query);
+            $_confirmkeyQ = $_user->getConfirmKey();
+            $_nameUserQ = $_user->getNameUser();
+            $stmt->execute(array($_nameUserQ, $_confirmkeyQ));
+            if($stmt->fetch()== true){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
+
+    public function confirmUser($_user)
+    {
+        if($_user->getNameUser() == "ab")
+            header('location:deede');
+        try{
+            $query = ('UPDATE user SET confirme = 1 WHERE nom_utilisateur = ? AND confirmkey = ? ');
+
+            $stmt = $this->getBdd()->prepare($query);
+            $_confirmkeyQ = $_user->getConfirmKey();
+            $_nameUserQ = $_user->getNameUser();
+            $stmt->execute(array($_nameUserQ, $_confirmkeyQ));
+            if($stmt->fetch()== true){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
 }
