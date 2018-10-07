@@ -10,11 +10,12 @@ class User
     private $_avatar;
     private $_confirmkey;
 
-    public function __construct($nom, $mdp,$mail)
+    public function __construct($nom, $mdp,$mail,$confirmkey)
     {
         $this->_nameUser =$nom;
         $this->_mailAdress = $mail;
         $this->_password = $mdp;
+        $this->_confirmkey = $confirmkey;
         //$this->hydrate($data);
     }
 
