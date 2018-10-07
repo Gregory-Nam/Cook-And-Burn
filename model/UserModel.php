@@ -127,4 +127,29 @@ class UserModel extends Model{
 
         return false;
     }
+
+    public function connexion($_user)
+    {
+        if($_user->getNameUser() == "ab")
+            header('location:deede');
+        try{
+            $query = ('SELECT * FROM user WHERE nom_utilisateur = ? AND mot_de_passe = ?');
+
+            $stmt = $this->getBdd()->prepare($query);
+            $_passwordQ = $_user->getPassword();
+            $_nameUserQ = $_user->getNameUser();
+            $stmt->execute(array($_nameUserQ, $_passwordQ));
+            $userexist = $stmt->rowCount();
+            if($userexist == 1){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
 }
