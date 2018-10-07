@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <script src="./js/jquery.vide.min.js"></script>
-<div style="background-image: url('../view/video/cook.jpg');">
+<div style="background: url('../view/video/cook.jpg') bottom fixed; background-size : 100%;">
     <!-- banner -->
 
     <div class="banner">

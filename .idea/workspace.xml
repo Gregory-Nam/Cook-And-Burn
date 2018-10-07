@@ -66,10 +66,11 @@
     <session id="-546289545">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.18" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -77,7 +78,7 @@
           <entry key="css" value="4" />
           <entry key="jpg" value="4" />
           <entry key="js" value="3" />
-          <entry key="php" value="46" />
+          <entry key="php" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -85,19 +86,19 @@
           <entry key="CSS" value="4" />
           <entry key="Image" value="4" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="46" />
+          <entry key="PHP" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="37" />
-          <entry key="php" value="3710" />
+          <entry key="php" value="4312" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="37" />
-          <entry key="PHP" value="3710" />
+          <entry key="PHP" value="4312" />
         </counts>
       </usages-collector>
     </session>
@@ -105,162 +106,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewSignUp.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="true">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Recette.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerConfirmation.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/js/bootstrap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="814" column="37" selection-start-line="814" selection-start-column="37" selection-end-line="814" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/js/jquery-1.11.1.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="15806" selection-start-line="2" selection-start-column="15801" selection-end-line="2" selection-end-column="15806" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/js/jquery.vide.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="85" selection-start-line="8" selection-start-column="85" selection-end-line="8" selection-end-column="85" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/template.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/index.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/css/font-awesome.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-682" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUpAction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/Rooter.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controler/ControllerConfirmation.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
         <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/UserModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1225" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUpAction.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Model.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198" />
+            <state relative-caret-position="-264" />
           </provider>
         </entry>
       </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewError.php">
+      <file pinned="true" current-in-tab="true">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/View.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="374">
+              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
         <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUp.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerIndex.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/index.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -283,6 +178,11 @@
       <find>col-md-6</find>
       <find>w3ls-special</find>
       <find>w3ls-special-img</find>
+      <find>\</find>
+      <find>RequestMeth</find>
+      <find>POST</find>
+      <find>gRecaptchaResponse</find>
+      <find>Post</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -309,16 +209,18 @@
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/template.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerIndex.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/index.php" />
-        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/Rooter.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/UserModel.php" />
-        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUpAction.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/User.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUp.php" />
-        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewSignUp.php" />
-        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/template.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/css/bootstrap.css" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/css/style.css" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/reCaptcha/autoload.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/Rooter.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/reCaptcha/ReCaptcha/ReCaptcha.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewSignUp.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUpAction.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/template.php" />
       </list>
     </option>
   </component>
@@ -329,7 +231,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+    <option name="x" value="491" />
+    <option name="y" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -338,7 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -370,6 +272,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,6 +314,8 @@
       <workItem from="1538781172528" duration="987000" />
       <workItem from="1538836243905" duration="9529000" />
       <workItem from="1538851874765" duration="10723000" />
+      <workItem from="1538904388438" duration="5731000" />
+      <workItem from="1538921613982" duration="849000" />
     </task>
     <task id="LOCAL-00001" summary="correction bug ID qui s'affichait pas">
       <created>1538739969676</created>
@@ -423,7 +328,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31494000" />
+    <option name="totallyTimeSpent" value="38074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -438,7 +343,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -458,7 +363,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.17750533" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.19029851" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
     </layout>
   </component>
@@ -528,13 +433,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/template.php" />
     <entry file="file://$PROJECT_DIR$/pages-template/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -552,6 +451,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-396" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controler/ControllerConfirmation.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
