@@ -12,6 +12,10 @@ class Rooter
 			spl_autoload_register(function($class){
 			    if(strpos($class, "Controller") === true)
 			        require_once ('controler/'.$class.'.php');
+			    else if(strpos($class,"Captcha") == true) {
+                    $class = str_replace('\\', '/', $class);
+                    require_once('model/reCaptcha/' . $class . '.php');
+                }
 			    else
 				    require_once('model/'.$class.'.php');
 			});
