@@ -6,10 +6,11 @@ class UserModel extends Model{
         if($_user->getNameUser() == "ab")
             header('location:deede');
         try{
-            $query = 'INSERT INTO user(nom_utilisateur,mot_de_passe, adresse_email) VALUES(:nameUserQ,:passwordQ,:mailAdressQ)';
+            $query = 'INSERT INTO user(nom_utilisateur,mot_de_passe, adresse_email, confirmkey) VALUES(:nameUserQ,:passwordQ,:mailAdressQ, :confirmkeyQ)';
 
             $stmt = $this->getBdd()->prepare($query);
 
+            $_confirmkeyQ = $_user->getConfirmKey();
             $_nameUserQ = $_user->getNameUser();
             $_passwordQ = $_user->getPassword();
             $_mailAdressQ = $_user->getMailAdress();
@@ -17,6 +18,7 @@ class UserModel extends Model{
             $stmt->bindValue('nameUserQ', $_nameUserQ, PDO::PARAM_STR);
             $stmt->bindValue('passwordQ', $_passwordQ, PDO::PARAM_STR);
             $stmt->bindValue('mailAdressQ', $_mailAdressQ, PDO::PARAM_STR);
+            $stmt->bindValue('confirmkeyQ', $_confirmkeyQ, PDO::PARAM_STR);
 
 
             $stmt->execute();
