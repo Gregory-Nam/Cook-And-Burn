@@ -8,6 +8,7 @@ class User
     //private $_hashValidation;
     private $_inscriptionDate;
     private $_avatar;
+    private $_confirmkey;
 
     public function __construct($nom, $mdp,$mail)
     {
@@ -77,6 +78,20 @@ class User
     {
         if(is_string($mailAdress))
             $this->_mailAdress = $mailAdress;
+    }
+
+    public function getConfirmKey()
+    {
+        return $this->_confirmkey;
+    }
+
+    /**
+     * @param mixed $mailAdress
+     */
+    public function setConfirmKey($mailAdress)
+    {
+        if(is_numeric($mailAdress))
+            $this->_confirmkey = $mailAdress;
     }
 
     /**
