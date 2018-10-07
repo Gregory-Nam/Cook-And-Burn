@@ -4,6 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<?php
+include ('./controler/ControllerConnexionAction.php');?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +45,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="logo">
                     <h1><a href="index">Cook And Burn</a></h1>
                 </div>
+            <?php
+            if(isset($_SESSION['pseudo']))
+            {?>
+                <div class="top-nav">
+                    <nav class="navbar navbar-default">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
+                                <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
+                                <li><a href="news.html">News & Events</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            <?php
+            }
+            else
+            {
+            ?>
                 <div class="top-nav">
                     <nav class="navbar navbar-default">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
@@ -60,6 +87,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </nav>
                 </div>
+            <?php
+            }
+            ?>
                 <div class="clearfix"> </div>
 
 

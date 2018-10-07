@@ -27,8 +27,9 @@ class ControllerConnexionAction
    			if($test->connexion($aUser) == true){
    				echo 'Vous êtes connecté en tant que :'.'<br/>';
    				$_SESSION['pseudo'] = $nameconect;
+   				header("location:index");
 
-   				echo $_SESSION['pseudo'];
+                //echo $_SESSION['pseudo'];
 
    			}
    			else{

@@ -4,7 +4,7 @@
 
     if(isset($_POST['deco'])){
     	session_destroy();
-    	header("Location: connexion");
+    	header("Location: index");
     }
     ?>
 

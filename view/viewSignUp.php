@@ -1,11 +1,12 @@
 <?php
     $this->_t = "Inscription";
     ?>
-<!-- permet de fermer la banner -->
 <head>
     <title>reCAPTCHA demo: Simple page</title>
      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
+<!-- permet de fermer la banner -->
 </div>
 </div>
 </div>
