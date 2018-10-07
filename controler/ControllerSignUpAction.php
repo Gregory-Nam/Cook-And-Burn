@@ -35,52 +35,61 @@ class ControllerSignUpAction
             $mailUser2 = htmlspecialchars($_POST['mail2']);
             $aUser = new User($nameUser,$firstNameUser, $mailUser);
             $pseudolength = strlen($nameUser);
-
+            $test = new UserModel();
             if($pseudolength <= 255){
                 if($firstNameUser == $firstNameUser2){
                     if($mailUser == $mailUser2){
                         if(filter_var($mailUser, FILTER_VALIDATE_EMAIL)){
+                            if($test->verifUser($aUser) == false){ //Vérifie si le pseudo est utilisé
+                                if($test->verifUserEmail($aUser) == false){
+                                    if ($resp->isSuccess() === true)
+                                    {
+                                        try
+                                        {
+                                            
+                                            $test->insertUser($aUser);
+                                        }
+                                        catch(PDOException $e)
+                                        {
+                                            die('Error : ' . $e->getMessage());
+                                        }
+                                        echo "Inscription réussit !";
+                                        echo $aUser->getNameUser();
+                                        //header('location:Index');
+                                    }
+                                    else{
 
-                            if ($resp->isSuccess() === true)
-                            {
-                                try
-                                {
-                                    $test = new UserModel();
-                                    $test->insertUser($aUser);
+                                        echo "Valider le captcha !";
+                                    }
                                 }
-                                catch(PDOException $e)
-                                {
-                                    die('Error : ' . $e->getMessage());
+                                else{
+                                    echo "Email déjà utilisé !";
                                 }
-                                echo "Inscription réussit !";
-                                echo $aUser->getNameUser();
-                                //header('location:Index');
-                            }
-                            else{
-
-                                echo "Valider le captcha !";
-                            }
                                 
                             }
                             else{
-                                echo "Votre adresse mail n'est pas valide !";
-                            }   
+                                echo "Pseudo déjà utilisé !";
+                            }          
                         }
                         else{
-                            echo "Les adresses emails ne correspondent pas !";
-                        }
+                            echo "Votre adresse mail n'est pas valide !";
+                        }   
                     }
                     else{
-                        echo "Vos mots de passes ne correspondent pas !";
-                    }      
+                        echo "Les adresses emails ne correspondent pas !";
+                    }
                 }
                 else{
-                        echo "Votre pseudo ne doit pas dépasser 255 caractères !";
-                    }
+                    echo "Vos mots de passes ne correspondent pas !";
+                }      
+            }
+            else{
+                echo "Votre pseudo ne doit pas dépasser 255 caractères !";
+            }
                 
        
-            }
         }
+    }
 }
 
 
