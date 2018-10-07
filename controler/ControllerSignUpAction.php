@@ -1,7 +1,10 @@
+
 <?php
 //include('../view/viewSignUp
 //include('./model/User.php');
 //include ('ControllerSignUpAction.php');
+error_reporting(E_ALL);
+ini_set('display-errors','on');
 
 class ControllerSignUpAction
 {
@@ -20,6 +23,11 @@ class ControllerSignUpAction
         }
         else
         {
+
+            //require_once ('./model/reCaptcha/autoload.php');
+            $recaptcha = new \ReCaptcha\ReCaptcha('6Lcy3XMUAAAAADkAvu0vbHEM8GURkxLbYOGCoWnh');
+
+            $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
             $nameUser = htmlspecialchars($_POST['name']);
             $firstNameUser = sha1($_POST['password']);
             $firstNameUser2 = sha1($_POST['password2']);
@@ -27,42 +35,52 @@ class ControllerSignUpAction
             $mailUser2 = htmlspecialchars($_POST['mail2']);
             $aUser = new User($nameUser,$firstNameUser, $mailUser);
             $pseudolength = strlen($nameUser);
+
             if($pseudolength <= 255){
                 if($firstNameUser == $firstNameUser2){
                     if($mailUser == $mailUser2){
                         if(filter_var($mailUser, FILTER_VALIDATE_EMAIL)){
-                            try
+
+                            if ($resp->isSuccess() === true)
                             {
-                                $test = new UserModel();
-                                $test->insertUser($aUser);
+                                try
+                                {
+                                    $test = new UserModel();
+                                    $test->insertUser($aUser);
+                                }
+                                catch(PDOException $e)
+                                {
+                                    die('Error : ' . $e->getMessage());
+                                }
+                                echo "Inscription réussit !";
+                                echo $aUser->getNameUser();
+                                //header('location:Index');
                             }
-                            catch(PDOException $e)
-                            {
-                                die('Error : ' . $e->getMessage());
+                            else{
+
+                                echo "Valider le captcha !";
                             }
-                            echo "Inscription réussit !";
-                            echo $aUser->getNameUser();
-                            //header('location:Index');
+                                
+                            }
+                            else{
+                                echo "Votre adresse mail n'est pas valide !";
+                            }   
                         }
                         else{
-                            echo "Votre adresse mail n'est pas valide !";
-                        }   
+                            echo "Les adresses emails ne correspondent pas !";
+                        }
                     }
                     else{
-                        echo "Les adresses emails ne correspondent pas !";
-                    }
+                        echo "Vos mots de passes ne correspondent pas !";
+                    }      
                 }
                 else{
-                    echo "Vos mots de passes ne correspondent pas !";
-                }      
+                        echo "Votre pseudo ne doit pas dépasser 255 caractères !";
+                    }
+                
+       
             }
-            else{
-                    echo "Votre pseudo ne doit pas dépasser 255 caractères !";
-                }
-            
-   
         }
-    }
 }
 
 
