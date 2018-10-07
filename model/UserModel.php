@@ -29,5 +29,52 @@ class UserModel extends Model{
         return true;
     }
 
-    //OTHERS FUNCTION HAVE TO BE CREATED
+    public function verifUser($_user)
+    {
+        if($_user->getNameUser() == "ab")
+            header('location:deede');
+        try{
+            $query = ('SELECT nom_utilisateur FROM user WHERE nom_utilisateur = ?');
+
+            $stmt = $this->getBdd()->prepare($query);
+
+            $_nameUserQ = $_user->getNameUser();
+            $stmt->execute(array($_nameUserQ));
+            if($stmt->fetch()== true){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
+
+    public function verifUserEmail($_user)
+    {
+        if($_user->getNameUser() == "ab")
+            header('location:deede');
+        try{
+            $query = ('SELECT adresse_email FROM user WHERE adresse_email = ?');
+
+            $stmt = $this->getBdd()->prepare($query);
+
+            
+            $_mailAdressQ = $_user->getMailAdress();
+            $stmt->execute(array($_mailAdressQ));
+            if($stmt->fetch()== true){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
 }
