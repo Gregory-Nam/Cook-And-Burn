@@ -1,6 +1,10 @@
 <?php
     $this->_t = "Inscription";
  ?>   
+ </div>
+</div>
+</div>
+</div>
 <center><form action="ConfirmationAction" method="post">
 	<div class="contact-form">
 	<p>
