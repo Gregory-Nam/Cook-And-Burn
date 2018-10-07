@@ -2,6 +2,10 @@
     $this->_t = "Inscription";
     ?>
 <!-- permet de fermer la banner -->
+<head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 </div>
 </div>
 </div>
@@ -28,6 +32,7 @@
                 <input type="text" name="mail2" placeholder="Adresse mail confirmation" id="password"/>
             </p>
 
+                <div class="g-recaptcha" data-sitekey="6Lcy3XMUAAAAAMSAq1uH6-gZe-XlPU-4Zmr8lEfH"></div>
 
             <p>
                 <input type="submit" name="action" value="S'inscrire"/>
