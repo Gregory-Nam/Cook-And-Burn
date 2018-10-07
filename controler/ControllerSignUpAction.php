@@ -23,6 +23,11 @@ class ControllerSignUpAction
         }
         else
         {
+            $longueurKey = 15;
+            $key = "";
+            for($i=1; $i <$longueurKey;++$i){
+                $key .= mt_rand(0,9);
+            }
 
             //require_once ('./model/reCaptcha/autoload.php');
             $recaptcha = new \ReCaptcha\ReCaptcha('6Lcy3XMUAAAAADkAvu0vbHEM8GURkxLbYOGCoWnh');
@@ -33,7 +38,7 @@ class ControllerSignUpAction
             $firstNameUser2 = sha1($_POST['password2']);
             $mailUser = htmlspecialchars($_POST['mail']);
             $mailUser2 = htmlspecialchars($_POST['mail2']);
-            $aUser = new User($nameUser,$firstNameUser, $mailUser);
+            $aUser = new User($nameUser,$firstNameUser, $mailUser, $key);
             $pseudolength = strlen($nameUser);
             $test = new UserModel();
             if($pseudolength <= 255){
@@ -53,6 +58,7 @@ class ControllerSignUpAction
                                         {
                                             die('Error : ' . $e->getMessage());
                                         }
+                                        echo $key;
                                         echo "Inscription réussit !";
                                         echo $aUser->getNameUser();
                                         //header('location:Index');
