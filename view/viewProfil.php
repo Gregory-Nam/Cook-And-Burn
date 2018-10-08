@@ -6,6 +6,11 @@
     	session_destroy();
     	header("Location: index");
     }
+
+    if(isset($_POST['changeMail']))
+    {
+        header("Location:ChangeMail");
+    }
     ?>
 
 </div>
@@ -18,6 +23,10 @@
 ?>
 <div class="contact-form">
 	<form action="" method="post">
-	<center><input type="submit" name="deco" value="Me Déconnecter"></center>
+
+        <center/><input type="submit" name="favRec" value="Mes recettes favorites">
+        <input type="submit" name="changeMail" value="Changer mon adresse mail">
+        <input type="submit" name="changeMdp" value="Changer mon mot de passe">
+    <br/><br/><input type="submit" name="deco" value="Me Déconnecter"></center>
 	</form>
 </div>
