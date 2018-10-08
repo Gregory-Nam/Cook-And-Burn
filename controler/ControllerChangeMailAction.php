@@ -2,6 +2,7 @@
 //include('../view/viewSignUp
 //include('./model/User.php');
 //include ('ControllerSignUpAction.php');
+session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
@@ -29,7 +30,7 @@ class ControllerChangeMailAction
             if($mail2 == $mail3)
             {
 
-                $test->mailChange($mail1,$mail2);
+                $test->mailChange($_SESSION['pseudo'],$mail1,$mail2);
                 echo "coucou";
 
             }
