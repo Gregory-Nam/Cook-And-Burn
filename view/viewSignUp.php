@@ -23,7 +23,7 @@
             </p>
 
             <p>
-                <input type="password" name="password2" placeholder="Mot de passe à nouveau " id="firstname"/>
+                <input type="text" name="password2" placeholder="Mot de passe à nouveau " id="firstname"/>
             </p>
 
             <p>

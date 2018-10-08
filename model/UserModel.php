@@ -152,4 +152,33 @@ class UserModel extends Model{
 
         return false;
     }
+
+
+    public function mailChange($oldmail,$Newmail)
+    {
+        try{
+            $query = 'SELECT nom_utilisateur FROM user WHERE adresse_email = "'.$oldmail.'"';
+            $response = $this->getBdd()->query($query);
+
+            if(($nom = $response->fetch()))
+            {
+                    $query2 = ('UPDATE user SET adresse_email = "'.$Newmail.'" WHERE adresse_email= ? AND nom_utilisateur = "'. $nom['nom_utilisateur']  .'"');
+                    $stmt2 = $this->getBdd()->prepare($query2);
+
+                    $stmt2->execute(array());
+            };
+
+
+
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
+
+
 }
