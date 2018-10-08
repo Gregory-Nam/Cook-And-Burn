@@ -154,19 +154,22 @@ class UserModel extends Model{
     }
 
 
-    public function mailChange($oldmail,$Newmail)
+    public function mailChange($name,$oldmail,$Newmail)
     {
         try{
-            $query = 'SELECT nom_utilisateur FROM user WHERE adresse_email = "'.$oldmail.'"';
+            $query = 'SELECT nom_utilisateur FROM user WHERE adresse_email = "'.$oldmail.'" AND nom_utilisateur="'.$name.'"';
             $response = $this->getBdd()->query($query);
 
-            if(($nom = $response->fetch()))
+            if(($response->fetch()))
             {
-                    $query2 = ('UPDATE user SET adresse_email = "'.$Newmail.'" WHERE adresse_email= ? AND nom_utilisateur = "'. $nom['nom_utilisateur']  .'"');
+                    $query2 = ('UPDATE user SET adresse_email = "'.$Newmail.'" WHERE adresse_email= ? AND nom_utilisateur = "'. $name  .'"');
                     $stmt2 = $this->getBdd()->prepare($query2);
 
-                    $stmt2->execute(array());
-            };
+                    $stmt2->execute(array($oldmail));
+            }
+            else{
+                echo "c'est pas toi";
+            }
 
 
 
