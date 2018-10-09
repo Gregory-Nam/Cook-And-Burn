@@ -14,7 +14,10 @@
             </p>
 
             <p>
-                <input type="textarea" name="descriptionRecette" placeholder="Description de la recette"/>
+                <input type="textarea" name="descriptionRecette" placeholder="Description rapide"/>
+            </p>
+            <p>
+                <input type="textarea" name="descriptionRecette2" placeholder="Description détaillée"/>
             </p>
             <p>
                 <input type="textarea" name="ingredientRecette" placeholder="Ingrédient de la recette"/>
@@ -31,3 +34,4 @@
             </p>
 
 </form></center></div>
+

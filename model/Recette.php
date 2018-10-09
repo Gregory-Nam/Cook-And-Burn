@@ -5,16 +5,18 @@ class Recette
 	private $_id;
 	private $_titre;
 	private $_description;
+	private $_descriptionDet;
 	private $_auteur;
 	private $_ingredient;
 	private $_image;
 	private $_nombrePersonne;
 
 	//CONSTRUCTEUR
-	public function __construct($titre,$description,$auteur,$ingredient,$image,$nombrePersonne)
+	public function __construct($titre,$description,$descriptionDet,$auteur,$ingredient,$image,$nombrePersonne)
 	{
 		$this->_titre = $titre;
 		$this->_description = $description;
+		$this->_descriptionDet= $descriptionDet;
 		$this->_auteur = $auteur;
 		$this->_ingredient = $ingredient;
 		$this->_image = $image;
@@ -55,6 +57,13 @@ class Recette
 	{
 		if(is_string($name))
 			$this->_description = $name;
+
+	}
+
+	public function setDescriptionDet($name)
+	{
+		if(is_string($name))
+			$this->_descriptionDet = $name;
 
 	}
 
@@ -116,6 +125,11 @@ class Recette
 	public function getDescription()
 	{
 		return $this->_description;
+	}
+
+	public function getDescriptionDet()
+	{
+		return $this->_descriptionDet;
 	}
 
 	public function getAuteur()

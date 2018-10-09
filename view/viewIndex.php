@@ -36,17 +36,18 @@ $this->_t = 'Cook And Burn';
                 <h3>Les recettes avec le plus de burns !!!</h3>
             </div>
 <?php
-foreach($recette as $rec) :?>
+foreach($recette as $rec) :
+            ?>
 
             <div class="w3ls-menu-grids">
                 <div class="menu-top-grids agileinfo">
                     <div class="col-md-3 menu-grid">
                         <div class="agile-menu-grid">
-                            <a href="single.html">
-                                <img src="images/<?php echo $rec->getTitre();?>.jpg" alt="" />
+                            <a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>" />
+                                <img src="./files/<?php echo $rec->getImage();?>" alt="" />
                                 <div class="agileits-caption">
                                     <h4><?php echo $rec->getTitre();?> </h4>
-                                    <p>$18</p>
+                                    <p> par <?php echo $rec->getAuteur();?></p>
                                 </div>
                             </a>
                         </div>
