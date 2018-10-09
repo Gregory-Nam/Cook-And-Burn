@@ -88,6 +88,10 @@ class Recette
 	{
 		return $this->_id;
 	}
+	public function getNombrePersonne()
+	{
+		return $this->_nombrePersonne;
+	}
 
 	public function getTitre()
 	{
