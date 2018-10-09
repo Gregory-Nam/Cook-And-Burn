@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="nav navbar-nav">
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
-                                <li><a class="<?php if($t == "Création recette") echo "active";?>"href="creationRecette">Créer une recette</a></li>
+                                <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <div class="clearfix"> </div>
                             </ul>
