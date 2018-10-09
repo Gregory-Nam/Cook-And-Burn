@@ -10,15 +10,10 @@ class Recette
 	private $_image;
 
 	//CONSTRUCTEUR
-	public function __construct($nom, $description,$auteur,$ingredient,$image)
-    {
-        $this->_titre =$nom;
-        $this->_description = $description;
-        $this->_auteur = $auteur;
-        $this->_ingredient = $ingredient;
-        $this->_image = $image;
-        //$this->hydrate($data);
-    }
+	public function __construct(array $data)
+	{
+		$this->hydrate($data);
+	}
 
 	//HYDRATION CE QUI CORRESPOND A APPORTER AU OBJET CE QU'ILS ONT BESOIN
 	//POUR EXISTER
