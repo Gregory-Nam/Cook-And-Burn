@@ -18,7 +18,7 @@ class ControllerRecetteAction
     {
         if(!empty($_FILES))
         {
-            if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['ingredientRecette']) || empty($_POST['nombrePersonne']))
+            if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['descriptionRecette2']) || empty($_POST['ingredientRecette']) || empty($_POST['nombrePersonne']))
             {
                 echo 'Remplir les champs';
                 echo 'Nom : '. $_POST['nameRecette'];
@@ -37,13 +37,16 @@ class ControllerRecetteAction
 
             $extensions_autorisees = array('.png', '.jpg');
 
+ 
+
             $nomRecette = htmlspecialchars($_POST['nameRecette']);
             $descriptionRecette = htmlspecialchars($_POST['descriptionRecette']);
+            $descriptionRecetteDet = htmlspecialchars($_POST['descriptionRecette2']);
             $ingredientRecette = htmlspecialchars($_POST['ingredientRecette']);
             //$imageRecette = htmlspecialchars($_POST['imageRecette']);
             $nombrePersonne = htmlspecialchars($_POST['nombrePersonne']);
             $test = new RecetteModel();
-            $aRecette = new Recette($nomRecette,$descriptionRecette, $_SESSION['pseudo'], $ingredientRecette, $file_name, $nombrePersonne);
+            $aRecette = new Recette($nomRecette,$descriptionRecette, $descriptionRecette2,$_SESSION['pseudo'], $ingredientRecette, $file_name, $nombrePersonne);
                 if($nombrePersonne <= 0 )
                 {
                     echo 'Le nombre de personne doit au moins être égale à 1';
@@ -55,6 +58,7 @@ class ControllerRecetteAction
                     move_uploaded_file($file_tmp_name, $destination);
                     $test->insertRecette($aRecette); 
                     echo 'Recette ajouté';
+
                     }
                     else{
                         echo 'Extension autorisé : png et jpg';
