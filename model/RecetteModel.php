@@ -3,18 +3,25 @@ class RecetteModel extends Model{
 
 	public function insertRecette($_recette)
     {
+    	try{
             $query = 'INSERT INTO recettes (titre,description, auteur,ingredients,image, nombre_personne) VALUES(?,?,?,?,?,?)';
 
             $stmt = $this->getBdd()->prepare($query);
+            $stmt->bindValue(1, $_recette->getTitre(), PDO::PARAM_STR);
+            $stmt->bindValue(2, $_recette->getDescription(), PDO::PARAM_STR);
+            $stmt->bindValue(3, $_recette->getAuteur(), PDO::PARAM_STR);
+            $stmt->bindValue(4, $_recette->getIngredient(), PDO::PARAM_STR);
+            $stmt->bindValue(5, $_recette->getImage(), PDO::PARAM_STR);
+            $stmt->bindValue(6, $_recette->getNombrePersonne(), PDO::PARAM_STR);
 
-            $_titreQ = $_recette->getTitre();
-            $_descriptionQ = $_recette->getDescription();
-            $_auteurQ = $_recette->getAuteur();
-            $_ingredientsQ = $_recette->getIngredient();
-            $_imageQ = $_recette->getImage();
-            $_nombrePersonneQ = $_recette->getNombrePersonne();
-            $stmt->execute(array($_titreQ, $_descriptionQ, $_auteurQ, $_ingredientsQ, $_imageQ, $_nombrePersonneQ));
+            $ret =$stmt->execute();
 
+        }
+
+        catch (Exception $e)
+        {
+            echo $e;
+        }
         return true;
     }
 
