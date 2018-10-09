@@ -1,7 +1,7 @@
 <?php
 require_once('view/View.php');
-include('./model/User.php');
-include ('./model/UserModel.php');
+include('./model/Recette.php');
+include ('./model/RecetteModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 
 class ControllerCreationRecette

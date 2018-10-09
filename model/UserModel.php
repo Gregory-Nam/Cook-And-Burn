@@ -183,5 +183,29 @@ class UserModel extends Model{
         return false;
     }
 
+    public function mdpChange($name, $oldMdp, $newMdp)
+    {
+        try{
+            $query = 'SELECT nom_utilisateur FROM user WHERE nom_utilisateur ="'.$name . '" AND mot_de_passe ="'.$oldMdp.'"';
+            $response = $this->getBdd()->query($query);
+
+            if($response->fetch())
+            {
+                $query2 = ('UPDATE user SET mot_de_passe = "'.$newMdp.'" WHERE nom_utilisateur = "'. $name  .'"');
+                $stmt2 = $this->getBdd()->prepare($query2);
+
+                $stmt2->execute();
+            }
+            else
+            {
+                echo "Mauvais mot de passe";
+            }
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+    }
+
 
 }

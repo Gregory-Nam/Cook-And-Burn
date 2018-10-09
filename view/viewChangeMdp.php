@@ -8,7 +8,7 @@ if(isset($_SESSION['pseudo']))
 {?>
     <center>
         <div class="contact-form">
-            <form action="" method="post" id="contact-form">
+            <form action="ChangeMdpAction" method="post" id="contact-form">
 
                 <p>
                     <input type="password" name="oldMdp" placeholder="Votre ancien mot de passe"/>

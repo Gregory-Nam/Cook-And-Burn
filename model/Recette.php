@@ -8,6 +8,7 @@ class Recette
 	private $_auteur;
 	private $_ingredient;
 	private $_image;
+	private $_nombrePersonne;
 
 	//CONSTRUCTEUR
 	public function __construct(array $data)
@@ -72,6 +73,15 @@ class Recette
 			$this->_image = $name;
 
 	}
+
+	public function setNombrePersonne($number)
+    {
+
+        if(is_numeric($number))
+        {
+            $this->_nombrePersonne = $number;
+        }
+    }
 
 	//GETTER
 	public function getId()
