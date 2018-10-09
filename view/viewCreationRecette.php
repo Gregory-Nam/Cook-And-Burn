@@ -8,7 +8,7 @@
 </div>
     <div class="contact-form">
                 <h3>Ma recette : </h3>
-        <center><form action="RecetteAction" method="post">
+        <center><form action="RecetteAction" enctype="multipart/form-data" method="post">
             <p>
                 <input type="text" name="nameRecette" placeholder ="Titre de la recette" />
             </p>
