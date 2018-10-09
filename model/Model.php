@@ -32,7 +32,7 @@ abstract class Model
 	  $req->execute();
 	  while($data = $req->fetch(PDO::FETCH_ASSOC))
 	  {
-		$var[] = new $obj($data['titre'], $data['descritpion'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne']);
+		$var[] = new $obj($data['titre'], $data['descritpion'],$data['descritpionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne']);
 	  }
 	  return $var;
 	  $req->closeCursor();
