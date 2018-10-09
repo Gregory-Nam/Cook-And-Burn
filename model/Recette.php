@@ -6,6 +6,8 @@ class Recette
 	private $_titre;
 	private $_description;
 	private $_auteur;
+	private $_ingredient;
+	private $_image;
 
 	//CONSTRUCTEUR
 	public function __construct(array $data)
@@ -57,6 +59,20 @@ class Recette
 
 	}
 
+	public function setIngredient($name)
+	{
+		if(is_string($name))
+			$this->_ingredient = $name;
+
+	}
+
+	public function setImage($name)
+	{
+		if(is_file($name)
+			$this->_image = $name;
+
+	}
+
 	//GETTER
 	public function getId()
 	{
@@ -66,6 +82,16 @@ class Recette
 	public function getTitre()
 	{
 		return $this->_titre;
+	}
+
+	public function getImage()
+	{
+		return $this->_image;
+	}
+
+	public function getIngredient()
+	{
+		return $this->_ingredient;
 	}
 
 	public function getDescription()
