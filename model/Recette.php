@@ -12,10 +12,11 @@ class Recette
 	private $_nombrePersonne;
 
 	//CONSTRUCTEUR
-	public function __construct($titre,$description,$auteur,$ingredient,$image,$nombrePersonne)
+	public function __construct($titre,$description,$descriptionDet,$auteur,$ingredient,$image,$nombrePersonne)
 	{
 		$this->_titre = $titre;
 		$this->_description = $description;
+		$this->_descriptionDet= $descriptionDet;
 		$this->_auteur = $auteur;
 		$this->_ingredient = $ingredient;
 		$this->_image = $image;
