@@ -4,6 +4,12 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+#bg-video {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+}
 body a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -1148,6 +1154,19 @@ h2.typoh2{
   margin: 2em 0 0 0;
 }
 .contact-form input[type="text"] {
+     width: 32.6%;
+     color: #898888;
+     background: none;
+     outline: none;
+     font-size: 1em;
+     padding: 1em;
+     margin: 0 .5em 1em 0;
+     border: solid 2px #3C3C3C;
+     -webkit-appearance: none;
+ }
+
+.contact-form input[type="password"]
+{
     width: 32.6%;
     color: #898888;
     background: none;
@@ -1160,6 +1179,60 @@ h2.typoh2{
 }
 .contact-form input[type="text"]:nth-child(3) {
   margin-right: 0;
+}
+.contact-form input[type="password"]:nth-child(3) {
+    margin-right: 0;
+}
+
+.contact-form input[type="textarea"]
+{
+    width: 32.6%;
+    color: #898888;
+    background: none;
+    outline: none;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 .5em 1em 0;
+    border: solid 2px #3C3C3C;
+    -webkit-appearance: none;
+}
+
+.contact-form input[type="textarea"]:nth-child(3) {
+    margin-right: 0;
+}
+
+.contact-form input[type="file"]
+{
+    width: 32.6%;
+    color: #898888;
+    background: none;
+    outline: none;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 .5em 1em 0;
+    border: solid 2px #3C3C3C;
+    -webkit-appearance: none;
+}
+
+.contact-form input[type="file"]:nth-child(3) {
+    margin-right: 0;
+}
+
+.contact-form input[type="number"]
+{
+    width: 32.6%;
+    color: #898888;
+    background: none;
+    outline: none;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 .5em 1em 0;
+    border: solid 2px #3C3C3C;
+    -webkit-appearance: none;
+}
+
+.contact-form input[type="number"]:nth-child(3) {
+    margin-right: 0;
 }
 .contact-form textarea {
   resize: none;
@@ -1329,7 +1402,19 @@ h2.typoh2{
 .opinion form{
     margin: 1em 0 0 0;	
 }
-.opinion form input[type="text"] {
+.opinion form input[type="text"]  {
+    width: 100%;
+    color: #BBBBBB;
+    outline: none;
+    font-size: 1em;
+    padding: .5em;
+    margin: 0 .5em 1em 0;
+    border: solid 1px #BBBBBB;
+    -webkit-appearance: none;
+}
+
+.opinion form input[type="password"]
+{
     width: 100%;
     color: #BBBBBB;
     outline: none;
@@ -1445,6 +1530,9 @@ h2.typoh2{
 	.contact-form input[type="text"] {
 		width: 32.5%;
 	}
+    .contact-form input[type="password"] {
+        width: 32.5%;
+    }
 }
 @media (max-width:991px){
 	.banner-info {
@@ -1465,7 +1553,7 @@ h2.typoh2{
 	.w3ls-special-img {
 		width: 50%;
 		float: left;
-		min-height: 201px;
+		min-height: 40px;
 		background: url(../images/s1.jpg) no-repeat -53px -195px;
 	}
 	.agileits-special-info {
@@ -1555,6 +1643,9 @@ h2.typoh2{
 	.contact-form input[type="text"] {
 		width: 32.2%;
 	}
+    .contact-form input[type="password"] {
+        width: 32.2%;
+    }
 	.blog-top-left-grid {
 		padding: 0;
 		margin: 0 0 1em 0;
@@ -1643,6 +1734,9 @@ h2.typoh2{
 	.contact-form input[type="text"] {
 		width: 32%;
 	}
+    .contact-form input[type="password"] {
+        width: 32%;
+    }
 }
 @media (max-width:480px){
 	.top-nav {
@@ -1803,6 +1897,10 @@ h2.typoh2{
 		width: 100%;
 		padding: .5em;
 	}
+    .contact-form input[type="password"] {
+        width: 100%;
+        padding: .5em;
+    }
 	.contact-form textarea {
 		padding: .5em;
 	}
