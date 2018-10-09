@@ -68,7 +68,7 @@ class Recette
 
 	public function setImage($name)
 	{
-		if(is_file($name)
+		if(is_file($name))
 			$this->_image = $name;
 
 	}
