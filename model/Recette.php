@@ -5,6 +5,7 @@ class Recette
 	private $_id;
 	private $_titre;
 	private $_description;
+	private $_descriptionDet;
 	private $_auteur;
 	private $_ingredient;
 	private $_image;
@@ -55,6 +56,13 @@ class Recette
 	{
 		if(is_string($name))
 			$this->_description = $name;
+
+	}
+
+	public function setDescriptionDet($name)
+	{
+		if(is_string($name))
+			$this->_descriptionDet = $name;
 
 	}
 
@@ -116,6 +124,11 @@ class Recette
 	public function getDescription()
 	{
 		return $this->_description;
+	}
+
+	public function getDescriptionDet()
+	{
+		return $this->_descriptionDet;
 	}
 
 	public function getAuteur()
