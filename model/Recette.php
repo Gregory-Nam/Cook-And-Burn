@@ -11,9 +11,14 @@ class Recette
 	private $_nombrePersonne;
 
 	//CONSTRUCTEUR
-	public function __construct(array $data)
+	public function __construct($titre,$description,$auteur,$ingredient,$image,$nombrePersonne)
 	{
-		$this->hydrate($data);
+		$this->_titre = $titre;
+		$this->_description = $description;
+		$this->_auteur = $auteur;
+		$this->_ingredient = $ingredient;
+		$this->_image = $image;
+		$this->_nombrePersonne = $nombrePersonne;
 	}
 
 	//HYDRATION CE QUI CORRESPOND A APPORTER AU OBJET CE QU'ILS ONT BESOIN
@@ -116,5 +121,10 @@ class Recette
 	public function getAuteur()
 	{
 		return $this->_auteur;
+	}
+
+	public function __toString()
+	{
+		return $this->_id.','.$this->_nombrePersonne.','.$this->_titre.','.$this->_image.','.$this->_ingredient.','.$this->_description.','.$this->_auteur;
 	}
 }
