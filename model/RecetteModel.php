@@ -49,5 +49,23 @@ class RecetteModel extends Model{
         }
     }
 
+    public function postCommentaire($commentaire,$auteur,$recette)
+    {
+        try{
+            print_r($commentaire);
+            print_r($auteur);
+            print_r($recette);
+            $query = 'INSERT INTO commentaire (commentaire,auteur, id_recette) VALUES(?,?,?)';
+            $stmt = $this->getBdd()->prepare($query);
+            $ret =$stmt->execute(array($commentaire,$auteur,$recette));
+            
+        }
+        catch (Exception $e)
+        {
+            echo $e;
+        }
+        return true;
+    }
+
 
 }
