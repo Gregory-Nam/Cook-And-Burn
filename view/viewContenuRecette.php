@@ -35,7 +35,7 @@ $this->_t = $titre;?>
         </div>
         <div class="contact-form">
         <form method="post" action="MettreFavorisAction">
-            <input type="submit" name="action" value="Poster"/>
+            <input type="submit" name="actionFav" value="Poster"/>
         </form>
         </div>
 

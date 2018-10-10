@@ -207,5 +207,30 @@ class UserModel extends Model{
         }
     }
 
+    public function getByNom($name)
+    {
+        try{
+        $query = 'SELECT * FROM user WHERE nom_utilisateur ="'.$name.'"';
+
+        $stmt = $this->getBdd()->query($query);
+
+        if($resp = $stmt->fetch())
+        {
+
+            $aUser = new User($resp['nom_utilisateur'], $resp['mot_de_passe'],$resp['adresse_email']);
+            $aUser->setId($resp['id']);
+        }
+        else{
+            echo "pas d'utilisateur de ce nom";
+
+            return null;
+        }
+        return $aUser;
+    }
+    catch(Exception $e)
+    {
+        echo $e;
+    }}
+
 
 }

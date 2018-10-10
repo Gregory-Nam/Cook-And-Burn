@@ -1,17 +1,34 @@
 <?php
-
+session_start();
+error_reporting(E_ALL);
+ini_set('display-errors','on');
 class ControllerMettreFavorisAction
 {
-private $test;
+private $_favorisModel;
 public function __construct()
 {
-$this->MettreFavoris();
+    $this->tfavoris();
 }
 
-public function MettreFavoris()
+public function tfavoris()
 {
-    echo "coucou";
+
+
+
+
+    $recMod = new RecetteModel();
+    $rec = $recMod->getByTitre($_SESSION['recette']);
+
+    $userMod = new UserModel();
+    $user = $userMod->getByNom($_SESSION['pseudo']);
+
+    //$favmod = new FavorisModel();
+    $favMod = new FavorisModel();
+    $fav = new Favoris($rec->getId(), $user->getId() ,$rec->getTitre(),$user->getNameUser(), $rec->getImage());
+    $favMod->insertFavoris($fav);
 }
+
+
 //if(empty($_POST['oldMail']) || empty($_POST['newMail']) || empty($_POST['newMail2']))
 //{
 //echo "Vous n'avez pas rempli tous les champs.";

@@ -66,14 +66,15 @@
     <session id="-546289545">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -81,7 +82,7 @@
           <entry key="css" value="7" />
           <entry key="jpg" value="4" />
           <entry key="js" value="3" />
-          <entry key="php" value="107" />
+          <entry key="php" value="158" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -89,19 +90,19 @@
           <entry key="CSS" value="7" />
           <entry key="Image" value="4" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="107" />
+          <entry key="PHP" value="158" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="114" />
-          <entry key="php" value="5014" />
+          <entry key="php" value="8627" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="114" />
-          <entry key="PHP" value="5014" />
+          <entry key="PHP" value="8627" />
         </counts>
       </usages-collector>
     </session>
@@ -137,85 +138,79 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerIndex.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerProfil.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerMettreFavorisAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+            <state relative-caret-position="572">
+              <caret line="26" column="109" selection-start-line="26" selection-start-column="109" selection-end-line="26" selection-end-column="109" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/template.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewProfil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663" />
+            <state relative-caret-position="902">
+              <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="6" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUpAction.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewContenuRecette.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-714" />
+            <state relative-caret-position="-154">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUp.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerConfirmationAction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" selection-start-line="4" selection-end-line="5" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerMettreFavoris.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="31" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewRec.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
         <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerContenuRecette.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerCreationRecette.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Recette.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-833">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewMsgFavoris.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-260" />
-          </provider>
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewSignUp.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/User.php">
+      <file pinned="true" current-in-tab="true">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewRecetteFav.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1773" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/UserModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="209" selection-start-line="209" selection-end-line="209" />
+            <state relative-caret-position="264">
+              <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -226,46 +221,50 @@
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewConnexion.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerChangeMdpAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state relative-caret-position="110">
+              <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewProfil.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/FavorisModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewChangeMdp.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerRecetteAction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewChangeMail.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Recette.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2570" />
+          </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerChangeMdpAction.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerRecetteFav.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerConfirmation.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="true">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerConfirmationAction.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerChangeMdp.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewCreationRecette.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -275,53 +274,98 @@
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerChangeMail.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerIndex.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/View.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-18" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewChangeMail.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewSignUp.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="32" column="48" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/User.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Favoris.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1166">
+              <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerProfil.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUpAction.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUp.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
         <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/RecetteModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="159" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
+            <state relative-caret-position="88">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewContenuRecette.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/template.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+            <state relative-caret-position="902">
+              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerRecetteAction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408" />
-          </provider>
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewError.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewCreationRecette.php">
+        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/UserModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="44">
+              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="23" selection-end-column="29" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerChangeMailAction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153" />
           </provider>
         </entry>
       </file>
@@ -357,6 +401,7 @@
       <find>type=&quot;text</find>
       <find>input</find>
       <find>form</find>
+      <find>$rec</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -382,7 +427,6 @@
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/template.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerIndex.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/index.php" />
-        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/User.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerSignUp.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/css/bootstrap.css" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/reCaptcha/autoload.php" />
@@ -402,10 +446,18 @@
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerRecetteAction.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Recette.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerContenuRecette.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/User.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/UserModel.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewContenuRecette.php" />
         <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/RecetteModel.php" />
-        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewIndex.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewRec.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerMettreFavoris.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerRecetteFav.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/Favoris.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/controler/ControllerMettreFavorisAction.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/model/FavorisModel.php" />
+        <option value="&lt;4eb59ed7-90e9-46b3-a727-eeee5aa1bb6c&gt;/www/view/viewRecetteFav.php" />
       </list>
     </option>
   </component>
@@ -416,10 +468,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1040" />
-    <option name="height" value="744" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -438,26 +489,30 @@
               <item name="Cook-And-Burn" type="462c0819:PsiDirectoryNode" />
               <item name="controler" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
             <path>
-              <item name="Cook-And-Burn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cook-And-Burn" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="Cook-And-Burn" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
             <path>
-              <item name="Cook-And-Burn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cook-And-Burn" type="462c0819:PsiDirectoryNode" />
-              <item name="pages-template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cook-And-Burn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cook-And-Burn" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Cook-And-Burn" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -506,6 +561,7 @@
       <workItem from="1538954860407" duration="723000" />
       <workItem from="1539023180619" duration="1153000" />
       <workItem from="1539081222349" duration="14375000" />
+      <workItem from="1539199005332" duration="9537000" />
     </task>
     <task id="LOCAL-00001" summary="correction bug ID qui s'affichait pas">
       <created>1538739969676</created>
@@ -518,7 +574,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57974000" />
+    <option name="totallyTimeSpent" value="69408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,14 +586,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17787287" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09221748" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -545,15 +601,15 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.4989339" weight="0.16255605" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49840087" visible="true" weight="0.16160521" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="11" sideWeight="0.4989339" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49816626" visible="true" weight="0.114349775" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50183374" side_tool="true" visible="true" weight="0.114349775" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49816626" weight="0.114349775" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50159913" side_tool="true" visible="true" weight="0.16160521" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.29767725" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.17590618" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
     </layout>
   </component>
@@ -610,27 +666,11 @@
     <entry file="file://$PROJECT_DIR$/view/viewError.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages-template/Model.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages-template/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="6" lean-forward="true" selection-end-line="256" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages-template/Model.php" />
+    <entry file="file://$PROJECT_DIR$/pages-template/menu.php" />
     <entry file="file://$PROJECT_DIR$/template.php" />
-    <entry file="file://$PROJECT_DIR$/pages-template/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages-template/inscription.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages-template/index.php" />
+    <entry file="file://$PROJECT_DIR$/pages-template/inscription.php" />
     <entry file="file://$PROJECT_DIR$/view/template.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>

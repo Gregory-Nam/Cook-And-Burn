@@ -5,12 +5,15 @@ class Favoris{
     private $_idUser;
     private $_nomRecette;
     private $_nomUser;
-    public function __construct($idRec, $idUser, $nomRec, $nomUser)
+    private $_imageRec;
+
+    public function __construct($idRec, $idUser, $nomRec, $nomUser, $imgRec)
     {
         $this->_idRec = $idRec;
         $this->_idUser = $idUser;
         $this->_nomRecette = $nomRec;
         $this->_nomUser = $nomUser;
+        $this->_imageRec = $imgRec;
     }
 
     /**
@@ -80,6 +83,11 @@ class Favoris{
     {
         if(is_string($nomUser))
             $this->_nomUser = $nomUser;
+    }
+
+    public function getImageRec()
+    {
+        return $this->_imageRec;
     }
     
 

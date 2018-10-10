@@ -6,7 +6,7 @@ require_once ('./model/reCaptcha/autoload.php');
 
 class ControllerMettreFavoris
 {
-    private $_userModel;
+    private $_favorisModel;
     private $_view;
     public function __construct()
     {
@@ -18,8 +18,18 @@ class ControllerMettreFavoris
 
     public function MettreFavoris()
     {
+//        $this->_recetteModel = new TopRecetteModel();
+//        $recette = $this->_recetteModel->getRecettes();
+//
+//        $this->_view = new View('Index');
+//        $this->_view->generate(array('recette' => $recette));
 
-        $this->_userModel = new UserModel();
+//
+//        $this->_favorisModel = new FavorisModel();
+//        $favRec = $this->_favorisModel->getFavorisForUser();
+//
+//        $this->_view = new View('Rec');
+//        $this->_view->generate(array('favRec' => $favRec));
 
     }
 }
