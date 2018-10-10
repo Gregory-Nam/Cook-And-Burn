@@ -15,16 +15,26 @@ class ControllerCommentaireRecette
     }
 
     public function verif()
-    {
-    	if(empty($_POST['commentaireRecette'])){
-        echo 'vide';
-      }
-      else{
-        $commentaire = htmlspecialchars($_POST['commentaireRecette']);
-        $test = new RecetteModel();
-        $test->postCommentaire($commentaire,$_SESSION['pseudo'],$_SESSION['recette']);
-        header('Location:ContenuRecette?id='.$_SESSION['recette']);
-      }
+    {;
+        if(empty($_SESSION['pseudo']))
+        {
+            echo 'Vous devez vous connecter';
+        }
+        else
+        {
+            if(empty($_POST['commentaireRecette']))
+            {
+            echo 'vide';
+            }
+            else
+            {
+                $commentaire = htmlspecialchars($_POST['commentaireRecette']);
+                $test = new RecetteModel();
+                $test->postCommentaire($commentaire,$_SESSION['pseudo'],$_SESSION['recette']);
+                header('Location:ContenuRecette?id='.$_SESSION['recette']);
+            }
+        }
+    	
     }
 }
 ?>
