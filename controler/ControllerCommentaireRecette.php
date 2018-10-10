@@ -23,7 +23,7 @@ class ControllerCommentaireRecette
         $commentaire = htmlspecialchars($_POST['commentaireRecette']);
         $test = new RecetteModel();
         $test->postCommentaire($commentaire,$_SESSION['pseudo'],$_SESSION['recette']);
-        echo 'Commentaire posté';
+        header('Location:ContenuRecette?id='.$_SESSION['recette']);
       }
     }
 }
