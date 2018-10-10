@@ -35,31 +35,38 @@ $this->_t = 'Cook And Burn';
             <div class="special-heading">
                 <h3>Les recettes avec le plus de burns !!!</h3>
             </div>
+            <div class="w3ls-menu-grids">
+                <div class="menu-top-grids agileinfo">
 <?php
 foreach($recette as $rec) :
             ?>
 
-            <div class="w3ls-menu-grids">
-                <div class="menu-top-grids agileinfo">
+
+
                     <div class="col-md-3 menu-grid">
+                        <div class="clearfix"> </div>
                         <div class="agile-menu-grid">
+
                             <a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>" />
-                                <img src="./files/<?php echo $rec->getImage();?>" alt="" />
+                                <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="270em" />
                                 <div class="agileits-caption">
                                     <h4><?php echo $rec->getTitre();?> </h4>
                                     <p> par <?php echo $rec->getAuteur();?></p>
                                 </div>
                             </a>
+
                         </div>
+
                     </div>
-                    <div class="clearfix"> </div>
-                </div>
-
-            </div>
 
 
+<!--                    <div class="clearfix"> </div>-->
 
 <?php endforeach; ?>
+
+                </div>
+                <div class="clearfix"> </div>
+            </div>
         </div>
     </div>
 
