@@ -3,7 +3,6 @@ class FavorisModel extends Favoris
 {
     public function insertFavoris($aFavoris)
     {
-        $query = 'INSERT INTO user(nom_utilisateur,mot_de_passe, adresse_email, confirmkey) VALUES(:nameUserQ,:passwordQ,:mailAdressQ, :confirmkeyQ)';
 
         $query = 'INSERT INTO favoris(idRec, idUser, nomRec, nomUser)  VALUES(:idRecQ, :idUserQ, :nomRecQ, :nomUserQ)';
         $stmt = $this->getBdd()->prepare($query);
