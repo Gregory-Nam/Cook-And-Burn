@@ -33,7 +33,9 @@ class RecetteModel extends Model{
 
             if($rec = $stmt->fetch())
             {
+
                 $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredient'], $rec['image'],$rec['nombre_personne']);
+                $aRec->setId($rec['id']);
             }
             else{
                 echo "pas de recette de ce nom";
@@ -75,7 +77,7 @@ class RecetteModel extends Model{
             //$ret =$stmt->execute(array($titre));
             
             while($c = $stmt->fetch()){
-                echo $_SESSION['pseudo'].' : '.$c['commentaire'] .'<br/>';
+                echo $c['auteur'].' : '.$c['commentaire'] .'<br/>';
                 
             }
 
