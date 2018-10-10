@@ -12,6 +12,7 @@ $this->_t = $titre;?>
     <?php
     $uM = new RecetteModel();
     $marec = $uM->getByTitre($titre);
+
     ;?>
     <center>
         <h1> <?php echo $marec->getTitre();?> </h1> </br>
@@ -30,10 +31,10 @@ $this->_t = $titre;?>
         </form>
         </div>
         <div class="customer-info">
-            <p><?php echo $um->getCommentaire($titre); ?></p>
+            <p><?php echo $uM->getCommentaire($titre);?></p>
         </div>
         <div class="contact-form">
-        <form method="post" action="MettreFavoris">
+        <form method="post" action="MettreFavorisAction">
             <input type="submit" name="action" value="Poster"/>
         </form>
         </div>
