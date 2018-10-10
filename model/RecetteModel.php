@@ -67,5 +67,26 @@ class RecetteModel extends Model{
         return true;
     }
 
+    public function getCommentaire($titre)
+    {
+        try{
+            $query = 'SELECT * FROM commentaire WHERE id_recette = "'.$titre.'"';
+            $stmt = $this->getBdd()->query($query);
+            //$ret =$stmt->execute(array($titre));
+            
+            while($c = $stmt->fetch()){
+                echo $_SESSION['pseudo'].' : '.$c['commentaire'] .'<br/>';
+                
+            }
+
+                
+        }
+        catch(Exception $e){
+            echo $e;
+        }
+        return $var;
+    }
+
 
 }
+
