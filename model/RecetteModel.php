@@ -33,7 +33,9 @@ class RecetteModel extends Model{
 
             if($rec = $stmt->fetch())
             {
+
                 $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredient'], $rec['image'],$rec['nombre_personne']);
+                $aRec->setId($rec['id']);
             }
             else{
                 echo "pas de recette de ce nom";
@@ -67,5 +69,26 @@ class RecetteModel extends Model{
         return true;
     }
 
+    public function getCommentaire($titre)
+    {
+        try{
+            $query = 'SELECT * FROM commentaire WHERE id_recette = "'.$titre.'"';
+            $stmt = $this->getBdd()->query($query);
+            //$ret =$stmt->execute(array($titre));
+            
+            while($c = $stmt->fetch()){
+                echo $c['auteur'].' : '.$c['commentaire'] .'<br/>';
+                
+            }
+
+                
+        }
+        catch(Exception $e){
+            echo $e;
+        }
+        return $var;
+    }
+
 
 }
+
