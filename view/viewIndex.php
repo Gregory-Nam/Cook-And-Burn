@@ -1,27 +1,32 @@
+
 <?php
 $this->_t = 'Cook And Burn';
 ?>
     <div class="banner-info">
-        <h2>Bienvenu sur Cook And Burn !</h2>
-        <p>BLABLABLA</p>
+        <h2>Bienvenue sur Cook And Burn !</h2>
+        <p> Suite à l'achat de votre barbecue votre compte sera automatiquement créée, c'est fou n'est-ce pas ? <br/>
+         Cook and Burn sera votre meilleur ami pour profiter pleinement de votre nouvelle acquisition !<br/>
+        Comment ça marche ? Cela est très simple, vous et tous les autres possesseurs du barbecue, pourrez partager <br/>
+            vos meilleures recettes, y laisser des commentaires mais aussi y ajouter un petit burn !<br/>
+         Et qui sait ? Avec un peu de chance votre recette possèdera plus de 15 burns et sera affichée sur l'accueil !</p>
     </div>
     <div class="banner-grads">
         <div class="col-md-4 banner-grad">
             <div class="banner-grad-img">
                 <img src="images/b1.jpg" alt="" />
-                <h4>Suspendisse</h4>
+                <h4>Délicieux</h4>
             </div>
         </div>
         <div class="col-md-4 banner-grad">
             <div class="banner-grad-img">
                 <img src="images/b2.jpg" alt="" />
-                <h4>Molestie</h4>
+                <h4>Rafinée</h4>
             </div>
         </div>
         <div class="col-md-4 banner-grad">
             <div class="banner-grad-img">
                 <img src="images/b3.jpg" alt="" />
-                <h4>Imperdiet</h4>
+                <h4>À point</h4>
             </div>
         </div>
         <div class="clearfix"> </div>
