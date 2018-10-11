@@ -884,6 +884,10 @@ h2.typoh2{
 .agile-menu-grid{
 	position:relative;
 	overflow: hidden;
+    margin-bottom:2em;
+    -webkit-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .agile-menu-grid a img{
 	width:100%;
@@ -1186,15 +1190,10 @@ h2.typoh2{
 
 .contact-form input[type="textarea"]
 {
-    width: 32.6%;
-    color: #898888;
-    background: none;
-    outline: none;
-    font-size: 1em;
-    padding: 1em;
-    margin: 0 .5em 1em 0;
-    border: solid 2px #3C3C3C;
-    -webkit-appearance: none;
+    width:32.6%;
+    resize: vertical;
+
+
 }
 
 .contact-form input[type="textarea"]:nth-child(3) {
@@ -1210,7 +1209,7 @@ h2.typoh2{
     font-size: 1em;
     padding: 1em;
     margin: 0 .5em 1em 0;
-    border: solid 2px #3C3C3C;
+    align:center;
     -webkit-appearance: none;
 }
 
@@ -1220,7 +1219,7 @@ h2.typoh2{
 
 .contact-form input[type="number"]
 {
-    width: 32.6%;
+    width: 5%;
     color: #898888;
     background: none;
     outline: none;
@@ -1235,16 +1234,15 @@ h2.typoh2{
     margin-right: 0;
 }
 .contact-form textarea {
-  resize: none;
-  width: 100%;
-  color: #898888;
-  background: none;
-  font-size: 1em;
-  outline: none;
-  padding: 1em;
-  border: solid 2px #3C3C3C;
-  min-height: 150px;
-  -webkit-appearance: none;
+    width: 32.6%;
+    margin-bottom:20px;
+    resize:vertical;
+    color: #898888;
+    background: none;
+    font-size: 1em;
+    outline: none;
+    padding: 1em;
+    -webkit-appearance: none;
 }
 .contact-form input[type="submit"] {
     border: solid 2px #3C3C3C;
@@ -1258,15 +1256,33 @@ h2.typoh2{
 	margin:1em 0 0 0;
 	-webkit-appearance:none;
 }
+
+ul li .contact-form input[type="submit"] {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+    padding: .7em 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: none;
+    margin:1em 0 0 0;
+    -webkit-appearance:none;
+}
 .contact-form input[type="submit"]:hover {
-    border: solid 2px #FD5C63;
-    background: #FD5C63;
-    color: #FFFFFF;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
+     border: solid 2px #FD5C63;
+     background: #FD5C63;
+     color: #FFFFFF;
+     transition: 0.5s all;
+     -webkit-transition: 0.5s all;
+     -o-transition: 0.5s all;
+     -moz-transition: 0.5s all;
+     -ms-transition: 0.5s all;
+ }
+
+
+ul li .contact-form  {
+    display:inline;
+
 }
 .address-grids {
   margin-top: 2em;
@@ -1425,13 +1441,10 @@ h2.typoh2{
     -webkit-appearance: none;
 }
 .opinion form textarea {
-    resize: none;
     width: 100%;
     color: #BBBBBB;
     font-size: 1em;
     outline: none;
-    resize: none;
-    padding: .5em;
     border: solid 1px #BBBBBB;
     min-height: 125px;
 }
@@ -1907,6 +1920,9 @@ h2.typoh2{
 	.contact-form input[type="submit"] {
 		padding: .5em 1em;
 	}
+
+    li .contact-form input[type="submit"] {
+    }
 	.agileinfo {
 		margin: 0;
 	}
@@ -2262,3 +2278,4 @@ h2.typoh2{
   border: 12px solid #99003d;
   border-radius: 10px;
 }
+
