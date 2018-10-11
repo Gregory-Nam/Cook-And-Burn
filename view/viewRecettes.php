@@ -1,88 +1,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+<script type="text/javascript" src="./js/recherche.js"></script>
+<script type="text/javascript" src="./js/pagination.js"></script>
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+<h1><font color="white">Les recettes : </font></h1><br/>
 
-#myTable {
-    position: relative;
-    top: 89px;
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
 
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
-
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
-
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
-</style>
-
-<h1>Les recettes : </h1>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher une recette" title="Type in a name">
+<div class="container" style="margin-top: 35px">
+    <h2>Selectionner affichage</h2>
+    <div class="form-group">
+        <select name="state" id="maxRows" class="form-control" style="width:150px">
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="2000">Tout voir</option>
+        </select>
+    </div>
+</div>
+<div class="menu-top-grids agileinfo">
 <table id="myTable">
   <tr class="header">
     <th style="width:60%;">Recette</th>
     <th style="width:40%;"></th>
   </tr>
+
 <?php
 $this->_t = 'Recettes';
 
 foreach($recette as $rec) :
             ?>
                 <tr>
-                    <td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="270em"  /></a></td>
-                    <td><?php echo $rec->getTitre(); ?></td>
+                    <td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a></td>
+                    <td><h1><?php echo $rec->getTitre(); ?></h1></td>
                 </tr>
 
 
 <?php endforeach; ?>
-
+                </table>
+                <div class="pagination-container">
+                    <nav>
+                        <ul class="pagination"></ul>
+                    </nav>
+                </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
     </div>
+
+    <script>
+        var table = '#myTable'
+        $('#maxRows').on('change',function(){
+            $('.pagination').html('')
+            var trnum = 0
+            var maxRows = parseInt($(this).val())
+            var totalRows = $(table+' tbody tr').length
+            $(table+' tr:gt(0)').each(function(){
+                trnum++
+                if(trnum > maxRows){
+                    $(this).hide()
+                }
+                if(trnum <= maxRows){
+                    $(this).show()
+                }
+            })
+            if(totalRows > maxRows){
+                var pagenum = Math.ceil(totalRows/maxRows)
+                for(var i=1; i<=pagenum;){
+                    $('.pagination').append('<li data-page="'+i+'">\<span>'+ i++ +'<span class="sr-only">(current)</span></span>\</li>').show()
+                }
+            }
+            $('.pagination li:first-child').addClass('active')
+            $('.pagination li').on('click',function(){
+                var pageNum = $(this).attr('data-page')
+                var trIndex = 0;
+                $('.pagination li').removeClass('active')
+                $(this).addClass('active')
+                $(table+' tr:get(0)').each(function(){
+                    trIndex++
+                    if(trIndex > (maxRows*pageNum) || trIndex <= ((maxRows*pageNum)-maxRows)){
+                        $(this).hide()
+                    }else{
+                        $(this).show()
+                    }
+                })
+            })
+        })
+        $(function(){
+            $('table tr:eq(0)').prepend('<th>ID</th>')
+            var id = 0;
+            $('table tr:gt(0)').each(function(){
+                id++
+                $(this).prepend('<td>'+id+'</td>')
+            })
+        })
+    </script>
+
+
 
 
 
