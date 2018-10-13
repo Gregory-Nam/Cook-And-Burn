@@ -1,4 +1,5 @@
 <?php
+session_start();
     $this->_t = "Connexion";
     ?>
 
@@ -16,6 +17,10 @@
             <p>
                 <input type="password" name="password" placeholder="Mot de passe" id="firstname"/>
             </p>
+            <?php if(isset($_SESSION['erreur'])){
+                echo '<p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
+                unset($_SESSION['erreur']);
+            } ?>
 
             <p>
                 <input type="submit" name="action" value="Me connecter"/>
