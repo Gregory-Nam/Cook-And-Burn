@@ -4,7 +4,7 @@ class RecetteModel extends Model{
     public function insertRecette($_recette)
     {
         try{
-            $query = 'INSERT INTO recettes (titre,description, descriptionDet,auteur,ingredients,image, nombre_personne) VALUES(?,?,?,?,?,?,?)';
+            $query = 'INSERT INTO recettes (titre,description, descriptionDet,auteur,ingredients,image, nombre_personne,nombre_burn) VALUES(?,?,?,?,?,?,?,?)';
             $stmt = $this->getBdd()->prepare($query);
             $stmt->bindValue(1, $_recette->getTitre(), PDO::PARAM_STR);
             $stmt->bindValue(2, $_recette->getDescription(), PDO::PARAM_STR);
@@ -13,6 +13,8 @@ class RecetteModel extends Model{
             $stmt->bindValue(5, $_recette->getIngredient(), PDO::PARAM_STR);
             $stmt->bindValue(6, $_recette->getImage(), PDO::PARAM_STR);
             $stmt->bindValue(7, $_recette->getNombrePersonne(), PDO::PARAM_STR);
+            $stmt->bindValue(8, $_recette->getNombreBurn(), PDO::PARAM_STR);
+
             $ret =$stmt->execute();
         }
         catch (Exception $e)
@@ -34,7 +36,7 @@ class RecetteModel extends Model{
             if($rec = $stmt->fetch())
             {
 
-                $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne']);
+                $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
                 $aRec->setId($rec['id']);
             }
             else{
@@ -90,6 +92,18 @@ class RecetteModel extends Model{
         return $var;
     }
 
+    public function addOneBurn($rec)
+    {
+        $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." + 1 WHERE id =".$rec->getId();
+        print_r($rec->getNombreBurn(),$rec->getId());
+        $this->getBdd()->exec($query);
+    }
+
+    public function RemoveOneBurn($rec)
+    {
+        $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." - 1 WHERE id =".$rec->getId();
+        $this->getBdd()->exec($query);
+    }
 
 }
 

@@ -10,9 +10,12 @@ class Recette
 	private $_ingredient;
 	private $_image;
 	private $_nombrePersonne;
+	private $_nombreBurn;
 
 	//CONSTRUCTEUR
-	public function __construct($titre,$description,$descriptionDet,$auteur,$ingredient,$image,$nombrePersonne)
+	public function __construct($titre,$description,
+                                $descriptionDet,$auteur,
+                                $ingredient,$image,$nombrePersonne,$nombreBurn)
 	{
 		$this->_titre = $titre;
 		$this->_description = $description;
@@ -21,6 +24,7 @@ class Recette
 		$this->_ingredient = $ingredient;
 		$this->_image = $image;
 		$this->_nombrePersonne = $nombrePersonne;
+		$this->_nombreBurn = $nombreBurn;
 	}
 
 	//HYDRATION CE QUI CORRESPOND A APPORTER AU OBJET CE QU'ILS ONT BESOIN
@@ -97,6 +101,14 @@ class Recette
         }
     }
 
+    public function setNombreBurn($number)
+    {
+        if(is_numeric($number))
+        {
+            $this->_nombreBurn = $number;
+        }
+    }
+
 	//GETTER
 	public function getId()
 	{
@@ -136,6 +148,11 @@ class Recette
 	{
 		return $this->_auteur;
 	}
+
+	public function getNombreBurn()
+    {
+        return $this->_nombreBurn;
+    }
 
 	public function __toString()
 	{
