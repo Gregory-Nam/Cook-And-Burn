@@ -153,6 +153,30 @@ class UserModel extends Model{
         return false;
     }
 
+     public function userConfirm($_user)
+    {
+        if($_user->getNameUser() == "ab")
+            header('location:deede');
+        try{
+            $query = ('SELECT * FROM user WHERE nom_utilisateur = ? AND confirme = 1');
+
+            $stmt = $this->getBdd()->prepare($query);
+            $_nameUserQ = $_user->getNameUser();
+            $stmt->execute(array($_nameUserQ));
+            $userexist = $stmt->rowCount();
+            if($userexist == 1){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
+
 
     public function mailChange($name,$oldmail,$Newmail)
     {
