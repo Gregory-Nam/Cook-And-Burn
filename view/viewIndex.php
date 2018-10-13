@@ -2,12 +2,13 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
 <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="./js/affichageLettre.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
 $this->_t = 'Cook And Burn';
 ?>
     <div class="banner-info">
-        <h2>Bienvenue sur Cook And Burn !</h2>
+        <h2><p id="lien"></p></h2>
         <p> Suite à l'achat de votre barbecue votre compte sera automatiquement créée, c'est fou n'est-ce pas ? <br/>
          Cook and Burn sera votre meilleur ami pour profiter pleinement de votre nouvelle acquisition !<br/>
         Comment ça marche ? Cela est très simple, vous et tous les autres possesseurs du barbecue, pourrez partager <br/>
@@ -82,6 +83,6 @@ $(document).ready(function(){
 
 });
 </script>
-</div>
+
 </html>  
 
