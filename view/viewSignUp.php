@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $this->_t = "Inscription";
     ?>
 <head>
@@ -34,7 +35,14 @@
             </p>
 
                 <div class="g-recaptcha" data-sitekey="6Lcy3XMUAAAAAMSAq1uH6-gZe-XlPU-4Zmr8lEfH"></div>
-
+                <?php if(isset($_SESSION['erreur'])){
+                echo '<p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
+                unset($_SESSION['erreur']);
+            } ?>
+            <?php if(isset($_SESSION['reussi'])){
+                echo '<p><span class="label label-success">'.$_SESSION['reussi'].'</span>';
+                unset($_SESSION['reussi']);
+            } ?>
             <p>
                 <input type="submit" name="action" value="S'inscrire"/>
             </p>
