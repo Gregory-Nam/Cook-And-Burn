@@ -13,19 +13,28 @@ public function __construct()
 public function tfavoris()
 {
 
+    if(isset($_SESSION['pseudo']))
+    {
+        $recMod = new RecetteModel();
+        $rec = $recMod->getByTitre($_SESSION['recette']);
+
+        $userMod = new UserModel();
+        $user = $userMod->getByNom($_SESSION['pseudo']);
+
+        //$favmod = new FavorisModel();
+        $favMod = new FavorisModel();
+        $fav = new Favoris($rec->getId(), $user->getId() ,$rec->getTitre(),$user->getNameUser(), $rec->getImage());
+        $favMod->insertFavoris($fav);
+    }
+    else
+    {
+        $_SESSION['erreur'] = "Veuillez vous connecter";
+        header("location:".$_SERVER['HTTP_REFERER']);
+
+    }
 
 
 
-    $recMod = new RecetteModel();
-    $rec = $recMod->getByTitre($_SESSION['recette']);
-
-    $userMod = new UserModel();
-    $user = $userMod->getByNom($_SESSION['pseudo']);
-
-    //$favmod = new FavorisModel();
-    $favMod = new FavorisModel();
-    $fav = new Favoris($rec->getId(), $user->getId() ,$rec->getTitre(),$user->getNameUser(), $rec->getImage());
-    $favMod->insertFavoris($fav);
 }
 
 
