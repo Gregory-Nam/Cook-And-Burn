@@ -30,9 +30,15 @@ class ControllerConnexionAction
    			$test = new UserModel();
    			if($test->connexion($aUser) == true){
           if ($resp->isSuccess() === true){
-            echo 'Vous êtes connecté en tant que :'.'<br/>';
+            if($test->userConfirm($aUser) == true){
+              echo 'Vous êtes connecté en tant que :'.'<br/>';
             $_SESSION['pseudo'] = $nameconect;
            header("location:index");
+         }else{
+          $_SESSION['erreur'] = 'Compte non confrimé !';
+          header('Location:Connexion');
+         }
+            
           }else{
             $_SESSION['erreur'] = 'Captcha erreur !';
           header('Location:Connexion');
