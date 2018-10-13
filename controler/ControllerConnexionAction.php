@@ -17,7 +17,8 @@ class ControllerConnexionAction
     public function verif()
     {
     	if(empty($_POST['name']) || empty($_POST['password'])){
-    		echo 'Remplir les champs !';
+    		$_SESSION['erreur'] = 'Remplir les champs !';
+          header('Location:Connexion');
     	}
     	else{
     		$nameconect = htmlspecialchars($_POST['name']);
@@ -33,7 +34,8 @@ class ControllerConnexionAction
 
    			}
    			else{
-   				echo 'erreur';
+          $_SESSION['erreur'] = 'Mauvais identifiant !';
+   				header('Location:Connexion');
    			}
     	}
     }
