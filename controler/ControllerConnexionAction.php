@@ -33,7 +33,9 @@ class ControllerConnexionAction
             if($test->userConfirm($aUser) == true){
               echo 'Vous êtes connecté en tant que :'.'<br/>';
             $_SESSION['pseudo'] = $nameconect;
+
            header("location:index");
+           $_SESSION['burn'] = array();
          }else{
           $_SESSION['erreur'] = 'Compte non confrimé !';
           header('Location:Connexion');
