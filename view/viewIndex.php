@@ -1,4 +1,8 @@
-
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
 $this->_t = 'Cook And Burn';
 ?>
@@ -40,41 +44,44 @@ $this->_t = 'Cook And Burn';
             <div class="special-heading">
                 <h3>Les recettes avec le plus de burns !!!</h3>
             </div>
-            <div class="w3ls-menu-grids">
-                <div class="menu-top-grids agileinfo">
-<?php
+ 
+
+<div class="container">
+    <h2><font color="white">Recettes</font></h2>
+</div>
+    <table id="myTable" class="table table-striped" >  
+        <thead>  
+          <tr>  
+            <th>Recette</th>  
+            <th>Auteur</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+          <?php
+
 foreach($recette as $rec) :
             ?>
+                <tr>
+                    <td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a></td>
+                    <td><h1><?php echo $rec->getTitre(); ?></h1></td>
+                </tr>
 
-
-
-                    <div class="col-md-3 menu-grid">
-                        <div class="clearfix"> </div>
-                        <div class="agile-menu-grid">
-
-                            <a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>" />
-                                <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="270em" />
-                                <div class="agileits-caption">
-                                    <h4><?php echo $rec->getTitre();?> </h4>
-                                    <p> par <?php echo $rec->getAuteur();?></p>
-                                </div>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-<!--                    <div class="clearfix"> </div>-->
 
 <?php endforeach; ?>
+                </tbody>
+                </table>
+        </tbody>  
+      </table>  
+      </div>
+</body>  
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable({
+        "lengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]]
+    })
 
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-
-
-
+});
+</script>
+</div>
+</html>  
 
