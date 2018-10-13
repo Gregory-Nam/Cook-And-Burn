@@ -20,17 +20,34 @@ $this->_t = $titre;
     $bM = new BurnModel();
 
     $marec = $rM->getByTitre($titre);
-    $user = $uM->getByNom($_SESSION['pseudo']);
+    if(isset($_SESSION['pseudo']))
+        $user = $uM->getByNom($_SESSION['pseudo']);
 
     ;?>
     <center>
         <div class="contact-form">
             <span>
+
+                <?php
+
+                    if(!isset($_SESSION['pseudo']))
+                    {
+
+                ?>
             <form style="display :inline" method="post" action="MettreFavorisAction">
                 <input type="submit" name="actionFav" value="Mettre en favoris"/>
             </form>
+            <form style="display :inline" method="post" action="BurnAction">
+                <input type="submit" action="BurnAction" value="Ajouter un burn"/>
+            </form>
                 <?php
-                    if(!$bM->verifAlreadyBurn($user,$marec))
+                        if(isset($_SESSION['erreur']))
+                        {
+                            echo '<p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
+                            unset($_SESSION['erreur']);
+                        }
+                    }
+                    else if(!$bM->verifAlreadyBurn($user,$marec))
                     {
 
                 ?>
@@ -47,6 +64,7 @@ $this->_t = $titre;
             </form>
                 <?php
                     }
+
                 ?>
             </span>
             <?php echo $marec->getNombreBurn();?>
