@@ -7,6 +7,7 @@ session_start();
 </div>
 </div>
 </div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div class="contact-form">
                 <h3>Connexion</h3>
         <center><form action="ConnexionAction" method="post">
@@ -17,6 +18,11 @@ session_start();
             <p>
                 <input type="password" name="password" placeholder="Mot de passe" id="firstname"/>
             </p>
+            </p>
+
+                <div class="g-recaptcha" data-sitekey="6Lcy3XMUAAAAAMSAq1uH6-gZe-XlPU-4Zmr8lEfH"></div>
+
+            <p>
             <?php if(isset($_SESSION['erreur'])){
                 echo '<p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
                 unset($_SESSION['erreur']);
