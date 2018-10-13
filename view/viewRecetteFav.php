@@ -20,7 +20,7 @@ if(isset($_SESSION['pseudo']))
 
 
                 <div class="col-md-3 menu-grid">
-                    <div class="agile-menu-grid">
+                    <div class="agile-menu-grid img-rounded">
                         <a href="ContenuRecette?id=<?php echo (urlencode($favRe->getNomRecette()));?>" />
                         <img src="./files/<?php echo $favRe->getImageRec();?>" alt="" width ="170em" height ="270em" />
                         <div class="agileits-caption">

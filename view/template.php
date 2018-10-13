@@ -48,20 +48,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             <?php
             if(isset($_SESSION['pseudo']))
-            {?>
+            {
+                ?>
                 <div class="top-nav">
+
                     <nav class="navbar navbar-default">
+
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
                         </button>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                             <ul class="nav navbar-nav">
+
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                                 <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><form method ="post" class = "contact-form">
+                                        <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
+                                    </form></li>
                                 <div class="clearfix"> </div>
                             </ul>
+                            <?php
+                                if(isset($_POST['deco'])) {session_destroy(); header('location:index');}
+                            ?>
                         </div>
                     </nav>
                 </div>
