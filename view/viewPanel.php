@@ -1,6 +1,8 @@
 <?php
 session_start();
     $this->_t = "Panel";
+    $test = new RecetteModel();
+    $test2 = new UserModel();
     ?>
 
 </div>
@@ -62,8 +64,8 @@ session_start();
 						<i class="fa fa-eye"> </i>
 					</div>
 					 <div class="col-md-8 market-update-left">
-					 <h4>Visitors</h4>
-					<h3>13,500</h3>
+					 <h4>Recettes</h4>
+					<h3><?php echo $test->nbRecettes() ?></h3>
 					<p>Other hand, we denounce</p>
 				  </div>
 				  <div class="clearfix"> </div>
@@ -75,8 +77,8 @@ session_start();
 						<i class="fa fa-users" ></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-					<h4>Users</h4>
-						<h3>1,250</h3>
+					<h4>Utilisateurs</h4>
+						<h3><?php echo $test2->nbUsers() ?></h3>
 						<p>Other hand, we denounce</p>
 					</div>
 				  <div class="clearfix"> </div>
