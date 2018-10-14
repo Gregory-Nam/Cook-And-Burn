@@ -31,20 +31,20 @@ session_start();
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a class="active" href="Panel">
                         <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
+                        <span>Tableau de bord</span>
                     </a>
                 </li>
             
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span>Data Tables</span>
+                        <span>Les tables</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
-                        <li><a href="responsive_table.html">Responsive Table</a></li>
+                        <li><a href="userTable">User Table</a></li>
+                        <li><a href="recetteTable">Recette Table</a></li>
                     </ul>
                 </li>
                 
@@ -66,7 +66,7 @@ session_start();
 					 <div class="col-md-8 market-update-left">
 					 <h4>Recettes</h4>
 					<h3><?php echo $test->nbRecettes() ?></h3>
-					<p>Other hand, we denounce</p>
+					<p>postées</p>
 				  </div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -79,7 +79,7 @@ session_start();
 					<div class="col-md-8 market-update-left">
 					<h4>Utilisateurs</h4>
 						<h3><?php echo $test2->nbUsers() ?></h3>
-						<p>Other hand, we denounce</p>
+						<p>créés</p>
 					</div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -90,9 +90,9 @@ session_start();
 						<i class="fa fa-usd"></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-						<h4>Sales</h4>
-						<h3>1,500</h3>
-						<p>Other hand, we denounce</p>
+						<h4>Commentaires</h4>
+						<h3><?php echo $test->nbCom() ?></h3>
+						<p>publiés</p>
 					</div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -103,9 +103,9 @@ session_start();
 						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-						<h4>Orders</h4>
+						<h4>Partage</h4>
 						<h3>1,500</h3>
-						<p>Other hand, we denounce</p>
+						<p>sur les réseaux</p>
 					</div>
 				  <div class="clearfix"> </div>
 				</div>
