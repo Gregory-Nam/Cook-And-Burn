@@ -137,7 +137,7 @@ session_start();
 								<header class="agileits-box-header clearfix">
 										<div class="toolbar">
 											
-											<h1>yoooooo</h1>
+											<h1><?php echo $test2->affichageUser() ?></h1>
 										</div>
 								</header>
 								<div class="agileits-box-body clearfix">
