@@ -114,5 +114,14 @@ class RecetteModel extends Model{
         
     }
 
+    public function nbCom(){
+       /* $query = 'SELECT count(*) FROM recettes';
+        $sth = $this->getBdd()->exec($query);
+        print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
+        return $this->getBdd()->query("SELECT COUNT(*) FROM commentaire")->fetchColumn();
+
+        
+    }
+
 }
 
