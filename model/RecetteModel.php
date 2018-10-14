@@ -114,5 +114,59 @@ class RecetteModel extends Model{
         
     }
 
+    public function nbCom(){
+       /* $query = 'SELECT count(*) FROM recettes';
+        $sth = $this->getBdd()->exec($query);
+        print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
+        return $this->getBdd()->query("SELECT COUNT(*) FROM commentaire")->fetchColumn();
+
+        
+    }
+
+    public function affichageRecette(){
+        $req= $this->getBdd()->query("SELECT * FROM recettes")->fetchAll();
+            ?>
+        <table id="myTable" class="table table-striped" >  
+        <thead>  
+          <tr>  
+            <th>ID</th>  
+            <th>Titre</th>
+
+            <th>Description</th>
+            <th>Détails</th>
+            <th>Auteur</th>
+            <th>Ingrédients</th>
+            <th>Personne</th> 
+            <th>Burns</th> 
+            <th>Action</th>  
+          </tr>  
+        </thead>  
+        <tbody> 
+           <?php foreach ($req as $q): ?>
+            <tr>
+
+                    <td><?php echo $q['id'] ?></td>
+                    <td><?php echo $q['titre'] ?></td>
+
+                    <td><?php echo $q['description'] ?></td>
+                    <td><?php echo $q['descriptionDet'] ?></td>
+                    <td><?php echo $q['auteur'] ?></td>
+                    <td><?php echo $q['ingredients'] ?></td>
+                    <td><?php echo $q['nombre_personne'] ?></td>
+                    <td><?php echo $q['burns'] ?></td>
+                    <td><a href="recette<?php echo $q['id'] ?>">Editer</a></td>
+                </tr>
+
+
+        <?php endforeach; ?>
+        </tbody>
+                </table>
+        </tbody>  
+      </table>  
+      </div>
+      <?php  
+    }
+
+
 }
 
