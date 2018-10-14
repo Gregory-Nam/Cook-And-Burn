@@ -105,5 +105,14 @@ class RecetteModel extends Model{
         $this->getBdd()->exec($query);
     }
 
+    public function nbRecettes(){
+       /* $query = 'SELECT count(*) FROM recettes';
+        $sth = $this->getBdd()->exec($query);
+        print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
+        return $this->getBdd()->query("SELECT COUNT(*) FROM recettes")->fetchColumn();
+
+        
+    }
+
 }
 
