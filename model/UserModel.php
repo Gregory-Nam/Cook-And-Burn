@@ -265,5 +265,42 @@ class UserModel extends Model{
         
     }
 
+     public function affichageUser(){
+        $req= $this->getBdd()->query("SELECT * FROM user WHERE confirme= 1")->fetchAll();
+            ?>
+        <table id="myTable" class="table table-striped" >  
+        <thead>  
+          <tr>  
+            <th>ID</th>  
+            <th>nom_utilisateur</th>
+
+            <th>adresse_email</th>
+            <th>confirmkey</th>
+            <th>Action</th>  
+          </tr>  
+        </thead>  
+        <tbody> 
+           <?php foreach ($req as $q): ?>
+            <tr>
+                    <td><?php echo $q['id'] ?></td>
+                    <td><?php echo $q['nom_utilisateur'] ?></td>
+
+                    <td><?php echo $q['adresse_email'] ?></td>
+                    <td><?php echo $q['confirmkey'] ?></td>
+                    <td><a href="">Editer</a></td>
+                </tr>
+
+
+        <?php endforeach; ?>
+        </tbody>
+                </table>
+        </tbody>  
+      </table>  
+      </div>
+      <?php  
+    }
+
 
 }
+
+?>
