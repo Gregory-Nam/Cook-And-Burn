@@ -4,7 +4,7 @@ class RecetteModel extends Model{
     public function insertRecette($_recette)
     {
         try{
-            $query = 'INSERT INTO recettes (titre,description, descriptionDet,auteur,ingredients,image, nombre_personne,nombre_burn) VALUES(?,?,?,?,?,?,?,?)';
+            $query = 'INSERT INTO recettes (titre,description, descriptionDet,auteur,ingredients,image, nombre_personne,burns) VALUES(?,?,?,?,?,?,?,?)';
             $stmt = $this->getBdd()->prepare($query);
             $stmt->bindValue(1, $_recette->getTitre(), PDO::PARAM_STR);
             $stmt->bindValue(2, $_recette->getDescription(), PDO::PARAM_STR);
