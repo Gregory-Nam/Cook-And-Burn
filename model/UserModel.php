@@ -256,5 +256,14 @@ class UserModel extends Model{
         echo $e;
     }}
 
+    public function nbUsers(){
+       /* $query = 'SELECT count(*) FROM recettes';
+        $sth = $this->getBdd()->exec($query);
+        print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
+        return $this->getBdd()->query("SELECT COUNT(*) FROM user WHERE confirme= 1")->fetchColumn();
+
+        
+    }
+
 
 }
