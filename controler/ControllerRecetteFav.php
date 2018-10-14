@@ -19,17 +19,11 @@ class ControllerRecetteFav
     public function recFav()
     {
 
-//
-//        $this->_userModel = new UserModel();
-//        $this->_view = new View('RecetteFav');
-//
-//
-//        $this->_view->generate(array($this->_userModel));
         $this->_favorisModel = new FavorisModel();
-        $favRec = $this->_favorisModel->getFavorisForUser();
+//        $favRec = $this->_favorisModel->getFavorisForUser();
 
         $this->_view = new View('RecetteFav');
-        $this->_view->generate(array('favRec' => $favRec));
+        $this->_view->generate(array($this->_favorisModel));
 
     }
 }

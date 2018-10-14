@@ -15,16 +15,34 @@ public function tfavoris()
 
     if(isset($_SESSION['pseudo']))
     {
+
         $recMod = new RecetteModel();
         $rec = $recMod->getByTitre($_SESSION['recette']);
 
         $userMod = new UserModel();
         $user = $userMod->getByNom($_SESSION['pseudo']);
 
-        //$favmod = new FavorisModel();
-        $favMod = new FavorisModel();
-        $fav = new Favoris($rec->getId(), $user->getId() ,$rec->getTitre(),$user->getNameUser(), $rec->getImage());
-        $favMod->insertFavoris($fav);
+
+        $this->_favorisModel = new FavorisModel();
+
+        if(!$this->_favorisModel->verifAlreadyFav($user,$rec))
+        {
+            $fav = new Favoris($rec->getId(), $user->getId() ,$rec->getTitre(),$user->getNameUser(), $rec->getImage());
+            $this->_favorisModel->insertFavoris($fav);
+        }
+        else
+        {
+            foreach ($this->_favorisModel->getFavorisForUser() as $fav)
+            {
+                if($fav->getIdRec() == $rec->getId())
+                {
+
+                    $this->_favorisModel->deleteFav($fav);
+                    break;
+                }
+            }
+        }
+
     }
     else
     {
@@ -32,6 +50,7 @@ public function tfavoris()
         header("location:".$_SERVER['HTTP_REFERER']);
 
     }
+    header("location:".$_SERVER['HTTP_REFERER']);
 
 
 

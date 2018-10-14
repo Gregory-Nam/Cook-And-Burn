@@ -18,6 +18,7 @@ $this->_t = $titre;
     $rM = new RecetteModel();
     $uM = new UserModel();
     $bM = new BurnModel();
+    $fM = new FavorisModel();
 
     $marec = $rM->getByTitre($titre);
     if(isset($_SESSION['pseudo']))
@@ -47,25 +48,48 @@ $this->_t = $titre;
                             unset($_SESSION['erreur']);
                         }
                     }
-                    else if(!$bM->verifAlreadyBurn($user,$marec))
-                    {
-
-                ?>
-            <form style="display :inline" method="post" action="BurnAction">
-                <input type="submit" action="BurnAction" value="Ajouter un burn"/>
-            </form>
-                <?php
-                    }
                     else
                     {
-                ?>
-            <form style="display :inline" method="post" action="BurnAction">
-                <input type="submit" action="BurnAction" value="Enlever un burn"/>
-            </form>
-                <?php
-                    }
+                        if(!$bM->verifAlreadyBurn($user,$marec))
+                        {
 
                 ?>
+            <form style="display :inline" method="post" action="BurnAction">
+                <input type="submit" name="BurnAction" value="Mettre un burn"/>
+            </form>
+
+                <?php
+                        }
+                        else {
+                ?>
+            <form style="display :inline" method="post" action="BurnAction">
+                <input type="submit" name="BurnAction" value="Enlever un burn"/>
+            </form>
+                <?php
+                        }
+
+                        if(!$fM->verifAlreadyFav($user, $marec))
+                        {
+                ?>
+            <form style="display :inline" method="post" action="MettreFavorisAction">
+                <input type="submit" name="actionFav" value="Mettre en favoris"/>
+            </form>
+                <?php
+                        }
+                        else
+                        {
+                ?>
+                            <form style="display :inline" method="post" action="MettreFavorisAction">
+                <input type="submit" name="actionFav" value="Enlever des favoris"/>
+            </form>
+            <?php
+                        }
+                }
+
+            ?>
+
+
+
             </span>
             <?php echo $marec->getNombreBurn();?>
 
@@ -95,4 +119,3 @@ $this->_t = $titre;
     </center>
 
 </div>
-

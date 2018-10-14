@@ -28,9 +28,20 @@ class FavorisModel extends Model
         }
     }
 
+    public function DeleteFav($aFav)
+    {
+        try{
+            $query = 'DELETE FROM favoris WHERE id_user ='.$aFav->getIdUser(). ' AND id_rec='.$aFav->getIdRec();
+            $this->getBdd()->exec($query);
+        }
+        catch(Exception $e)
+        {
+            print_r($e);
+        }
+    }
+
     public function getFavorisForUser()
     {
-        session_start();
         $var = [];
         try
         {
@@ -51,6 +62,26 @@ class FavorisModel extends Model
         return $var;
 
     }
+
+    public function verifAlreadyFav($user,$rec)
+    {
+        try {
+            $query = 'SELECT * FROM favoris WHERE id_user ='.$user->getId().' AND id_rec='.$rec->getId();
+            $stmt = $this->getBdd()->query($query);
+
+            if($stmt->fetch())
+
+                return true;
+
+            return false;
+        }
+        catch(Exception $e)
+        {
+            print_r($e);
+        }
+    }
+
+
 
 
 }

@@ -13,9 +13,9 @@ include("viewProfil.php");
 <?php
 if(isset($_SESSION['pseudo']))
 {
+    $fM = new FavorisModel();
+    foreach($fM->getFavorisForUser() as $favRe) :
 
-    foreach($favRec as $favRe) :
-    //echo $favRe->getNomRecette();
     ?>
 
 
