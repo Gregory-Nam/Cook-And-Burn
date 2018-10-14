@@ -144,6 +144,7 @@ class RecetteModel extends Model{
         <tbody> 
            <?php foreach ($req as $q): ?>
             <tr>
+
                     <td><?php echo $q['id'] ?></td>
                     <td><?php echo $q['titre'] ?></td>
 
@@ -153,7 +154,7 @@ class RecetteModel extends Model{
                     <td><?php echo $q['ingredients'] ?></td>
                     <td><?php echo $q['nombre_personne'] ?></td>
                     <td><?php echo $q['burns'] ?></td>
-                    <td><a href="">Editer</a></td>
+                    <td><a href="recette<?php echo $q['id'] ?>">Editer</a></td>
                 </tr>
 
 
