@@ -1,7 +1,7 @@
 <?php
 	session_start();
     $this->_t = "Profil";
-    $user = $uM->getByNom($_SESSION['pseudo']);
+//    $user = $uM->getByNom($_SESSION['pseudo']);
 
     if(isset($_POST['deco'])){
     	session_destroy();

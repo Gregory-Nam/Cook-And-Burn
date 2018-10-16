@@ -28,7 +28,8 @@ class ControllerCreatedRec
 
         $createdRec = $rM->getCreatedRecByUser($user);
         $this->_view = new View('CreatedRec');
-        $this->_view->generate(array("createdRec" => $createdRec));
+
+        $this->_view->generate(array("createdRec" => $createdRec, "user" => $user));
 
     }
 }

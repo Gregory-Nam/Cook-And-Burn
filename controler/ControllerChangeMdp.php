@@ -3,6 +3,7 @@ require_once('view/View.php');
 include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
+session_start();
 
 class ControllerChangeMdp
 {
@@ -20,8 +21,9 @@ class ControllerChangeMdp
     {
 
         $this->_userModel = new UserModel();
+        $user = $this->_userModel->getByNom($_SESSION['pseudo']);
         $this->_view = new View('ChangeMdp');
-        $this->_view->generate(array($this->_userModel));
+        $this->_view->generate(array("user" => $user));
 
     }
 }

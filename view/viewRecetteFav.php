@@ -13,7 +13,7 @@ include("viewProfil.php");
 <?php
 if(isset($_SESSION['pseudo']))
 {
-    $fM = new FavorisModel();
+//    $fM = new FavorisModel();
     foreach($fM->getFavorisForUser() as $favRe) :
 
     ?>
