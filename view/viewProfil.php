@@ -1,7 +1,6 @@
 <?php
 	session_start();
     $this->_t = "Profil";
-    $uM = new UserModel();
     $user = $uM->getByNom($_SESSION['pseudo']);
 
     if(isset($_POST['deco'])){

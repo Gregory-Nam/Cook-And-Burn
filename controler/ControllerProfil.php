@@ -21,7 +21,7 @@ class ControllerProfil
 
         $this->_userModel = new UserModel();
         $this->_view = new View('Profil');
-        $this->_view->generate(array($this->_userModel));
+        $this->_view->generate(array("uM" => $this->_userModel));
 
     }
 }
