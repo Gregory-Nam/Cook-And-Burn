@@ -17,23 +17,40 @@ class ControllerConnexionAction
     public function verif()
     {
     	if(empty($_POST['name']) || empty($_POST['password'])){
-    		echo 'Remplir les champs !';
+    		$_SESSION['erreur'] = 'Remplir les champs !';
+          header('Location:Connexion');
     	}
     	else{
+        $recaptcha = new \ReCaptcha\ReCaptcha('6Lcy3XMUAAAAADkAvu0vbHEM8GURkxLbYOGCoWnh');
+
+        $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
     		$nameconect = htmlspecialchars($_POST['name']);
    			$mdpconnect = sha1($_POST['password']);
    			$aUser = new User($nameconect,$mdpconnect, "", "");
    			$test = new UserModel();
    			if($test->connexion($aUser) == true){
-   				echo 'Vous êtes connecté en tant que :'.'<br/>';
-   				$_SESSION['pseudo'] = $nameconect;
-   				header("location:index");
+          if ($resp->isSuccess() === true){
+            if($test->userConfirm($aUser) == true){
+              echo 'Vous êtes connecté en tant que :'.'<br/>';
+            $_SESSION['pseudo'] = $nameconect;
 
-                //echo $_SESSION['pseudo'];
+           header("location:index");
+           $_SESSION['burn'] = array();
+         }else{
+          $_SESSION['erreur'] = 'Compte non confrimé !';
+          header('Location:Connexion');
+         }
+            
+          }else{
+            $_SESSION['erreur'] = 'Captcha erreur !';
+          header('Location:Connexion');
+          }
+
 
    			}
    			else{
-   				echo 'erreur';
+          $_SESSION['erreur'] = 'Mauvais identifiant !';
+   				header('Location:Connexion');
    			}
     	}
     }

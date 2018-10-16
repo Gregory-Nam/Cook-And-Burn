@@ -2,6 +2,7 @@
 
 class User
 {
+    private $_id;
     private $_nameUser;
     private $_password;
     private $_mailAdress;
@@ -10,7 +11,7 @@ class User
     private $_avatar;
     private $_confirmkey;
 
-    public function __construct($nom, $mdp,$mail,$confirmkey)
+    public function __construct($nom, $mdp,$mail,$confirmkey = null)
     {
         $this->_nameUser =$nom;
         $this->_mailAdress = $mail;
@@ -38,6 +39,15 @@ class User
         return $this->_nameUser;
     }
 
+    public function setId($number)
+    {
+        $this->_id = $number;
+    }
+
+    public function getId()
+    {
+        return $this->_id;
+    }
     /**
      * @param mixed $nameUser
      */

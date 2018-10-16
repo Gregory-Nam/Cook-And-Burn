@@ -10,7 +10,7 @@ include("viewProfil.php");
     {?>
         <center>
         <div class="contact-form">
-            <form action="" method="post" id="contact-form">
+            <form action="ChangeMailAction" method="post" id="contact-form">
 
                 <p>
                     <input type="text" name="oldMail" placeholder="Votre ancien mail"/>
@@ -19,7 +19,7 @@ include("viewProfil.php");
                     <input type="text" name="newMail" placeholder="Votre nouveau mail"/>
                 </p>
                 <p>
-                    <input type="text" name="oldMail" placeholder="Confirmer votre nouveau mail"/>
+                    <input type="text" name="newMail2" placeholder="Confirmer votre nouveau mail"/>
                 </p>
                 <p>
                     <input type="submit" name="action" value="Valider"/>

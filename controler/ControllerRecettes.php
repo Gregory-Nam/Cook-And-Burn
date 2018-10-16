@@ -1,6 +1,6 @@
 <?php
 require_once('view/View.php');
-class ControllerIndex
+class ControllerRecettes
 {
 	private $_recetteModel;
 	private $_view;
@@ -17,9 +17,9 @@ class ControllerIndex
 	private function recette()
 	{
 		$this->_recetteModel = new TopRecetteModel();
-		$recettes = $this->_recetteModel->getRecettes();
+		$recette = $this->_recetteModel->getRecettes();
 
-		$this->_view = new View('Index');
-		$this->_view->generate(array('recette' => $recettes));
+		$this->_view = new View('Recettes');
+		$this->_view->generate(array('recette' => $recette));
 	}
 }

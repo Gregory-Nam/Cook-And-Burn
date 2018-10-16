@@ -6,7 +6,7 @@ require_once ('./model/reCaptcha/autoload.php');
 
 class ControllerRecetteFav
 {
-    private $_userModel;
+    private $_favorisModel;
     private $_view;
     public function __construct()
     {
@@ -19,9 +19,11 @@ class ControllerRecetteFav
     public function recFav()
     {
 
-        $this->_userModel = new UserModel();
+        $this->_favorisModel = new FavorisModel();
+//        $favRec = $this->_favorisModel->getFavorisForUser();
+
         $this->_view = new View('RecetteFav');
-        $this->_view->generate(array($this->_userModel));
+        $this->_view->generate(array($this->_favorisModel));
 
     }
 }

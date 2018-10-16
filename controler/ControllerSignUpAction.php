@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 //include('../view/viewSignUp
 //include('./model/User.php');
 //include ('ControllerSignUpAction.php');
@@ -18,8 +19,8 @@ class ControllerSignUpAction
     {
         if(empty($_POST['name']) || empty($_POST['password']) || empty($_POST['mail'] || empty($_POST['password2'])))
         {
-            echo "Il faut tout remplir";
-            //header('location:Index');
+            $_SESSION['erreur'] = 'Il faut tout remplir !';
+          header('Location:SignUp');
         }
         else
         {
@@ -75,39 +76,45 @@ class ControllerSignUpAction
                                         {
                                             die('Error : ' . $e->getMessage());
                                         }
-                                        echo $key;
-                                        echo "Inscription réussit !";
-                                        echo $aUser->getNameUser();
-                                        //header('location:Index');
+                                        //Inscription reussit
+                                        $_SESSION['reussi'] = 'Valider votre email !';
+                                        header('Location:SignUp');
                                     }
                                     else{
 
-                                        echo "Valider le captcha !";
+                                        $_SESSION['erreur'] = 'Valider le captcha !';
+                                        header('Location:SignUp');
                                     }
                                 }
                                 else{
-                                    echo "Email déjà utilisé !";
+                                    $_SESSION['erreur'] = 'Email deja utilisé !';
+                                    header('Location:SignUp');
                                 }
                                 
                             }
                             else{
-                                echo "Pseudo déjà utilisé !";
+                                $_SESSION['erreur'] = 'Pseudo déjà utilisé !';
+                                header('Location:SignUp');
                             }          
                         }
                         else{
-                            echo "Votre adresse mail n'est pas valide !";
+                            $_SESSION['erreur'] = 'Adresse email non valide !';
+                            header('Location:SignUp');
                         }   
                     }
                     else{
-                        echo "Les adresses emails ne correspondent pas !";
+                        $_SESSION['erreur'] = 'Les adresses mails ne correspondent pas !';
+                        header('Location:SignUp');
                     }
                 }
                 else{
-                    echo "Vos mots de passes ne correspondent pas !";
+                    $_SESSION['erreur'] = 'Vos mots de passes ne correspondent pas !';
+                    header('Location:SignUp');
                 }      
             }
             else{
-                echo "Votre pseudo ne doit pas dépasser 255 caractères !";
+                $_SESSION['erreur'] = 'Le pseudo ne doit pas dépasser 255 caractéres !';
+            header('Location:SignUp');
             }
                 
        
