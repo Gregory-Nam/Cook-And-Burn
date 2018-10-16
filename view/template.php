@@ -11,6 +11,8 @@ include ('./controler/ControllerConnexionAction.php');?>
 <html>
 <head>
     <title><?php echo $t; ?></title>
+    <link rel="icon" type="image/gif" href="./images/favicon.png" />
+
 	<meta name="httpcs-site-verification" content="HTTPCS4303HTTPCS" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -121,7 +123,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Inscription") echo "active";?>" href="SignUp">Inscription</a></li>
                                 <li><a class="<?php if($t == "Connexion") echo "active";?>" href="Connexion">Connexion</a></li>
-                                <li><a class="<?php if($t == "Recettes") echo "active";?>" href="Recettes">Recettes</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <div class="clearfix"> </div>
                             </ul>
