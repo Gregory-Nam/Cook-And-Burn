@@ -1,6 +1,8 @@
 <?php
 	session_start();
     $this->_t = "Profil";
+    $uM = new UserModel();
+    $user = $uM->getByNom($_SESSION['pseudo']);
 
     if(isset($_POST['deco'])){
     	session_destroy();
@@ -37,6 +39,16 @@
         <center/><input type="submit" name="favRec" value="Mes recettes favorites">
         <input type="submit" name="changeMail" value="Changer mon adresse mail">
         <input type="submit" name="changeMdp" value="Changer mon mot de passe">
-    <br/><br/><input type="submit" name="deco" value="Me Déconnecter"></center>
+    <br/><br/>
+        <p> Votre pseudo :</p>
+        <input type="text" value="<?php echo $user->getNameUser();?>" readOnly="readonly">
+        <p> Votre adresse mail :</p>
+        <input type="text" value="<?php echo $user->getMailAdress();?>" readOnly="readonly">
+        <p> Votre mot de passe :</p>
+        <input type="password" value="<?php echo $user->getPassword();?>" readOnly="readonly"> <br/> <br/>
+
+
+
+        <input type="submit" name="deco" value="Me Déconnecter"></center>
 	</form>
 </div>

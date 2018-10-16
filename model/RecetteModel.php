@@ -92,6 +92,21 @@ class RecetteModel extends Model{
         return $var;
     }
 
+    public function getBestRec()
+    {
+        $query = "SELECT * FROM recettes where burns in (SELECT MAX(burns) FROM recettes)";
+        $stmt = $this->getBdd()->query($query);
+
+        if($rec = $stmt->fetch())
+        {
+            $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
+            $aRec->setId($rec['id']);
+            return $aRec;
+        }
+        return null;
+
+
+    }
     public function addOneBurn($rec)
     {
         $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." + 1 WHERE id =".$rec->getId();
@@ -111,7 +126,6 @@ class RecetteModel extends Model{
         print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
         return $this->getBdd()->query("SELECT COUNT(*) FROM recettes")->fetchColumn();
 
-        
     }
 
     public function nbCom(){
