@@ -230,6 +230,15 @@ class RecetteModel extends Model{
 
     }
 
+    public function suppRecette($id)
+    {
+        $query2 = ('DELETE  FROM recettes WHERE id = "'. $id  .'"');
+        $stmt2 = $this->getBdd()->prepare($query2);
+
+        $stmt2->execute();
+
+    }
+
 
 
 
