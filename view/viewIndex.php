@@ -8,7 +8,7 @@
 $this->_t = 'Cook And Burn';
 $fM = new  RecetteModel();
 $bestRec = $fM->getBestRec();
-echo $bestRec->getId();
+
 ?>
 <div class="banner-info">
     <h2><p id="lien"></p></h2>
@@ -106,6 +106,7 @@ $('#myTable').dataTable({
 
 });
 </script>
+</div>
 
 </html>
 
