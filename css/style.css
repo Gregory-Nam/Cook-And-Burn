@@ -4,6 +4,12 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+#bg-video {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+}
 body a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -878,6 +884,10 @@ h2.typoh2{
 .agile-menu-grid{
 	position:relative;
 	overflow: hidden;
+    margin-bottom:2em;
+    -webkit-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .agile-menu-grid a img{
 	width:100%;
@@ -1148,6 +1158,19 @@ h2.typoh2{
   margin: 2em 0 0 0;
 }
 .contact-form input[type="text"] {
+     width: 32.6%;
+     color: #898888;
+     background: none;
+     outline: none;
+     font-size: 1em;
+     padding: 1em;
+     margin: 0 .5em 1em 0;
+     border: solid 2px #3C3C3C;
+     -webkit-appearance: none;
+ }
+
+.contact-form input[type="password"]
+{
     width: 32.6%;
     color: #898888;
     background: none;
@@ -1161,17 +1184,65 @@ h2.typoh2{
 .contact-form input[type="text"]:nth-child(3) {
   margin-right: 0;
 }
+.contact-form input[type="password"]:nth-child(3) {
+    margin-right: 0;
+}
+
+.contact-form input[type="textarea"]
+{
+    width:32.6%;
+    resize: vertical;
+
+
+}
+
+.contact-form input[type="textarea"]:nth-child(3) {
+    margin-right: 0;
+}
+
+.contact-form input[type="file"]
+{
+    width: 32.6%;
+    color: #898888;
+    background: none;
+    outline: none;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 .5em 1em 0;
+    align:center;
+    -webkit-appearance: none;
+}
+
+.contact-form input[type="file"]:nth-child(3) {
+    margin-right: 0;
+}
+
+.contact-form input[type="number"]
+{
+    width: 5%;
+    color: #898888;
+    background: none;
+    outline: none;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 .5em 1em 0;
+    border: solid 2px #3C3C3C;
+    -webkit-appearance: none;
+}
+
+.contact-form input[type="number"]:nth-child(3) {
+    margin-right: 0;
+}
 .contact-form textarea {
-  resize: none;
-  width: 100%;
-  color: #898888;
-  background: none;
-  font-size: 1em;
-  outline: none;
-  padding: 1em;
-  border: solid 2px #3C3C3C;
-  min-height: 150px;
-  -webkit-appearance: none;
+    width: 32.6%;
+    margin-bottom:20px;
+    resize:vertical;
+    color: #898888;
+    background: none;
+    font-size: 1em;
+    outline: none;
+    padding: 1em;
+    -webkit-appearance: none;
 }
 .contact-form input[type="submit"] {
     border: solid 2px #3C3C3C;
@@ -1185,15 +1256,33 @@ h2.typoh2{
 	margin:1em 0 0 0;
 	-webkit-appearance:none;
 }
+
+ul li .contact-form input[type="submit"] {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+    padding: .7em 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: none;
+    margin:1em 0 0 0;
+    -webkit-appearance:none;
+}
 .contact-form input[type="submit"]:hover {
-    border: solid 2px #FD5C63;
-    background: #FD5C63;
-    color: #FFFFFF;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
+     border: solid 2px #FD5C63;
+     background: #FD5C63;
+     color: #FFFFFF;
+     transition: 0.5s all;
+     -webkit-transition: 0.5s all;
+     -o-transition: 0.5s all;
+     -moz-transition: 0.5s all;
+     -ms-transition: 0.5s all;
+ }
+
+
+ul li .contact-form  {
+    display:inline;
+
 }
 .address-grids {
   margin-top: 2em;
@@ -1329,7 +1418,19 @@ h2.typoh2{
 .opinion form{
     margin: 1em 0 0 0;	
 }
-.opinion form input[type="text"] {
+.opinion form input[type="text"]  {
+    width: 100%;
+    color: #BBBBBB;
+    outline: none;
+    font-size: 1em;
+    padding: .5em;
+    margin: 0 .5em 1em 0;
+    border: solid 1px #BBBBBB;
+    -webkit-appearance: none;
+}
+
+.opinion form input[type="password"]
+{
     width: 100%;
     color: #BBBBBB;
     outline: none;
@@ -1340,13 +1441,10 @@ h2.typoh2{
     -webkit-appearance: none;
 }
 .opinion form textarea {
-    resize: none;
     width: 100%;
     color: #BBBBBB;
     font-size: 1em;
     outline: none;
-    resize: none;
-    padding: .5em;
     border: solid 1px #BBBBBB;
     min-height: 125px;
 }
@@ -1445,6 +1543,9 @@ h2.typoh2{
 	.contact-form input[type="text"] {
 		width: 32.5%;
 	}
+    .contact-form input[type="password"] {
+        width: 32.5%;
+    }
 }
 @media (max-width:991px){
 	.banner-info {
@@ -1465,7 +1566,7 @@ h2.typoh2{
 	.w3ls-special-img {
 		width: 50%;
 		float: left;
-		min-height: 201px;
+		min-height: 40px;
 		background: url(../images/s1.jpg) no-repeat -53px -195px;
 	}
 	.agileits-special-info {
@@ -1555,6 +1656,9 @@ h2.typoh2{
 	.contact-form input[type="text"] {
 		width: 32.2%;
 	}
+    .contact-form input[type="password"] {
+        width: 32.2%;
+    }
 	.blog-top-left-grid {
 		padding: 0;
 		margin: 0 0 1em 0;
@@ -1643,6 +1747,9 @@ h2.typoh2{
 	.contact-form input[type="text"] {
 		width: 32%;
 	}
+    .contact-form input[type="password"] {
+        width: 32%;
+    }
 }
 @media (max-width:480px){
 	.top-nav {
@@ -1803,12 +1910,19 @@ h2.typoh2{
 		width: 100%;
 		padding: .5em;
 	}
+    .contact-form input[type="password"] {
+        width: 100%;
+        padding: .5em;
+    }
 	.contact-form textarea {
 		padding: .5em;
 	}
 	.contact-form input[type="submit"] {
 		padding: .5em 1em;
 	}
+
+    li .contact-form input[type="submit"] {
+    }
 	.agileinfo {
 		margin: 0;
 	}
@@ -2127,4 +2241,41 @@ h2.typoh2{
 		font-size: .9em;
 	}
 }
-/*-- //responsive --*/
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+    background-color: white;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  border: 12px solid #99003d;
+  border-radius: 10px;
+}
+

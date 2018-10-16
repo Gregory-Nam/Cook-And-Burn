@@ -321,4 +321,8 @@ class UserModel extends Model{
 
 }
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 9ef997bd488d871ae5f16f72e2abfd1d6678e0b1

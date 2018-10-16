@@ -43,10 +43,13 @@ class RecetteModel extends Model{
 
         $this->getBdd()->exec($query);
 
+<<<<<<< HEAD
         $query2 = "UPDATE favoris SET nom_recette='".$_recette->getTitre()."', image_rec='".$_recette->getImage()."' WHERE id=".$_recette->getId();
         $this->getBdd()->exec($query2);
 
 
+=======
+>>>>>>> 9ef997bd488d871ae5f16f72e2abfd1d6678e0b1
     }
 
 
