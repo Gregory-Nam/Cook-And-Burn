@@ -43,13 +43,10 @@ class RecetteModel extends Model{
 
         $this->getBdd()->exec($query);
 
-<<<<<<< HEAD
         $query2 = "UPDATE favoris SET nom_recette='".$_recette->getTitre()."', image_rec='".$_recette->getImage()."' WHERE id=".$_recette->getId();
         $this->getBdd()->exec($query2);
 
 
-=======
->>>>>>> 9ef997bd488d871ae5f16f72e2abfd1d6678e0b1
     }
 
 
@@ -101,7 +98,6 @@ class RecetteModel extends Model{
 
     public function getCommentaire($titre)
     {
-        $var = [];
         try{
             $query = 'SELECT * FROM commentaire WHERE id_recette = "'.$titre.'"';
             $stmt = $this->getBdd()->query($query);
@@ -117,7 +113,6 @@ class RecetteModel extends Model{
         catch(Exception $e){
             echo $e;
         }
-        return $var;
     }
 
     public function getBestRec()

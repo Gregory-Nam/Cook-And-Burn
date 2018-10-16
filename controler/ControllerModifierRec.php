@@ -21,11 +21,7 @@ class ControllerModifierRec
     public function ModifRec()
     {
 
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 9ef997bd488d871ae5f16f72e2abfd1d6678e0b1
         $this->_view = new View('ModifierRec');
         $this->_view->generate(array());
 

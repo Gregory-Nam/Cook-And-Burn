@@ -105,24 +105,84 @@ $this->_t = $titre;
             </span>
             <?php echo $marec->getNombreBurn();?>
 
-        </div>
-        <h1> <?php echo $marec->getTitre();?> </h1> </br>
-        <img src='./files/<?php echo $marec->getImage();?>' height ="10%" width="10%"/><br/>
-        <h2> Description </h2>
-        <p> <?php echo $marec->getDescription();?></p> <br/>
-        <h2> Description détaillée </h2>
-        <p> <?php echo $marec->getDescriptionDet();?></p> <br/>
-        <h2> Ingredients pour <?php echo $marec->getNombrePersonne();?> personnes </h2>
-        <p> <?php echo $marec->getIngredient();?></p> <br/><br/><br/>
-        <h1>Commentaires :</h1>
-        <div class="contact-form">
-            <div class="customer-info">
-                <p><?php echo $rM->getCommentaire($titre);?></p>
+         </div>
+<!--        <h1> --><?php //echo $marec->getTitre();?><!-- </h1> </br>-->
+<!--        <img src='./files/--><?php //echo $marec->getImage();?><!--' height ="10%" width="10%"/><br/>-->
+<!--        <h2> Description </h2>-->
+<!--        <p> --><?php //echo $marec->getDescription();?><!--</p> <br/>-->
+<!--        <h2> Description détaillée </h2>-->
+<!--        <p> --><?php //echo $marec->getDescriptionDet();?><!--</p> <br/>-->
+<!--        <h2> Ingredients pour --><?php //echo $marec->getNombrePersonne();?><!-- personnes </h2>-->
+<!--        <p> --><?php //echo $marec->getIngredient();?><!--</p> <br/><br/><br/>-->
+<!--        <h1>Commentaires :</h1>-->
+<!--        <div class="contact-form">-->
+<!--            <div class="customer-info">-->
+<!--                <p>--><?php //echo $rM->getCommentaire($titre);?><!--</p>-->
+<!--            </div>-->
+<!--        <form method="post" action="CommentaireRecette">-->
+<!--            <textarea class="form-control" name="commentaireRecette">Ecrivez un commentaire</textarea>-->
+<!--            <input class="btn" type="submit" name="action" value="Poster"/>-->
+<!--        </form>-->
+<!--        </div>-->
+
+
+        <div clas="blog">
+            <div class="container">
+                <div class="col-md-8 blog-top-left-grid">
+                    <div class="left-blog left-single">
+                        <div class="blog-left">
+                            <div class="single-left-left">
+                                <h3 style="color: #fd5c63;"> <?php echo $marec->getTitre();?> - Écrit par <?php echo $marec->getAuteur();?></h3>
+                                <img src='./files/<?php echo $marec->getImage();?>'/><br/>
+                            </div>
+                            <div class="blog-left-bottom">
+                                <p>
+                                    <?php echo $marec->getDescriptionDet();?>
+                                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+                                </p>
+                            </div>
+                        </div>
+                    <div class="response">
+                        <h3>Responses</h3>
+                        <div class="media response-info">
+                            <div class="media-body response-text-right">
+                                <p><?php echo $rM->getCommentaire($titre);?></p>
+
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+
+                    <div class ="opinion">
+                        <h2> Ecriver un commentaire </h2>
+                        <form method="post" action="CommentaireRecette">
+                            <textarea class="form-control" name="commentaireRecette">Ecrivez un commentaire</textarea>
+                            <input class="btn" type="submit" name="action" value="Poster"/>
+                        </form>
+                    </div>
+                    <br/>
+
+
+                </div>
+                </div>
+
+                <div class="col-md-4 blog-top-right-grid">
+                    <div class="categories">
+                        <h3> Description </h3>
+                        <p><?php echo $marec->getDescription();?></p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="categories">
+                        <h3> Ingredients - <?php echo $marec->getNombrePersonne()?> personnes</h3>
+                        <p> <?php echo $marec->getIngredient();?> </p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="categories">
+                        <h3> Les étapes</h3>
+                    </div>
+                </div>
+
             </div>
-        <form method="post" action="CommentaireRecette">
-            <textarea class="form-control" name="commentaireRecette">Ecrivez un commentaire</textarea>
-            <input class="btn" type="submit" name="action" value="Poster"/>
-        </form>
         </div>
 
 

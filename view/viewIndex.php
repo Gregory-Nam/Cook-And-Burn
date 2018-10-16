@@ -83,11 +83,7 @@ $bestRec = $fM->getBestRec();
 
 <div class="container">
         <div class="special-heading">
-<<<<<<< HEAD
         <h3>Toutes les recettes</h3>
-=======
-        <h3>Les recettes avec le plus de burns !!!</h3>
->>>>>>> 9ef997bd488d871ae5f16f72e2abfd1d6678e0b1
     </div>
 
 
