@@ -28,6 +28,9 @@ class RecetteModel extends Model{
     {
         $query = "DELETE FROM recettes WHERE id=".$_recette->getId();
         $this->getBdd()->exec($query);
+
+        $query2 = "DELETE FROM favoris WHERE id_rec=".$_recette->getId();
+        $this->getBdd()->exec($query2);
     }
 
     public function updateRec($_recette)
@@ -38,7 +41,7 @@ class RecetteModel extends Model{
                                                ingredients='".$_recette->getIngredient()."',image='".$_recette->getImage()."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
 
-        $this->getBdd()->execute($query);
+        $this->getBdd()->exec($query);
 
     }
 
@@ -186,7 +189,7 @@ class RecetteModel extends Model{
                     <td><?php echo $q['ingredients'] ?></td>
                     <td><?php echo $q['nombre_personne'] ?></td>
                     <td><?php echo $q['burns'] ?></td>
-                    <td><a href="recette<?php echo $q['id'] ?>">Editer</a></td>
+                    <td><a href="ModifUserRecette?id=<?php echo $q['id']?>">Editer</a> / <a href="SuppRecetteTable?id=<?php echo $q['id']?>">Supp</a></td>
                 </tr>
 
 
@@ -211,6 +214,23 @@ class RecetteModel extends Model{
         }
         return $var;
     }
+
+    public function updateRecette($id,$nom,$description,$descriptiondet,$auteur,$ingredients,$nombre)
+    {
+        $query = "UPDATE recettes SET titre ='".$nom
+                                               ."', description ='".$description."',
+                                               descriptionDet ='".$descriptiondet."',
+                                               auteur = '".$auteur."',
+                                               ingredients='".$ingredients."',
+                                               nombre_personne=".$nombre." WHERE id=". $id;
+
+
+        $stmt2 = $this->getBdd()->prepare($query);
+        $stmt2->execute();
+
+    }
+
+
 
 
 }
