@@ -33,6 +33,19 @@ class RecetteModel extends Model{
         $this->getBdd()->exec($query2);
     }
 
+    public function getAllRecette()
+    {
+        $var = [];
+        $req = $this->getBdd()->prepare('SELECT * FROM recettes ORDER BY id asc');
+        $req->execute();
+        while($data = $req->fetch())
+        {
+            $var[] = new Recette($data['titre'], $data['descritpion'],$data['descritpionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+        }
+        return $var;
+//        $req->closeCursor();
+    }
+
     public function updateRec($_recette)
     {
         $query = "UPDATE recettes SET titre ='".$_recette->getTitre()
@@ -239,6 +252,8 @@ class RecetteModel extends Model{
         $stmt2->execute();
 
     }
+
+
 
 
 

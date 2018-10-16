@@ -6,8 +6,8 @@
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
 $this->_t = 'Cook And Burn';
-$fM = new  RecetteModel();
-$bestRec = $fM->getBestRec();
+//$fM = new  RecetteModel();
+//$bestRec = $fM->getBestRec();
 
 ?>
 <div class="banner-info">
@@ -43,24 +43,6 @@ $bestRec = $fM->getBestRec();
 </div>
 </div>
 
-<!--<div class="special">
-    <div class="container">
-        <div class="special-heading">
-        <h3> La meilleure recette ! </h3>
-        </div>
-
-    <div class="col-md-3 menu-grid" >
-        <div class="agile-menu-grid img-rounded" >
-            <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" >
-                <img src="./files/<?php echo $bestRec->getImage();?>" alt="" >
-            </a>
-                <div class="agileits-caption">
-                    <h4> <?php echo $bestRec->getTitre();?> </h4>
-
-                </div>
-        </div>
-    </div>
-</div>-->
 
 <div class="special">
     <div class="container">

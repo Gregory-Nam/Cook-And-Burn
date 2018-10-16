@@ -24,18 +24,5 @@ abstract class Model
 		return self::$_bdd;
 	}
 
-	// RECUP TOUS LES ELEMENTS DE LA TABLE POUR L'OBJET
-	protected function getAll($table, $obj)
-	{
-	  $var = [];
-	  $req = $this->getBdd()->prepare('SELECT * FROM '.$table. ' ORDER BY id asc');
-	  $req->execute();
-	  while($data = $req->fetch(PDO::FETCH_ASSOC))
-	  {
-		$var[] = new $obj($data['titre'], $data['descritpion'],$data['descritpionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
-	  }
-	  return $var;
-	  $req->closeCursor();
-	}
 
 }

@@ -1,5 +1,7 @@
 <?php
 require_once('view/View.php');
+include('./model/User.php');
+include ('./model/UserModel.php');
 class ControllerIndex
 {
 	private $_recetteModel;
@@ -14,12 +16,15 @@ class ControllerIndex
 			$this->recette();
 	}
 
-	private function recette()
+	public function recette()
 	{
-		$this->_recetteModel = new TopRecetteModel();
-		$recettes = $this->_recetteModel->getRecettes();
+		$this->_recetteModel = new RecetteModel();
+		$recettes = $this->_recetteModel->getAllRecette();
+		$bestRec = $this->_recetteModel->getBestRec();
+
+
 
 		$this->_view = new View('Index');
-		$this->_view->generate(array('recette' => $recettes));
+		$this->_view->generate(array('recette' => $recettes, "bestRec" => $bestRec));
 	}
 }
