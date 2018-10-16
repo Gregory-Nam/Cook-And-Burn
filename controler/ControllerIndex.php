@@ -17,9 +17,9 @@ class ControllerIndex
 	private function recette()
 	{
 		$this->_recetteModel = new TopRecetteModel();
-		$recette = $this->_recetteModel->getRecettes();
+		$recettes = $this->_recetteModel->getRecettes();
 
 		$this->_view = new View('Index');
-		$this->_view->generate(array('recette' => $recette));
+		$this->_view->generate(array('recette' => $recettes));
 	}
 }

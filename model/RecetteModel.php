@@ -24,6 +24,12 @@ class RecetteModel extends Model{
         return true;
     }
 
+    public function deleteRecette($_recette)
+    {
+        $query = "DELETE FROM recettes WHERE id=".$_recette->getId();
+        $this->getBdd()->exec($query);
+    }
+
 
     public function getByTitre($_titre)
     {

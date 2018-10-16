@@ -79,12 +79,21 @@ $this->_t = $titre;
                         else
                         {
                 ?>
-                            <form style="display :inline" method="post" action="MettreFavorisAction">
+            <form style="display :inline" method="post" action="MettreFavorisAction">
                 <input type="submit" name="actionFav" value="Enlever des favoris"/>
             </form>
             <?php
                         }
-                }
+                        if($_SESSION['pseudo'] == $marec->getAuteur())
+                        {
+            ?>
+            <form style="display :inline" method="post" action="SupprimerRecAction">
+                <input type="submit" name="actionFav" value="Supprimer votre recette"/>
+            </form>
+            <?php
+
+                        }
+                    }
 
             ?>
 

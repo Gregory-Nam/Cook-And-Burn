@@ -23,6 +23,11 @@
     {
         header("Location:RecetteFav");
     }
+
+    if(isset($_POST['createdRec']))
+    {
+        header("Location:CreatedRec");
+    }
     ?>
 
 </div>
@@ -36,9 +41,12 @@
 <div class="contact-form">
 	<form action="" method="post">
 
-        <center/><input type="submit" name="favRec" value="Mes recettes favorites">
+        <center/>
+        <input type="submit" name="createdRec" value="Voir mes recettes">
+        <input type="submit" name="favRec" value="Mes recettes favorites">
         <input type="submit" name="changeMail" value="Changer mon adresse mail">
         <input type="submit" name="changeMdp" value="Changer mon mot de passe">
+
     <br/><br/>
         <p> Votre pseudo :</p>
         <input type="text" value="<?php echo $user->getNameUser();?>" readOnly="readonly">
