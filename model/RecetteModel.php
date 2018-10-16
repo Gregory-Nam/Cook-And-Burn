@@ -48,15 +48,16 @@ class RecetteModel extends Model{
 
     public function updateRec($_recette)
     {
-        $query = "UPDATE recettes SET titre ='".$_recette->getTitre()
-                                               ."', description ='".$_recette->getDescription()."',
-                                               descriptionDet ='".$_recette->getDescriptionDet()."',
-                                               ingredients='".$_recette->getIngredient()."',image='".$_recette->getImage()."',
+        //ADDSLASHES PERMET DE NE PAS POSER DE PROBLEME SI UN DES ATTRIBUTS CONTIENT "'"
+        $query = "UPDATE recettes SET titre ='". addslashes($_recette->getTitre())
+                                               ."', description ='". addslashes($_recette->getDescription())."',
+                                               descriptionDet ='". addslashes($_recette->getDescriptionDet()) ."',
+                                               ingredients='". addslashes($_recette->getIngredient()) ."',image='".addslashes($_recette->getImage())."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
 
         $this->getBdd()->exec($query);
 
-        $query2 = "UPDATE favoris SET nom_recette='".$_recette->getTitre()."', image_rec='".$_recette->getImage()."' WHERE id=".$_recette->getId();
+        $query2 = "UPDATE favoris SET nom_recette='".addslashes($_recette->getTitre()) ."', image_rec='". addslashes($_recette->getImage())."' WHERE id=".$_recette->getId();
         $this->getBdd()->exec($query2);
 
 

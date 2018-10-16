@@ -4,7 +4,8 @@ $_SESSION['recette'] = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
 $titre = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
 $this->_t = $titre;
 
-
+$marec = $rM->getByTitre($_SESSION['recette']);
+$mescom = $rM->getCommentaire($_SESSION['recette']);
 
 
 ?>

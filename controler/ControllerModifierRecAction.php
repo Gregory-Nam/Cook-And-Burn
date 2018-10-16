@@ -40,7 +40,6 @@ class ControllerModifierRecAction
                     || !isset($_POST['ingredientRecette']))
         {
 
-
         }
         else
         {
@@ -53,9 +52,6 @@ class ControllerModifierRecAction
                 $_POST['descriptionRecette2'], $_SESSION['pseudo'],
                 $_POST['ingredientRecette'], $ancienneRec->getImage(),
                 $_POST['nombrePersonne'],$ancienneRec->getNombreBurn());
-
-
-
         }
         else
         {
@@ -68,7 +64,10 @@ class ControllerModifierRecAction
         }
         $rec->setId($ancienneRec->getId());
         $rM->updateRec($rec);
+        header("location:ContenuRecette?id=".urlencode($rec->getTitre()));
         }
+
+
 
     }
 }

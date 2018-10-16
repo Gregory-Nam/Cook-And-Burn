@@ -26,14 +26,15 @@ class ControllerContenuRecette{
 
         $this->_burnModel = new BurnModel();
         $this->_recetteModel = new RecetteModel();
-        $marec = $this->_recetteModel ->getByTitre($_SESSION['recette']);
-        $mescom = $this->_recetteModel->getCommentaire($_SESSION['recette']);
+        // PB AVEC CODE COMMENTEE EN DESSOUS : AFFICHAGE DE LA DERNIERE RECETTE VU //
+//        $marec = $this->_recetteModel ->getByTitre($_SESSION['recette']);
+//        $mescom = $this->_recetteModel->getCommentaire($_SESSION['recette']);
 
         $this->_favorisModel = new FavorisModel();
 
         $this->_view = new View('ContenuRecette');
-        $this->_view->generate(array("user"=>$user, "bM" => $this->_burnModel, "marec" => $marec
-                                     , "fM" => $this->_favorisModel, "mescom" => $mescom));
+        $this->_view->generate(array("user"=>$user, "bM" => $this->_burnModel, "rM" => $this->_recetteModel
+                                     ,"fM" => $this->_favorisModel));
 
     }
 }
