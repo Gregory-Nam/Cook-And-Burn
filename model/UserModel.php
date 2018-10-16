@@ -300,6 +300,15 @@ class UserModel extends Model{
       <?php  
     }
 
+    public function UpdateUser($id, $mail, $nom)
+    {
+        $query2 = ('UPDATE user SET adresse_email = "'.$mail.'" , nom_utilisateur = "'.$nom.'" WHERE id = "'. $id  .'"');
+        $stmt2 = $this->getBdd()->prepare($query2);
+
+        $stmt2->execute();
+           
+    }
+
 
 }
 
