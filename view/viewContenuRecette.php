@@ -20,9 +20,9 @@ $this->_t = $titre;
 //    $bM = new BurnModel();
 //    $fM = new FavorisModel();
 
-    $marec = $rM->getByTitre($titre);
+//    $marec = $rM->getByTitre($titre);
     if(isset($_SESSION['pseudo']))
-        $user = $uM->getByNom($_SESSION['pseudo']);
+//        $user = $uM->getByNom($_SESSION['pseudo']);
 
     ;?>
     <center>
@@ -146,7 +146,7 @@ $this->_t = $titre;
                         <h3>Responses</h3>
                         <div class="media response-info">
                             <div class="media-body response-text-right">
-                                <p><?php echo $rM->getCommentaire($titre);?></p>
+                                <p><?php echo $mescom;?></p>
 
                             </div>
                             <div class="clearfix"> </div>

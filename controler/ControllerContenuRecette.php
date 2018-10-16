@@ -3,6 +3,7 @@ require_once('view/View.php');
 include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
+session_start();
 class ControllerContenuRecette{
     private $_userModel;
     private $_burnModel;
@@ -21,13 +22,18 @@ class ControllerContenuRecette{
     {
 
         $this->_userModel = new UserModel();
+        $user = $this->_userModel->getByNom($_SESSION['pseudo']);
+
         $this->_burnModel = new BurnModel();
         $this->_recetteModel = new RecetteModel();
+        $marec = $this->_recetteModel ->getByTitre($_SESSION['recette']);
+        $mescom = $this->_recetteModel->getCommentaire($_SESSION['recette']);
+
         $this->_favorisModel = new FavorisModel();
 
         $this->_view = new View('ContenuRecette');
-        $this->_view->generate(array("uM"=>$this->_userModel, "bM" => $this->_burnModel, "rM" => $this->_recetteModel
-                                     , "fM" => $this->_favorisModel));
+        $this->_view->generate(array("user"=>$user, "bM" => $this->_burnModel, "marec" => $marec
+                                     , "fM" => $this->_favorisModel, "mescom" => $mescom));
 
     }
 }

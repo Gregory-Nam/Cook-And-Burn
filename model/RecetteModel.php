@@ -102,12 +102,11 @@ class RecetteModel extends Model{
             $query = 'SELECT * FROM commentaire WHERE id_recette = "'.$titre.'"';
             $stmt = $this->getBdd()->query($query);
             //$ret =$stmt->execute(array($titre));
-            
+            $commentaire = "";
             while($c = $stmt->fetch()){
-                echo $c['auteur'].' : '.$c['commentaire'] .'<br/>';
-                
+                $commentaire = $commentaire . $c['auteur'].' : '.$c['commentaire'] .'<br/>';
             }
-
+            return $commentaire;
                 
         }
         catch(Exception $e){
