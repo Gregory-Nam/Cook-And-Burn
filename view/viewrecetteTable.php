@@ -1,8 +1,8 @@
 <?php
 session_start();
     $this->_t = "Panel";
-    $test = new RecetteModel();
-    $test2 = new UserModel();
+//    $rM = new RecetteModel();
+//    $uM = new UserModel();
     ?>
 
 </div>
@@ -65,7 +65,7 @@ session_start();
 					</div>
 					 <div class="col-md-8 market-update-left">
 					 <h4>Recettes</h4>
-					<h3><?php echo $test->nbRecettes() ?></h3>
+					<h3><?php echo $rM->nbRecettes() ?></h3>
 					<p>postées</p>
 				  </div>
 				  <div class="clearfix"> </div>
@@ -78,7 +78,7 @@ session_start();
 					</div>
 					<div class="col-md-8 market-update-left">
 					<h4>Utilisateurs</h4>
-						<h3><?php echo $test2->nbUsers() ?></h3>
+						<h3><?php echo $uM->nbUsers() ?></h3>
 						<p>créés</p>
 					</div>
 				  <div class="clearfix"> </div>
@@ -91,7 +91,7 @@ session_start();
 					</div>
 					<div class="col-md-8 market-update-left">
 						<h4>Commentaires</h4>
-						<h3><?php echo $test->nbCom() ?></h3>
+						<h3><?php echo $rM->nbCom() ?></h3>
 						<p>publiés</p>
 					</div>
 				  <div class="clearfix"> </div>
@@ -137,7 +137,7 @@ session_start();
 								<header class="agileits-box-header clearfix">
 										<div class="toolbar">
 											
-											<h1><?php echo $test->affichageRecette() ?></h1>
+											<h1><?php echo $rM->affichageRecette() ?></h1>
 										</div>
 								</header>
 								<div class="agileits-box-body clearfix">
