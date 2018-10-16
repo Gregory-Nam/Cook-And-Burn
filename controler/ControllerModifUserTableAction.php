@@ -19,6 +19,7 @@ class ControllerModifUserTableAction
         $idPro = $_SESSION['profilSup'];
         if(empty($_POST['nom']) or empty($_POST['mail']))
         {
+
             $_SESSION['erreur'] = 'Remplir tout les champs !';
             header("Location:ModifUserTable?id=$idPro");
         }
@@ -27,8 +28,11 @@ class ControllerModifUserTableAction
             $nom = htmlspecialchars($_POST['nom']);
             $mail = htmlspecialchars($_POST['mail']);
             $id = htmlspecialchars($_SESSION['profilSup']);
+            $test = new UserModel();
             if(filter_var($mail, FILTER_VALIDATE_EMAIL))
             {
+                //Tout est bon
+                $test->UpdateUser($id,$mail,$nom);
                 $_SESSION['reussi'] = 'Modifié !';
                 header("Location:ModifUserTable?id=$idPro");
             }
