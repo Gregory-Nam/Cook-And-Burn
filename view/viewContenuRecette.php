@@ -90,6 +90,9 @@ $this->_t = $titre;
             <form style="display :inline" method="post" action="SupprimerRecAction">
                 <input type="submit" name="actionFav" value="Supprimer votre recette"/>
             </form>
+            <form style="display :inline" method="post" action="ModifierRec">
+                <input type="submit" name="actionFav" value="Modifier votre recette"/>
+            </form>
             <?php
 
                         }

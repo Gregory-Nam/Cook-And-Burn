@@ -30,6 +30,18 @@ class RecetteModel extends Model{
         $this->getBdd()->exec($query);
     }
 
+    public function updateRec($_recette)
+    {
+        $query = "UPDATE recettes SET titre ='".$_recette->getTitre()
+                                               ."', description ='".$_recette->getDescription()."',
+                                               descriptionDet ='".$_recette->getDescriptionDet()."',
+                                               ingredients='".$_recette->getIngredient()."',image='".$_recette->getImage()."',
+                                               nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
+
+        $this->getBdd()->execute($query);
+
+    }
+
 
     public function getByTitre($_titre)
     {
