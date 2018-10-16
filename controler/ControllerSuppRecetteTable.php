@@ -16,7 +16,8 @@ class ControllerSuppRecetteTable
 
     public function verif()
     {
-        $idPro = htmlspecialchars($_SESSION['profilSup']);
+        $_SESSION['profilASup'] = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
+        $idPro = htmlspecialchars($_SESSION['profilASup']);
         $test = new RecetteModel();
         $test->suppRecette($idPro);
                 
