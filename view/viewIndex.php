@@ -43,22 +43,39 @@ $bestRec = $fM->getBestRec();
 </div>
 </div>
 
-<div class="special">
+<!--<div class="special">
     <div class="container">
         <div class="special-heading">
         <h3> La meilleure recette ! </h3>
         </div>
 
-  <div class="col-md-3 menu-grid" >
-  <div class="agile-menu-grid img-rounded" >
-      <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" >
-        <img src="./files/<?php echo $bestRec->getImage();?>" alt="" >
-      </a>
-        <div class="agileits-caption">
-            <h4> <?php echo $bestRec->getTitre();?> </h4>
+    <div class="col-md-3 menu-grid" >
+        <div class="agile-menu-grid img-rounded" >
+            <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" >
+                <img src="./files/<?php echo $bestRec->getImage();?>" alt="" >
+            </a>
+                <div class="agileits-caption">
+                    <h4> <?php echo $bestRec->getTitre();?> </h4>
 
+                </div>
         </div>
     </div>
+</div>-->
+
+<div class="special">
+    <div class="container">
+        <div class="special-heading">
+            
+            <h3>La meilleure recette !</h3>
+        </div>
+        <CENTER>
+            <div class="special-heading" >
+                <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" >
+                <img  height="300" width="250"src="./files/<?php echo $bestRec->getImage();?>" alt="" >
+            </a>
+            <h4> <?php echo $bestRec->getTitre();?> </h4>
+            </div>
+        </CENTER>
     </div>
 </div>
 
