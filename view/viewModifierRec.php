@@ -1,6 +1,6 @@
 <?php
-    $rM = new RecetteModel();
-    $recToUpdate = $rM->getByTitre($_SESSION['recette']);
+//    $rM = new RecetteModel();
+//    $recToUpdate = $rM->getByTitre($_SESSION['recette']);
 ?>
 
 </div>

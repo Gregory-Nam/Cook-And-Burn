@@ -7,6 +7,7 @@ require_once ('./model/reCaptcha/autoload.php');
 class ControllerModifUserRecette
 {
     private $_userModel;
+    private $_recetteModel;
     private $_view;
     public function __construct()
     {
@@ -20,8 +21,10 @@ class ControllerModifUserRecette
     {
 
         $this->_userModel = new UserModel();
+        $this->_recetteModel = new RecetteModel();
+
         $this->_view = new View('ModifRecetteTable');
-        $this->_view->generate(array($this->_userModel));
+        $this->_view->generate(array("uM" => $this->_userModel, "rM" => $this->_recetteModel));
 
     }
 }
