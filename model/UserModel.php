@@ -287,7 +287,7 @@ class UserModel extends Model{
 
                     <td><?php echo $q['adresse_email'] ?></td>
                     <td><?php echo $q['confirmkey'] ?></td>
-                    <td><a href="">Editer</a></td>
+                    <td><a href="#" onclick="toggle_visibility('foo');">Editer</a></td>
                 </tr>
 
 
