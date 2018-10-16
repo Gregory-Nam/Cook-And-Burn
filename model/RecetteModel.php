@@ -181,6 +181,19 @@ class RecetteModel extends Model{
       <?php  
     }
 
+    public function getCreatedRecByUser($user)
+    {
+        $query = "SELECT * FROM recettes WHERE auteur ='".$user->getNameUser()."'";
+        $stmt = $this->getBdd()->query($query);
+        $var = [];
+        while($rec =  $stmt->fetch())
+        {
+            $var[] = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
+
+        }
+        return $var;
+    }
+
 
 }
 
