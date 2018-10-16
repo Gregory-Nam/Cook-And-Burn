@@ -287,7 +287,7 @@ class UserModel extends Model{
 
                     <td><?php echo $q['adresse_email'] ?></td>
                     <td><?php echo $q['confirmkey'] ?></td>
-                    <td><a href="ModifUserTable?id=<?php echo $q['id']?>">Editer</a></td>
+                    <td><a href="ModifUserTable?id=<?php echo $q['id']?>">Editer</a> / <a href="SuppUserTable?id=<?php echo $q['id']?>">Supp</a></td>
                 </tr>
 
 
@@ -303,6 +303,15 @@ class UserModel extends Model{
     public function UpdateUser($id, $mail, $nom)
     {
         $query2 = ('UPDATE user SET adresse_email = "'.$mail.'" , nom_utilisateur = "'.$nom.'" WHERE id = "'. $id  .'"');
+        $stmt2 = $this->getBdd()->prepare($query2);
+
+        $stmt2->execute();
+           
+    }
+
+    public function deleteUser($id)
+    {
+        $query2 = ('DELETE  FROM user WHERE id = "'. $id  .'"');
         $stmt2 = $this->getBdd()->prepare($query2);
 
         $stmt2->execute();
