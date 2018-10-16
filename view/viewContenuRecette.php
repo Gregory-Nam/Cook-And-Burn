@@ -15,10 +15,10 @@ $this->_t = $titre;
 
 <div class = "container">
     <?php
-    $rM = new RecetteModel();
-    $uM = new UserModel();
-    $bM = new BurnModel();
-    $fM = new FavorisModel();
+//    $rM = new RecetteModel();
+//    $uM = new UserModel();
+//    $bM = new BurnModel();
+//    $fM = new FavorisModel();
 
     $marec = $rM->getByTitre($titre);
     if(isset($_SESSION['pseudo']))
