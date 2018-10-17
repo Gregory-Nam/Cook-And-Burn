@@ -47,12 +47,16 @@
         <input type="submit" name="changeMdp" value="Changer mon mot de passe">
 
     <br/><br/>
+        <div class="container">
+            <div class="alert alert-info" role="alert">
+                Nous ne sommes pas en mesure d'afficher votre mot de passe car nous ne le stockons pas pour des raisons de sécurité.
+            </div>
+        </div>
+
         <p> Votre pseudo :</p>
         <input type="text" value="<?php echo $user->getNameUser();?>" readOnly="readonly">
         <p> Votre adresse mail :</p>
-        <input type="text" value="<?php echo $user->getMailAdress();?>" readOnly="readonly">
-        <p> Votre mot de passe :</p>
-        <input type="password" value="<?php echo $user->getPassword();?>" readOnly="readonly"> <br/> <br/>
+        <input type="text" value="<?php echo $user->getMailAdress();?>" readOnly="readonly"><br/>
 
 
 

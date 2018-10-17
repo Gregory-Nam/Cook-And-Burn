@@ -245,7 +245,6 @@ class UserModel extends Model{
             $aUser->setId($resp['id']);
         }
         else{
-            echo "pas d'utilisateur de ce nom";
 
             return null;
         }

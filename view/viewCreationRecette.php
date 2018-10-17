@@ -18,7 +18,18 @@
 
             <textarea class="form-control" name="descriptionRecette">Description de la recette </textarea>
             <textarea class="form-control" name="descriptionRecette2">Description de la recette plus longue</textarea>
-            <textarea class="form-control" name="ingredientRecette">ingredient </textarea>
+<!--            <textarea class="form-control" name="ingredientRecette">ingredient </textarea>-->
+            <form size="2">
+            <?php
+                foreach($ingredients as $ingredient) :
+
+            ?>
+                <input type = "checkbox" value="<?php echo $ingredient->getNomIngredient();?>"><?php echo $ingredient->getNomIngredient();?> </br>
+            <?php
+                endforeach;
+            ?>
+            </form>
+
 
 
 

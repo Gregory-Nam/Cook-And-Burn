@@ -22,8 +22,7 @@ class ControllerModifierRec
     {
 
         $this->_recetteModel = new RecetteModel();
-        $this->_userModel = new UserModel();
-        
+
         $recToUpdate = $this->_recetteModel->getByTitre($_SESSION['recette']);
         $this->_view = new View('ModifierRec');
         $this->_view->generate(array("recToUpdate" => $recToUpdate));
