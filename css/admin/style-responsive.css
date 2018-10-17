@@ -26,13 +26,7 @@
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
-  .header{
-    position: relative! important;
-    margin-top: 80px ! important;
-}
-    .merge-header{
-        margin-right: 0px !important;
-    }
+
 .brand{
     width: 100%;
     float: none;

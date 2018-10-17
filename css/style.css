@@ -1157,6 +1157,11 @@ h2.typoh2{
 .contact-form form {
   margin: 2em 0 0 0;
 }
+
+.contact-form .test input[type="text"] {
+    width:100%;
+
+}
 .contact-form input[type="text"] {
      width: 32.6%;
      color: #898888;
@@ -1330,6 +1335,12 @@ ul li .contact-form  {
     font-size: 1em;
     font-weight: 500;
     color: #383838;
+}
+.single-left-left h3{
+    margin: 0 0 1em;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fd5c63;
 }
 .single-left-left p a {
     color: #fd5c63;
