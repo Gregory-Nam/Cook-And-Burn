@@ -19,16 +19,31 @@
             <textarea class="form-control" name="descriptionRecette">Description de la recette </textarea>
             <textarea class="form-control" name="descriptionRecette2">Description de la recette plus longue</textarea>
 <!--            <textarea class="form-control" name="ingredientRecette">ingredient </textarea>-->
-            <form size="2">
+            <div class="test">
+            <select id="lesIngredients" multiple>
             <?php
+                $i = 0;
                 foreach($ingredients as $ingredient) :
 
             ?>
-                <input type = "checkbox" value="<?php echo $ingredient->getNomIngredient();?>"><?php echo $ingredient->getNomIngredient();?> </br>
+                <option value="<?php echo $i;?>"> <?php echo $ingredient->getNomIngredient();?> </option>
             <?php
+                ++$i;
                 endforeach;
+
+
             ?>
-            </form>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#lesIngredients').multiselect({ enableFiltering: true,
+                        includeSelectAllOption: true,
+                        maxHeight:200,
+                        buttonWidth:400});
+
+                });
+            </script>
+            </select>
 
 
 

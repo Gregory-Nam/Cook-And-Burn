@@ -27,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--// css -->
     <!-- font-awesome icons -->
     <link href="./css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
     <!-- //font-awesome icons -->
     <!-- font -->
     <link href='//fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
@@ -36,6 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="./js/jquery-1.11.1.min.js"></script>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/SmoothScroll.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
 </head>
 <body>
 <script src="./js/jquery.vide.min.js"></script>
