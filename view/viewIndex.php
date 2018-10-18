@@ -5,7 +5,7 @@
 <script type="text/javascript" src="./js/affichageLettre.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
-session_start(); 
+session_start();
 $this->_t = 'Cook And Burn';
 //$fM = new  RecetteModel();
 //$bestRec = $fM->getBestRec();
@@ -77,7 +77,7 @@ $this->_t = 'Cook And Burn';
     <thead>
     <tr>
     <th>Recette</th>
-    <th>Auteur</th>
+    <th>Informations</th>
     </tr>
     </thead>
     <tbody>
@@ -89,8 +89,16 @@ if(isset($_SESSION['pseudo']))
 foreach($recette as $rec) :
 ?>
 <tr>
-<td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a></td>
-<td><h1><?php echo $rec->getTitre(); ?></h1></td>
+<td>
+<a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
+
+</td>
+<td>
+    <h1><?php echo $rec->getTitre(); ?></h1>
+    <p><?php echo $rec->getDescriptionDet();?> </p>
+    <p><?php echo $rec->getNombreBurn();?> </p>
+
+</td>
 </tr>
 
 

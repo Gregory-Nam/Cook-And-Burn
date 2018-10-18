@@ -40,7 +40,7 @@ class RecetteModel extends Model{
         $req->execute();
         while($data = $req->fetch())
         {
-            $var[] = new Recette($data['titre'], $data['descritpion'],$data['descritpionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
         }
         return $var;
 //        $req->closeCursor();
@@ -53,7 +53,7 @@ class RecetteModel extends Model{
         $req->execute();
         while($data = $req->fetch())
         {
-            $var[] = new Recette($data['titre'], $data['descritpion'],$data['descritpionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
         }
         return $var;
 //        $req->closeCursor();
