@@ -5,6 +5,7 @@
 <script type="text/javascript" src="./js/affichageLettre.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
+session_start();
 $this->_t = 'Cook And Burn';
 //$fM = new  RecetteModel();
 //$bestRec = $fM->getBestRec();
@@ -81,6 +82,9 @@ $this->_t = 'Cook And Burn';
     </thead>
     <tbody>
 <?php
+if(isset($_SESSION['pseudo']))
+{
+
 
 foreach($recette as $rec) :
 ?>
@@ -90,7 +94,21 @@ foreach($recette as $rec) :
 </tr>
 
 
-<?php endforeach; ?>
+<?php endforeach;
+}
+else
+{
+    foreach($recForInvit as $rec) :
+?>
+<tr>
+<td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a></td>
+<td><h1><?php echo $rec->getTitre(); ?></h1></td>
+</tr>
+
+<?php
+    endforeach;
+}
+?>
 </tbody>
 </table>
  </tbody>

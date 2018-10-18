@@ -21,10 +21,11 @@ class ControllerIndex
 		$this->_recetteModel = new RecetteModel();
 		$recettes = $this->_recetteModel->getAllRecette();
 		$bestRec = $this->_recetteModel->getBestRec();
+		$recForInvit = $this->_recetteModel->getRecetteForInvit();
 
 
 
 		$this->_view = new View('Index');
-		$this->_view->generate(array('recette' => $recettes, "bestRec" => $bestRec));
+		$this->_view->generate(array('recette' => $recettes, "bestRec" => $bestRec, "recForInvit" => $recForInvit));
 	}
 }

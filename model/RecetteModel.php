@@ -46,6 +46,19 @@ class RecetteModel extends Model{
 //        $req->closeCursor();
     }
 
+    public function getRecetteForInvit()
+    {
+        $var = [];
+        $req = $this->getBdd()->prepare('SELECT * FROM recettes WHERE burns >= 10 ORDER BY id asc');
+        $req->execute();
+        while($data = $req->fetch())
+        {
+            $var[] = new Recette($data['titre'], $data['descritpion'],$data['descritpionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+        }
+        return $var;
+//        $req->closeCursor();
+    }
+
     public function updateRec($_recette)
     {
         //ADDSLASHES PERMET DE NE PAS POSER DE PROBLEME SI UN DES ATTRIBUTS CONTIENT "'"
