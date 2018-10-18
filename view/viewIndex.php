@@ -5,7 +5,7 @@
 <script type="text/javascript" src="./js/affichageLettre.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
-session_start();
+session_start(); 
 $this->_t = 'Cook And Burn';
 //$fM = new  RecetteModel();
 //$bestRec = $fM->getBestRec();
