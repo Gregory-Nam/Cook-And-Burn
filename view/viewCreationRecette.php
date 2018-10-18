@@ -7,34 +7,30 @@
 </div>
 </div>
     <div class="contact-form">
-                <h3>Ma recette : </h3>
-
-        <center><form action="RecetteAction" enctype="multipart/form-data" method="post">
-            <input style="display:inline" type="file" name="imageRecette" placeholder="Description de la recette"/>
-
-            <p>
-                <input type="text" name="nameRecette" placeholder ="Titre de la recette" />
-            </p>
-
-            <textarea class="form-control" name="descriptionRecette">Description de la recette </textarea>
-            <textarea class="form-control" name="descriptionRecette2">Description de la recette plus longue</textarea>
+        <h3>Ma recette : </h3>
+        <center>
+            <form action="RecetteAction" enctype="multipart/form-data" method="post">
+                <input style="display:inline" type="file" name="imageRecette" placeholder="Description de la recette"/>
+                <p>
+                    <input type="text" name="nameRecette" placeholder ="Titre de la recette" />
+                </p>
+                <textarea class="form-control" name="descriptionRecette">Description de la recette </textarea>
+                <textarea class="form-control" name="descriptionRecette2">Description de la recette plus longue</textarea>
 <!--            <textarea class="form-control" name="ingredientRecette">ingredient </textarea>-->
-            <div class="test">
-            <select id="lesIngredients" multiple>
-            <?php
-                $i = 0;
-                foreach($ingredients as $ingredient) :
+                <span class="test">
+                    <select id="lesIngredients" multiple>
+                        <?php
+                        $i = 0;
+                        foreach($ingredients as $ingredient) :?>
+                            <option value="<?php echo $i;?>"> <?php echo $ingredient->getNomIngredient();?> </option>
+                        <?php ++$i;
+                        endforeach; ?>
 
-            ?>
-                <option value="<?php echo $i;?>"> <?php echo $ingredient->getNomIngredient();?> </option>
-            <?php
-                ++$i;
-                endforeach;
+                    </select>
 
-
-            ?>
-            </div>
-            <script type="text/javascript">
+                </span>
+                <br/>
+                <script type="text/javascript">
                 $(document).ready(function() {
                     $('#lesIngredients').multiselect({ enableFiltering: true,
                         includeSelectAllOption: true,
@@ -42,20 +38,38 @@
                         buttonWidth:400});
 
                 });
-            </script>
-            </select>
+                </script>
+                
+
+                    <script text="tetxt/javascript">
+                    function getTextUsingJavascript(){
+                     var cbo = document.getElementById("lesIngredients");
+                    document.getElementById('affichage').innerHTML =("Les ingrédients sont : " + cbo.options[cbo.selectedIndex].text);
+                    }
+                    </script>
 
 
 
+                    <button name="bite" id="btnGetTextJavascript" onclick="getTextUsingJavascript()">Afficher</button> 
 
-            <p>Nombre de personne :
 
-            </p>
-                <input style="display:inline" type="number" min="0" name="nombrePersonne" />
-            <p>
+                <div id="affichage">yo</div> 
+                
 
-                <input type="submit"  rows="10" cols="50" name="action" value="Créer !"/>
-            </p>
+                <br/>
+                <p>Nombre de personne :</p>
+                <p>
+                    <input style="display:inline" type="number" min="0" name="nombrePersonne" />
+                </p>
+                <p>
+                    <input type="submit"  rows="10" cols="50" name="action" value="Créer !"/>
+                </p>
 
-</form></center></div>
+            </form>
+
+                
+
+        </center>
+
+    </div>
 
