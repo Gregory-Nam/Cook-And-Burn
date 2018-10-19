@@ -131,7 +131,7 @@ class Recette
 
 	public function getIngredient()
 	{
-		return $this->_ingredient;
+		return nl2br($this->_ingredient);
 	}
 
 	public function getDescription()

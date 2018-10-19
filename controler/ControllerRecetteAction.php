@@ -29,41 +29,61 @@ class ControllerRecetteAction
             }
             else
             {
-                $quantitéIng = [];
+                $quantiteIng = [];
+                $i = 0;
                 foreach ($_POST['ingredients'] as $ing) :
-                    echo $ing;
-                    echo $_POST[' '.$ing.' '];
-//                    if(isset($_POST['ing']))
-//                        $quantitéIng[] = $_POST['ing'];
-//                    else
-//                        $quantitéIng = array();
-//                        break;
+                    //en faisant var_dump($_POST), rendu compte que pour cote de porc -> $_POST['cote_de_porc']
+                    $ing2 = str_replace(' ','_',$ing);
+                    if(isset($_POST[$ing2]))
+                    {
+                        $quantiteIng[] = $_POST[$ing2].' '.$_POST['mesure'.$i].' de '.$ing ;
+
+                    }
+                    else
+                    {
+                        $quantiteIng = array();
+                        break;
+                    }
+                    ++$i;
                 endforeach;
-                exit();
-                if(empty($quantitéIng))
+
+                if(empty($quantiteIng))
                 {
                     echo "un champ oublié";
+                    exit();
                 }
+                else
+                {
+                    $ingredientEtQuantite='';
+                    foreach($quantiteIng as $quantite) :
+                        $ingredientEtQuantite .= $quantite. "\n";
+                    endforeach;
+                    echo $ingredientEtQuantite;
+                }
+
+
                 $file_name = $_FILES['imageRecette']['name'];
-            $file_extension = strrchr($file_name, "."); //Derniere itération du point
+                $file_extension = strrchr($file_name, "."); //Derniere itération du point
 
-            $file_tmp_name = $_FILES['imageRecette']['tmp_name'];
-            $destination ='./files/'.$file_name;
+                $file_tmp_name = $_FILES['imageRecette']['tmp_name'];
+                $destination ='./files/'.$file_name;
 
-            $extensions_autorisees = array('.png', '.jpg');
+                $extensions_autorisees = array('.png', '.jpg');
 
-            exit();
 
  
 
-            $nomRecette = htmlspecialchars($_POST['nameRecette']);
-            $descriptionRecette = htmlspecialchars($_POST['descriptionRecette']);
-            $descriptionRecetteDet = htmlspecialchars($_POST['descriptionRecette2']);
-            $ingredientRecette = htmlspecialchars($_POST['ingredientRecette']);
-            //$imageRecette = htmlspecialchars($_POST['imageRecette']);
-            $nombrePersonne = htmlspecialchars($_POST['nombrePersonne']);
-            $test = new RecetteModel();
-            $aRecette = new Recette($nomRecette,$descriptionRecette, $descriptionRecetteDet,$_SESSION['pseudo'], $ingredientRecette, $file_name, $nombrePersonne,0);
+                $nomRecette = htmlspecialchars($_POST['nameRecette']);
+                $descriptionRecette = htmlspecialchars($_POST['descriptionRecette']);
+                $descriptionRecetteDet = htmlspecialchars($_POST['descriptionRecette2']);
+//              $ingredientRecette = htmlspecialchars($_POST['ingredientRecette']);
+
+
+
+                //$imageRecette = htmlspecialchars($_POST['imageRecette']);
+                $nombrePersonne = htmlspecialchars($_POST['nombrePersonne']);
+                $rM = new RecetteModel();
+                $aRecette = new Recette($nomRecette,$descriptionRecette, $descriptionRecetteDet,$_SESSION['pseudo'], $ingredientEtQuantite, $file_name, $nombrePersonne,0);
                 if($nombrePersonne <= 0 )
                 {
                     echo 'Le nombre de personne doit au moins être égale à 1';
@@ -73,13 +93,13 @@ class ControllerRecetteAction
                     if(in_array($file_extension, $extensions_autorisees))
                     {
                     move_uploaded_file($file_tmp_name, $destination);
-                    $test->insertRecette($aRecette); 
+                    $rM->insertRecette($aRecette);
                     echo 'Recette ajouté';
 
                     }
                     else{
                         echo 'Extension autorisé : png et jpg';
-                    }  
+                    }
                 }
             }
         }

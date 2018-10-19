@@ -40,20 +40,21 @@
                     });
 
                     function affiche() {
-                        var selectBox = document.getElementById("lesIngredients"),i, span = document.getElementById('affichage');
+                        var selectBox =document.getElementById("lesIngredients"),i, span = document.getElementById('affichage');
                         span.innerHTML=''
                         for (i=0; i < selectBox.length; i++)
                         {
                             if (selectBox[i].selected)
                             {
                                 var newInput = document.createElement('input');
-                                newInput.setAttribute('type', 'text');
+                                var test = selectBox[i].innerHTML.trim();
+                                newInput.setAttribute('type', 'number');
                                 newInput.setAttribute('placeholder', 'quel quantite');
-
+                                //trim permet d'enlever les espaces au debut et a la fin
                                 document.body.appendChild(newInput);
-                                span.innerHTML += selectBox[i].innerHTML+
-                                '<input  name="'+selectBox[i].innerHTML+'">' +
-                                '<select name="dosage">' +
+                                span.innerHTML += selectBox[i].innerHTML.trim() +
+                                '<input type="number" min="0" name="'+selectBox[i].innerHTML.trim()+'"/>' +
+                                '<select name="mesure'+i+'">' +
                                 '<option value ="gramme"> gramme </option>'+
                                 '<option value ="litre"> litre </option>'+
                                 '<option value ="ml"> millilitre </option>'+
