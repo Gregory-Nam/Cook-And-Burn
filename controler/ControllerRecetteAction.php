@@ -18,24 +18,41 @@ class ControllerRecetteAction
     {
         if(!empty($_FILES))
         {
-            if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['descriptionRecette2']) || empty($_POST['ingredientRecette']) || empty($_POST['nombrePersonne']))
+            if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['descriptionRecette2']) || empty($_POST['ingredients']) || empty($_POST['nombrePersonne']))
             {
                 echo 'Remplir les champs';
                 echo 'Nom : '. $_POST['nameRecette'];
                 echo 'Desc : '. $_POST['descriptionRecette'];
-                echo 'Ing : '. $_POST['ingredientRecette'];
-                
+                echo 'Ing : '. $_POST['ingredients'];
+
                 echo 'Nbr : '.$_POST['nombrePersonne'];
             }
             else
             {
-            $file_name = $_FILES['imageRecette']['name'];
+                $quantitéIng = [];
+                foreach ($_POST['ingredients'] as $ing) :
+                    echo $ing;
+                    echo $_POST[' '.$ing.' '];
+//                    if(isset($_POST['ing']))
+//                        $quantitéIng[] = $_POST['ing'];
+//                    else
+//                        $quantitéIng = array();
+//                        break;
+                endforeach;
+                exit();
+                if(empty($quantitéIng))
+                {
+                    echo "un champ oublié";
+                }
+                $file_name = $_FILES['imageRecette']['name'];
             $file_extension = strrchr($file_name, "."); //Derniere itération du point
 
             $file_tmp_name = $_FILES['imageRecette']['tmp_name'];
             $destination ='./files/'.$file_name;
 
             $extensions_autorisees = array('.png', '.jpg');
+
+            exit();
 
  
 

@@ -9,7 +9,7 @@
     <div class="contact-form">
         <h3>Ma recette : </h3>
         <center>
-            <form action="RecetteAction" enctype="multipart/form-data" method="post">
+            <form name="t" action="RecetteAction" enctype="multipart/form-data" method="post">
                 <input style="display:inline" type="file" name="imageRecette" placeholder="Description de la recette"/>
                 <p>
                     <input type="text" name="nameRecette" placeholder ="Titre de la recette" />
@@ -22,7 +22,7 @@
                     <?php
                     $i = 0;
                     foreach($ingredients as $ingredient) :?>
-                        <option  value="<?php echo $i;?>"> <?php echo $ingredient->getNomIngredient(); echo $i;?> </option>
+                        <option  name="<?php echo $ingredient->getNomIngredient()?>"> <?php echo $ingredient->getNomIngredient()?> </option>
                         <?php ++$i;
                     endforeach; ?>
 
@@ -32,6 +32,8 @@
                     $(document).ready(function() {
                         $('#lesIngredients').multiselect({ enableFiltering: true,
                             includeSelectAllOption: true,
+                            nonSelectedText: 'Veuillez selectionner des ingredients',
+                            filterPlaceholder:'Recherche',
                             maxHeight:200,
                             buttonWidth:400});
 
@@ -49,7 +51,22 @@
                                 newInput.setAttribute('placeholder', 'quel quantite');
 
                                 document.body.appendChild(newInput);
-                                span.innerHTML += selectBox[i].innerHTML+'<input type=text/> <br>';
+                                span.innerHTML += selectBox[i].innerHTML+
+                                '<input  name="'+selectBox[i].innerHTML+'">' +
+                                '<select name="dosage">' +
+                                '<option value ="gramme"> gramme </option>'+
+                                '<option value ="litre"> litre </option>'+
+                                '<option value ="ml"> millilitre </option>'+
+                                '<option value ="cc"> cuillère à café </option>'+
+                                '<option value ="c"> cuillère </option>'+
+                                '<option value ="cs"> cuillère à soupe </option>'+
+                                '</select> <br><br>'
+
+
+                            ;
+
+
+                                ;
                             }
                         }
                     }
