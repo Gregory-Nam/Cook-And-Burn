@@ -19,4 +19,46 @@ class IngredientsModel extends Model
         return $var;
 //        $req->closeCursor();
     }
+
+    public function affichageIngredients(){
+        $req= $this->getBdd()->query("SELECT * FROM ingredients")->fetchAll();
+            ?>
+        <table id="myTable" class="table table-striped" >  
+        <thead>  
+          <tr>  
+            <th>ID</th>  
+            <th>nom_ingredient</th>
+
+            <th>categorie</th>
+            <th>Action</th>
+          </tr>  
+        </thead>  
+        <tbody> 
+           <?php foreach ($req as $q): ?>
+            <tr>
+                    <td><?php echo $q['idL'] ?></td>
+                    <td><?php echo $q['nom_ingredient'] ?></td>
+
+                    <td><?php echo $q['categorie'] ?></td>
+                    <td><a href="SuppIngredientTable?id=<?php echo $q['idL']?>">Supp</a></td>
+                </tr>
+
+
+        <?php endforeach; ?>
+        </tbody>
+                </table>
+        </tbody>  
+      </table>  
+      </div>
+      <?php  
+    }
+
+    public function suppIngredient($id)
+    {
+        $query2 = ('DELETE  FROM ingredients WHERE idL = "'. $id  .'"');
+        $stmt2 = $this->getBdd()->prepare($query2);
+
+        $stmt2->execute();
+           
+    }
 }
