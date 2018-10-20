@@ -159,9 +159,15 @@ class Recette
     /**
      * @return mixed
      */
+    //br to nl pour gestion des inputs etc
+    public function getEtapesNl()
+    {
+        return preg_replace("/\<br\s*\/?\>/i", "\n", $this->_etapes);
+    }
+    //nl to br pour affichage sur le navigateur
     public function getEtapes()
     {
-        return $this->_etapes;
+        return nl2br($this->_etapes);
     }
 
 

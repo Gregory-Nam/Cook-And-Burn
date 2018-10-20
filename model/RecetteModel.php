@@ -271,6 +271,8 @@ class RecetteModel extends Model{
 
     }
 
+    //inverse de nl2br
+
 
 
 
