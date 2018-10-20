@@ -117,7 +117,8 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
 
 
             </span>
-            <?php echo $marec->getNombreBurn();?>
+            <button type="button" class="btn btn-danger btn-lg"><?php echo $marec->getNombreBurn();?> likes</button>
+         
 
 
          </div>
