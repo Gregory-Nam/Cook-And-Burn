@@ -18,7 +18,8 @@ class ControllerRecetteAction
     {
         if(!empty($_FILES))
         {
-            if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['descriptionRecette2']) || empty($_POST['ingredients']) || empty($_POST['nombrePersonne']))
+            if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['descriptionRecette2']) || empty($_POST['ingredients'])
+               || empty($_POST['etapes']) || empty($_POST['nombrePersonne']))
             {
                 echo 'Remplir les champs';
                 echo 'Nom : '. $_POST['nameRecette'];
@@ -50,7 +51,6 @@ class ControllerRecetteAction
                 if(empty($quantiteIng))
                 {
                     echo "un champ oublié";
-                    exit();
                 }
                 else
                 {
@@ -58,8 +58,47 @@ class ControllerRecetteAction
                     foreach($quantiteIng as $quantite) :
                         $ingredientEtQuantite .= $quantite. "\n";
                     endforeach;
-                    echo $ingredientEtQuantite;
+
+                    $etapes = [];
+                    $i = 1;
+                    foreach($_POST['etapes'] as $etape):
+                        $etape_ = str_replace(' ','_',$etape);
+                        // on verifie si une etape n'a pas été sauté exemple : etape 1 , etape 3
+                        if($etape != 'etape '.$i)
+                        {
+                            echo 'y a un pb';
+                            echo 'etape '.$i;
+                            echo $etape;
+                            break;
+                        }
+                        else
+                        {
+                            //on verifie si l'etape est vide, pour ce cas on vide le tableau et on sort du foreach
+                            if(empty($_POST[$etape_]))
+                            {
+                                echo "break";
+                                $etapes = array();
+                                break;
+                            }
+                            else
+                            {
+                                $etapes[] = $etape.' : '.$_POST[$etape_];
+                                ++$i;
+                            }
+
+                        }
+                    endforeach;
                 }
+
+                $lesEtapes = "";
+                foreach($etapes as $etape) :
+                    $lesEtapes .= $etape . "<br/>";
+                endforeach;
+
+                echo $lesEtapes;
+                exit();
+
+
 
 
                 $file_name = $_FILES['imageRecette']['name'];
