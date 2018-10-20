@@ -45,20 +45,28 @@ class ControllerModifierRecAction
         {
 
 
+        $nombreEtape =  count(explode ("<br/>", $ancienneRec->getEtapes()));
+        $lesEtapes = "";
+        for($j = 1; $j <= $nombreEtape; ++$j)
+        {
+            $lesEtapes.= preg_replace( "/\r|\n/"," ",$_POST['etape_'.$j]). "<br/>";
+        }
+
+        //on enleve le dernier <br/> pour que on ai pas un textarea en plus dans modifier recette
+        $lesEtapes = substr($lesEtapes, 0,-5);
+
 
         if(empty($_FILES['imageRecette']['name']))
         {
             $rec = new Recette($_POST['nameRecette'],$_POST['descriptionRecette'],
-                $_POST['descriptionRecette2'], $_SESSION['modif'], $_SESSION['pseudo'],
+                $_POST['descriptionRecette2'], $lesEtapes, $_SESSION['pseudo'],
                 $_POST['ingredientRecette'], $ancienneRec->getImage(),
                 $_POST['nombrePersonne'],$ancienneRec->getNombreBurn());
-            echo $_SESSION['modif'];
-            exit();
         }
         else
         {
             $rec = new Recette($_POST['nameRecette'],$_POST['descriptionRecette'],
-                $_POST['descriptionRecette2'],$_SESSION['modif'], $_SESSION['pseudo'],
+                $_POST['descriptionRecette2'],$lesEtapes, $_SESSION['pseudo'],
                 $_POST['ingredientRecette'], $_FILES['imageRecette']['name'],
                 $_POST['nombrePersonne'],$ancienneRec->getNombreBurn());
             move_uploaded_file($_FILES['imageRecette']['tmp_name'], './files/'.$rec->getImage());

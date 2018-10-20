@@ -9,7 +9,7 @@ class RecetteModel extends Model{
             $stmt->bindValue(1, $_recette->getTitre(), PDO::PARAM_STR);
             $stmt->bindValue(2, $_recette->getDescription(), PDO::PARAM_STR);
             $stmt->bindValue(3, $_recette->getDescriptionDet(), PDO::PARAM_STR);
-            $stmt->bindValue(4, $_recette->getEtapes(), PDO::PARAM_STR);
+            $stmt->bindValue(4, $_recette->getEtapesBr(), PDO::PARAM_STR);
             $stmt->bindValue(5, $_recette->getAuteur(), PDO::PARAM_STR);
             $stmt->bindValue(6, $_recette->getIngredient(), PDO::PARAM_STR);
             $stmt->bindValue(7, $_recette->getImage(), PDO::PARAM_STR);
@@ -72,7 +72,8 @@ class RecetteModel extends Model{
 
         $this->getBdd()->exec($query);
 
-        $query2 = "UPDATE favoris SET nom_recette='".addslashes($_recette->getTitre()) ."', image_rec='". addslashes($_recette->getImage())."' WHERE id=".$_recette->getId();
+        $query2 = "UPDATE favoris SET nom_recette='".addslashes($_recette->getTitre()) ."', image_rec='". addslashes($_recette->getImage())."' WHERE nom_recette='".$_SESSION['recette']."'";
+        
         $this->getBdd()->exec($query2);
 
 

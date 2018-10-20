@@ -82,10 +82,11 @@ class ControllerRecetteAction
                             }
                             else
                             {
-                                $etapes[] = $_POST[$etape_];
+                                //supprimer tous les retours a la ligne et retours chariots et remplacer par ' '
+                                $etapes[] = preg_replace( "/\r|\n/", " ", $_POST[$etape_]);
+
                                 ++$i;
                             }
-
                         }
                     endforeach;
                 }
@@ -94,10 +95,9 @@ class ControllerRecetteAction
                 foreach($etapes as $etape) :
                     $lesEtapes .= $etape . "<br/>";
                 endforeach;
+
                 //on enleve le dernier br;
                 $lesEtapes = substr($lesEtapes, 0,-5);
-
-
 
 
                 $file_name = $_FILES['imageRecette']['name'];
@@ -122,6 +122,8 @@ class ControllerRecetteAction
                 $nombrePersonne = htmlspecialchars($_POST['nombrePersonne']);
                 $rM = new RecetteModel();
                 $aRecette = new Recette($nomRecette,$descriptionRecette, $descriptionRecetteDet, $lesEtapes, $_SESSION['pseudo'], $ingredientEtQuantite, $file_name, $nombrePersonne,0);
+                echo $lesEtapes;
+
                 if($nombrePersonne <= 0 )
                 {
                     echo 'Le nombre de personne doit au moins être égale à 1';

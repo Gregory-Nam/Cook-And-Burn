@@ -29,7 +29,6 @@
             $i=1;
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $recToUpdate->getEtapesNl()) as $line){
                 echo $line;
-                $_SESSION['modif'] .= $line."\n";
             ?>
 
             <textarea name="etape <?php echo $i++;?>"> <?php echo $line; ?> </textarea> </br>

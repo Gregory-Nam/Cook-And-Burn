@@ -1,3 +1,4 @@
+
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
@@ -95,7 +96,7 @@ foreach($recette as $rec) :
 </td>
 <td>
     <h1><?php echo $rec->getTitre(); ?></h1>
-    <p><?php echo $rec->getDescription();?> </p>
+    <p><?php echo $rec->getDescriptionDet();?> </p>
     <p><?php echo $rec->getNombreBurn();?> </p>
 
 </td>

@@ -165,9 +165,13 @@ class Recette
         return preg_replace("/\<br\s*\/?\>/i", "\n", $this->_etapes);
     }
     //nl to br pour affichage sur le navigateur
-    public function getEtapes()
+    public function getEtapesBr()
     {
         return nl2br($this->_etapes);
+    }
+    public function getEtapes()
+    {
+        return $this->_etapes;
     }
 
 
