@@ -18,6 +18,9 @@ session_start();
             <p>
                 <input type="password" name="password" placeholder="Mot de passe" id="firstname"/>
             </p>
+            <p>
+                <a href="mdpOublie">Mot de passe oublié ?</a>
+            </p>
             </p>
 
                 <div class="g-recaptcha" data-sitekey="6Lcy3XMUAAAAAMSAq1uH6-gZe-XlPU-4Zmr8lEfH"></div>
