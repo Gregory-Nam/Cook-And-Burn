@@ -4,16 +4,17 @@ class RecetteModel extends Model{
     public function insertRecette($_recette)
     {
         try{
-            $query = 'INSERT INTO recettes (titre,description, descriptionDet,auteur,ingredients,image, nombre_personne,burns) VALUES(?,?,?,?,?,?,?,?)';
+            $query = 'INSERT INTO recettes (titre,description, descriptionDet,etapes,auteur,ingredients,image, nombre_personne,burns) VALUES(?,?,?,?,?,?,?,?,?)';
             $stmt = $this->getBdd()->prepare($query);
             $stmt->bindValue(1, $_recette->getTitre(), PDO::PARAM_STR);
             $stmt->bindValue(2, $_recette->getDescription(), PDO::PARAM_STR);
             $stmt->bindValue(3, $_recette->getDescriptionDet(), PDO::PARAM_STR);
-            $stmt->bindValue(4, $_recette->getAuteur(), PDO::PARAM_STR);
-            $stmt->bindValue(5, $_recette->getIngredient(), PDO::PARAM_STR);
-            $stmt->bindValue(6, $_recette->getImage(), PDO::PARAM_STR);
-            $stmt->bindValue(7, $_recette->getNombrePersonne(), PDO::PARAM_STR);
-            $stmt->bindValue(8, $_recette->getNombreBurn(), PDO::PARAM_STR);
+            $stmt->bindValue(4, $_recette->getEtapes(), PDO::PARAM_STR);
+            $stmt->bindValue(5, $_recette->getAuteur(), PDO::PARAM_STR);
+            $stmt->bindValue(6, $_recette->getIngredient(), PDO::PARAM_STR);
+            $stmt->bindValue(7, $_recette->getImage(), PDO::PARAM_STR);
+            $stmt->bindValue(8, $_recette->getNombrePersonne(), PDO::PARAM_STR);
+            $stmt->bindValue(9, $_recette->getNombreBurn(), PDO::PARAM_STR);
 
             $ret =$stmt->execute();
         }
@@ -40,7 +41,7 @@ class RecetteModel extends Model{
         $req->execute();
         while($data = $req->fetch())
         {
-            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'],$data['etapes'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
         }
         return $var;
 //        $req->closeCursor();
@@ -53,7 +54,7 @@ class RecetteModel extends Model{
         $req->execute();
         while($data = $req->fetch())
         {
-            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'],$data['etapes'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
         }
         return $var;
 //        $req->closeCursor();
@@ -65,6 +66,7 @@ class RecetteModel extends Model{
         $query = "UPDATE recettes SET titre ='". addslashes($_recette->getTitre())
                                                ."', description ='". addslashes($_recette->getDescription())."',
                                                descriptionDet ='". addslashes($_recette->getDescriptionDet()) ."',
+                                               etapes = '".addslashes($_recette->getEtapes())."',
                                                ingredients='". addslashes($_recette->getIngredient()) ."',image='".addslashes($_recette->getImage())."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
 
@@ -88,7 +90,7 @@ class RecetteModel extends Model{
             if($rec = $stmt->fetch())
             {
 
-                $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
+                $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'],$rec['etapes'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
                 $aRec->setId($rec['id']);
             }
             else{
@@ -148,7 +150,7 @@ class RecetteModel extends Model{
 
         if($rec = $stmt->fetch())
         {
-            $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
+            $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'],$rec['etapes'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
             $aRec->setId($rec['id']);
             return $aRec;
         }
@@ -213,6 +215,7 @@ class RecetteModel extends Model{
 
                     <td><?php echo $q['description'] ?></td>
                     <td><?php echo $q['descriptionDet'] ?></td>
+                    <td><?php echo $q['etapes'] ?></td>
                     <td><?php echo $q['auteur'] ?></td>
                     <td><?php echo $q['ingredients'] ?></td>
                     <td><?php echo $q['nombre_personne'] ?></td>
@@ -237,17 +240,18 @@ class RecetteModel extends Model{
         $var = [];
         while($rec =  $stmt->fetch())
         {
-            $var[] = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
+            $var[] = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'],$rec['etapes'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
 
         }
         return $var;
     }
 
-    public function updateRecette($id,$nom,$description,$descriptiondet,$auteur,$ingredients,$nombre)
+    public function updateRecette($id,$nom,$description,$descriptiondet,$etapes,$auteur,$ingredients,$nombre)
     {
         $query = "UPDATE recettes SET titre ='".$nom
                                                ."', description ='".$description."',
                                                descriptionDet ='".$descriptiondet."',
+                                               etapes='".$etapes."',
                                                auteur = '".$auteur."',
                                                ingredients='".$ingredients."',
                                                nombre_personne=".$nombre." WHERE id=". $id;
