@@ -6,6 +6,7 @@ class Recette
 	private $_titre;
 	private $_description;
 	private $_descriptionDet;
+	private $_etapes;
 	private $_auteur;
 	private $_ingredient;
 	private $_image;
@@ -14,12 +15,13 @@ class Recette
 
 	//CONSTRUCTEUR
 	public function __construct($titre,$description,
-                                $descriptionDet,$auteur,
+                                $descriptionDet,$etapes,$auteur,
                                 $ingredient,$image,$nombrePersonne,$nombreBurn)
 	{
 		$this->_titre = $titre;
 		$this->_description = $description;
 		$this->_descriptionDet= $descriptionDet;
+		$this->_etapes = $etapes;
 		$this->_auteur = $auteur;
 		$this->_ingredient = $ingredient;
 		$this->_image = $image;
@@ -70,6 +72,16 @@ class Recette
 			$this->_descriptionDet = $name;
 
 	}
+
+    /**
+     * @param mixed $etapes
+     */
+    public function setEtapes($etapes)
+    {
+        $this->_etapes = $etapes;
+    }
+
+	
 
 	public function setAuteur($name)
 	{
@@ -144,6 +156,15 @@ class Recette
 		return $this->_descriptionDet;
 	}
 
+    /**
+     * @return mixed
+     */
+    public function getEtapes()
+    {
+        return $this->_etapes;
+    }
+
+
 	public function getAuteur()
 	{
 		return $this->_auteur;
@@ -153,6 +174,7 @@ class Recette
     {
         return $this->_nombreBurn;
     }
+
 
 	public function __toString()
 	{
