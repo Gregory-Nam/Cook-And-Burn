@@ -14,6 +14,16 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
     </div>
     </div>
 
+<!--Facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class = "container">
     <?php
 //    $rM = new RecetteModel();
@@ -55,6 +65,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                         {
 
                 ?>
+
             <form style="display :inline" method="post" action="BurnAction">
                 <input type="submit" name="BurnAction" value="Mettre un burn"/>
             </form>
@@ -72,6 +83,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                         if(!$fM->verifAlreadyFav($user, $marec))
                         {
                 ?>
+
             <form style="display :inline" method="post" action="MettreFavorisAction">
                 <input type="submit" name="actionFav" value="Mettre en favoris"/>
             </form>
@@ -94,6 +106,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
             <form style="display :inline" method="post" action="ModifierRec">
                 <input type="submit" name="actionFav" value="Modifier votre recette"/>
             </form>
+          
             <?php
 
                         }
@@ -105,6 +118,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
 
             </span>
             <?php echo $marec->getNombreBurn();?>
+
 
          </div>
 <!--        <h1> --><?php //echo $marec->getTitre();?><!-- </h1> </br>-->
@@ -180,6 +194,10 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     <div class="clearfix"> </div>
                     <div class="categories">
                         <h3> Les étapes</h3>
+                    </div>
+                    <div class="categories">
+                        <h3> Partager </h3><br/>
+                        <div class="fb-share-button" data-size="large" data-href="http://cookandburn-gxaj.alwaysdata.net/ContenuRecette?id=<?php echo $_SESSION['recette']?>" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcookandburn-gxaj.alwaysdata.net%2FContenuRecette%3Fid%3D<?php echo $_SESSION['recette']?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
                     </div>
                 </div>
 
