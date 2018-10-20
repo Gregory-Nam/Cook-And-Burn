@@ -25,7 +25,17 @@
             <textarea class="form-control" name="descriptionRecette"> <?php echo $recToUpdate->getDescription()?></textarea>
             <textarea class="form-control" name="descriptionRecette2"><?php echo $recToUpdate->getDescriptionDet()?></textarea>
             <textarea class="form-control" name="ingredientRecette"><?php echo $recToUpdate->getIngredient()?> </textarea>
+            <?php
+            $i=1;
+            foreach(preg_split("/((\r?\n)|(\r\n?))/", $recToUpdate->getEtapesNl()) as $line){
+                echo $line;
+                $_SESSION['modif'] .= $line."\n";
+            ?>
 
+            <textarea name="etape <?php echo $i++;?>"> <?php echo $line; ?> </textarea> </br>
+            <?php
+            }
+            ?>
 
 
             <p>Nombre de personne :

@@ -195,7 +195,15 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     <div class="clearfix"> </div>
                     <div class="categories">
                         <h3> Les étapes</h3>
-                        <p> <?php echo $marec->getEtapes(); ?> </p>
+                        <p> <?php
+                            $i = 1;
+                            foreach(preg_split("/((\r?\n)|(\r\n?))/", $marec->getEtapesNl()) as $line):
+
+                                echo 'Etape '.$i++.' : '.$line.'<br/>';
+                            endforeach;
+
+                            ?>
+                        </p>
                     </div>
                     <div class="categories">
                         <h3> Partager </h3><br/>
