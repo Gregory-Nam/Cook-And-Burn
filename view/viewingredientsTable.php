@@ -137,7 +137,28 @@ session_start();
 							<div class="agileits-box">
 								<header class="agileits-box-header clearfix">
 										<div class="toolbar">
-											
+											<p> Nouveau ingredient : </p><br/>
+											<form method="post" action="ajoutIngredient">
+												<p>
+													Nom ingrédient :
+												</p>
+												<input type="text" name="nomIngredient"><br/>
+												<p>
+													Categorie ingrédient :
+												</p>
+												<input type="text" name="catIngredient"><br/>
+
+												<input type="submit" name="envoyer" value="Ajouter"><br/><br/>
+
+											</form>
+											<?php if(isset($_SESSION['erreur'])){
+                							echo '<p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
+                							unset($_SESSION['erreur']);
+           									 } ?>
+            								<?php if(isset($_SESSION['reussi'])){
+               								echo '<p><span class="label label-success">'.$_SESSION['reussi'].'</span>';
+               								 unset($_SESSION['reussi']);
+            								} ?>
 											<h1><?php echo $in->affichageIngredients() ?></h1>
 										</div>
 								</header>
