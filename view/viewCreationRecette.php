@@ -76,6 +76,54 @@
                 <div id="affichage"> </div>
                 <br/><br/>
                 </div>
+
+                <select name="etapes[]" onchange='affiche2();' id="lesEtapes" multiple>
+                    <?php
+                        for($i = 1; $i <= 30; ++$i)
+                        {
+                    ?>
+                    <option value="etape <?php echo $i;?>"> etape <?php echo $i;?></option>
+                    <?php
+                        }
+                    ?>
+
+                </select>
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#lesEtapes').multiselect({ enableFiltering: false,
+                            includeSelectAllOption: true,
+                            nonSelectedText: 'Selectionnez les étapes que vous souhaitez écrire',
+                            maxHeight:200,
+                            buttonWidth:400});
+
+                    });
+
+                    function affiche2() {
+                        var selectBox =document.getElementById("lesEtapes"),i, span = document.getElementById('affichageEtapes');
+                        span.innerHTML=''
+                        var j=0
+                        for (i=0; i < selectBox.length; i++)
+                        {
+                            if (selectBox[i].selected)
+                            {
+                                var newTextArea = document.createElement('textarea');
+                                newTextArea.setAttribute('type', 'text');
+                                newTextArea.setAttribute('placeholder', 'quel quantite');
+                                //trim permet d'enlever les espaces au debut et a la fin
+                                document.body.appendChild(newTextArea);
+                                span.innerHTML += selectBox[i].innerHTML.trim() +
+                                    '<textarea name="'+selectBox[i].innerHTML.trim()+'"> </textarea> <br/> <br/>';
+                                    //post incrementation pour incrementer apres avoir mis la mesure actuel
+
+                            }
+                        }
+                    }
+                </script>
+                <div id="affichageEtapes"></div>
+
+
+
                 <p>Nombre de personne :</p>
                 <p>
                     <input style="display:inline" type="number" min="0" name="nombrePersonne" />
@@ -87,11 +135,6 @@
             </form>
 
 
-
-
-
-
-<!--                <button id="btnGetTextJavascript" onclick="getTextUsingJavascript()">Afficher</button>-->
 
 
 
