@@ -82,7 +82,7 @@ class ControllerRecetteAction
                             }
                             else
                             {
-                                $etapes[] = $etape.' : '.$_POST[$etape_];
+                                $etapes[] = $_POST[$etape_];
                                 ++$i;
                             }
 
@@ -94,8 +94,8 @@ class ControllerRecetteAction
                 foreach($etapes as $etape) :
                     $lesEtapes .= $etape . "<br/>";
                 endforeach;
-
-                echo $lesEtapes;
+                //on enleve le dernier br;
+                $lesEtapes = substr($lesEtapes, 0,-5);
 
 
 

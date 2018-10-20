@@ -49,14 +49,16 @@ class ControllerModifierRecAction
         if(empty($_FILES['imageRecette']['name']))
         {
             $rec = new Recette($_POST['nameRecette'],$_POST['descriptionRecette'],
-                $_POST['descriptionRecette2'], $_SESSION['pseudo'],
+                $_POST['descriptionRecette2'], $_SESSION['modif'], $_SESSION['pseudo'],
                 $_POST['ingredientRecette'], $ancienneRec->getImage(),
                 $_POST['nombrePersonne'],$ancienneRec->getNombreBurn());
+            echo $_SESSION['modif'];
+            exit();
         }
         else
         {
             $rec = new Recette($_POST['nameRecette'],$_POST['descriptionRecette'],
-                $_POST['descriptionRecette2'], $_SESSION['pseudo'],
+                $_POST['descriptionRecette2'],$_SESSION['modif'], $_SESSION['pseudo'],
                 $_POST['ingredientRecette'], $_FILES['imageRecette']['name'],
                 $_POST['nombrePersonne'],$ancienneRec->getNombreBurn());
             move_uploaded_file($_FILES['imageRecette']['tmp_name'], './files/'.$rec->getImage());
