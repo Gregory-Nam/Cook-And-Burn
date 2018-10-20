@@ -95,7 +95,7 @@ foreach($recette as $rec) :
 </td>
 <td>
     <h1><?php echo $rec->getTitre(); ?></h1>
-    <p><?php echo $rec->getDescriptionDet();?> </p>
+    <p><?php echo $rec->getDescription();?> </p>
     <p><?php echo $rec->getNombreBurn();?> </p>
 
 </td>

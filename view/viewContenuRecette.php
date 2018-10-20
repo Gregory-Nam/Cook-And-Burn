@@ -117,7 +117,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
 
 
             </span>
-            <button type="button" class="btn btn-danger btn-lg"><?php echo $marec->getNombreBurn();?> likes</button>
+            <button type="button" class="btn btn-danger btn-lg"><?php echo $marec->getNombreBurn();?> burns</button>
          
 
 
@@ -159,7 +159,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                             </div>
                         </div>
                     <div class="response">
-                        <h3>Responses</h3>
+                        <h3>Commentaires</h3>
                         <div class="media response-info">
                             <div class="media-body response-text-right">
                                 <p><?php echo $mescom;?></p>
@@ -195,6 +195,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     <div class="clearfix"> </div>
                     <div class="categories">
                         <h3> Les étapes</h3>
+                        <p> <?php echo $marec->getEtapes(); ?> </p>
                     </div>
                     <div class="categories">
                         <h3> Partager </h3><br/>

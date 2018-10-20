@@ -81,7 +81,7 @@ class Recette
         $this->_etapes = $etapes;
     }
 
-	
+
 
 	public function setAuteur($name)
 	{

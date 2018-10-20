@@ -96,7 +96,6 @@ class ControllerRecetteAction
                 endforeach;
 
                 echo $lesEtapes;
-                exit();
 
 
 
@@ -122,7 +121,7 @@ class ControllerRecetteAction
                 //$imageRecette = htmlspecialchars($_POST['imageRecette']);
                 $nombrePersonne = htmlspecialchars($_POST['nombrePersonne']);
                 $rM = new RecetteModel();
-                $aRecette = new Recette($nomRecette,$descriptionRecette, $descriptionRecetteDet,$_SESSION['pseudo'], $ingredientEtQuantite, $file_name, $nombrePersonne,0);
+                $aRecette = new Recette($nomRecette,$descriptionRecette, $descriptionRecetteDet, $lesEtapes, $_SESSION['pseudo'], $ingredientEtQuantite, $file_name, $nombrePersonne,0);
                 if($nombrePersonne <= 0 )
                 {
                     echo 'Le nombre de personne doit au moins être égale à 1';
