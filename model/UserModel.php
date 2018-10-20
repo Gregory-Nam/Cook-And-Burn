@@ -317,6 +317,35 @@ class UserModel extends Model{
            
     }
 
+    public function validMail($mail)
+    {
+        try{
+            $query = ('SELECT * FROM user WHERE adresse_email = ?');
+
+            $stmt = $this->getBdd()->prepare($query);
+
+            $stmt->execute(array($mail));
+            if($stmt->fetch()== true){
+                return true;
+            }
+
+        }
+        catch (SQLiteException $e)
+        {
+            echo $e;
+        }
+
+        return false;
+    }
+
+    public function newMdp($mail,$newMdp)
+    {
+        $query2 = ('UPDATE user SET mot_de_passe = "'.$newMdp.'" WHERE adresse_email = "'. $mail  .'"');
+        $stmt2 = $this->getBdd()->prepare($query2);
+
+        $stmt2->execute();
+    }
+
 
 }
 
