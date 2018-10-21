@@ -8,6 +8,7 @@ session_start();
 class ControllerModifierRec
 {
     private $_recetteModel;
+    private $_ingredientsModel;
     private $_userModel;
     private $_view;
     public function __construct()
@@ -22,10 +23,12 @@ class ControllerModifierRec
     {
 
         $this->_recetteModel = new RecetteModel();
+        $this->_ingredientsModel = new IngredientsModel();
 
         $recToUpdate = $this->_recetteModel->getByTitre($_SESSION['recette']);
+        $ingredients = $this->_ingredientsModel->getAll();
         $this->_view = new View('ModifierRec');
-        $this->_view->generate(array("recToUpdate" => $recToUpdate));
+        $this->_view->generate(array("recToUpdate" => $recToUpdate,"ingredients" => $ingredients));
 
     }
 }

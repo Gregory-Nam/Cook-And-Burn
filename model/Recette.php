@@ -146,6 +146,16 @@ class Recette
 		return nl2br($this->_ingredient);
 	}
 
+	public function getIngredientNl()
+    {
+        return preg_replace("/\<br\s*\/?\>/i", "\n", $this->_ingredient);
+    }
+
+    public function getIngredientBr()
+    {
+        return nl2br($this->_ingredient);
+    }
+
 	public function getDescription()
 	{
 		return $this->_description;

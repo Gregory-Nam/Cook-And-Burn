@@ -11,7 +11,7 @@ class RecetteModel extends Model{
             $stmt->bindValue(3, $_recette->getDescriptionDet(), PDO::PARAM_STR);
             $stmt->bindValue(4, $_recette->getEtapesNl(), PDO::PARAM_STR);
             $stmt->bindValue(5, $_recette->getAuteur(), PDO::PARAM_STR);
-            $stmt->bindValue(6, $_recette->getIngredient(), PDO::PARAM_STR);
+            $stmt->bindValue(6, $_recette->getIngredientNl(), PDO::PARAM_STR);
             $stmt->bindValue(7, $_recette->getImage(), PDO::PARAM_STR);
             $stmt->bindValue(8, $_recette->getNombrePersonne(), PDO::PARAM_STR);
             $stmt->bindValue(9, $_recette->getNombreBurn(), PDO::PARAM_STR);

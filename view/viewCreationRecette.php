@@ -82,7 +82,7 @@
                         for($i = 1; $i <= 30; ++$i)
                         {
                     ?>
-                    <option value="etape <?php echo $i;?>"> etape <?php echo $i;?></option>
+                    <option value="etape <?php echo $i;?>">etape <?php echo $i;?></option>
                     <?php
                         }
                     ?>

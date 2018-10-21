@@ -48,6 +48,8 @@ class ControllerRecetteAction
                     ++$i;
                 endforeach;
 
+
+
                 if(empty($quantiteIng))
                 {
                     echo "un champ oublié";

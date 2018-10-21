@@ -97,6 +97,7 @@ foreach($recette as $rec) :
 <td>
     <h1><?php echo $rec->getTitre(); ?></h1>
     <p><?php echo $rec->getDescriptionDet();?> </p>
+    <p><?php echo $rec->getIngredient(); ?></p>
     <p><?php echo $rec->getNombreBurn();?> </p>
 
 </td>
@@ -111,7 +112,9 @@ else
 ?>
 <tr>
 <td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a></td>
-<td><h1><?php echo $rec->getTitre(); ?></h1></td>
+<td><h1><?php echo $rec->getTitre(); ?></h1>
+    <p><?php echo $rec->getIngredient(); ?></p>
+</td>
 </tr>
 
 <?php

@@ -24,7 +24,6 @@ class ControllerCreationRecette
         $this->_ingredientsModel = new IngredientsModel();
         $ingredients = $this->_ingredientsModel->getAll();
         $this->_view = new View('CreationRecette');
-
         $this->_view->generate(array("ingredients" => $ingredients));
 
     }
