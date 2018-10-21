@@ -45,12 +45,21 @@ class ControllerModifierRecAction
         {
 
 
-        $nombreEtape =  count(explode ("<br/>", $ancienneRec->getEtapes()));
+        $nombreEtape =  count(explode ("\n", $ancienneRec->getEtapesNl()));
         $lesEtapes = "";
+        echo $nombreEtape;
         for($j = 1; $j <= $nombreEtape; ++$j)
         {
+            echo "for";
+            if(empty($_POST['etape_'.$j]))
+            {
+                echo "empty";
+                continue;
+            }
+            echo $_POST['etape_'.$j];
             $lesEtapes.= preg_replace( "/\r|\n/"," ",$_POST['etape_'.$j]). "<br/>";
         }
+        echo $lesEtapes;
 
         //on enleve le dernier <br/> pour que on ai pas un textarea en plus dans modifier recette
         $lesEtapes = substr($lesEtapes, 0,-5);

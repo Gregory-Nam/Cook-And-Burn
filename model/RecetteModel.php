@@ -9,7 +9,7 @@ class RecetteModel extends Model{
             $stmt->bindValue(1, $_recette->getTitre(), PDO::PARAM_STR);
             $stmt->bindValue(2, $_recette->getDescription(), PDO::PARAM_STR);
             $stmt->bindValue(3, $_recette->getDescriptionDet(), PDO::PARAM_STR);
-            $stmt->bindValue(4, $_recette->getEtapesBr(), PDO::PARAM_STR);
+            $stmt->bindValue(4, $_recette->getEtapesNl(), PDO::PARAM_STR);
             $stmt->bindValue(5, $_recette->getAuteur(), PDO::PARAM_STR);
             $stmt->bindValue(6, $_recette->getIngredient(), PDO::PARAM_STR);
             $stmt->bindValue(7, $_recette->getImage(), PDO::PARAM_STR);
@@ -66,7 +66,7 @@ class RecetteModel extends Model{
         $query = "UPDATE recettes SET titre ='". addslashes($_recette->getTitre())
                                                ."', description ='". addslashes($_recette->getDescription())."',
                                                descriptionDet ='". addslashes($_recette->getDescriptionDet()) ."',
-                                               etapes = '".addslashes($_recette->getEtapes())."',
+                                               etapes = '".addslashes($_recette->getEtapesNl())."',
                                                ingredients='". addslashes($_recette->getIngredient()) ."',image='".addslashes($_recette->getImage())."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
 
