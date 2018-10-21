@@ -41,7 +41,7 @@ A REMPLIR
 
 	Site :
 		Compte admin :
-			adm:123
+			adm:1234
 		Compte utilisateur :
 			xavier:1234
 
