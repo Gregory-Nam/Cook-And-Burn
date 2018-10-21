@@ -52,6 +52,9 @@ A REMPLIR
 			adm:1234
 		Compte utilisateur :
 			xavier:1234
+			gregory:monmdp
+			jonas:juljul
+			axel:nul
 
 	PhpMyAdmin :
 		167602:barbecue2018
