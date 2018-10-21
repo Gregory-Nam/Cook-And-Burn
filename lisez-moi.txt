@@ -31,7 +31,8 @@ A REMPLIR
 
 //Configuration logicielle minimale //
 
-A remplir
+-PHP 7.2.9
+-MySQL 10.2(mariadb)
 
 
 // Identifiants de connexion //
