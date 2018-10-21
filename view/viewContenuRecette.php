@@ -142,7 +142,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
 <!--        </div>-->
 
 
-        <div clas="blog">
+        <div class="blog">
             <div class="container">
                 <div class="col-md-8 blog-top-left-grid">
                     <div class="left-blog left-single">
