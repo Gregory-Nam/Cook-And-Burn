@@ -149,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="footer-grids">
             <div class="footer-heading">
-                <h3>Get in touch with us</h3>
+                <h3>Suivez-nous aussi sur les réseaux !</h3>
             </div>
             <div class="footer-icons">
                 <ul>
@@ -168,11 +168,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="w3agile-list">
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="codes.html">Codes</a></li>
-                <li><a href="news.html">News & Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <?php
+                    if(isset($_SESSION['pseudo']) and $_SESSION['pseudo']== "adm")
+                    {
+                ?>
+                        <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
+                        <li><a class="<?php if($t == "Panel") echo "active";?>" href="panel">Panel</a></li>
+                        <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
+                        <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
+                <?php
+                    }
+                    elseif(isset($_SESSION['pseudo']))
+                    {
+                ?>
+                        <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
+                        <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
+                        <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
+                <?php
+                    }
+                    else
+                    {
+                    ?>
+                        <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
+                        <li><a class="<?php if($t == "Connexion") echo "active";?>" href="Connexion">Connexion</a></li>
+                <?php
+                    }
+                    ?>
+
             </ul>
         </div>
         <div class="agileinfo">
