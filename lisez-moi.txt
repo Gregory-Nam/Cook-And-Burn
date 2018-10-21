@@ -1,0 +1,60 @@
+     __  _______  ____  ____  _______        __ 
+    / / |_   __ \|_   ||   _||_   __ \      / / 
+   / /    | |__) | | |__| |    | |__) |    / /  
+  / /     |  ___/  |  __  |    |  ___/    / /   
+ / /     _| |_    _| |  | |_  _| |_      / /    
+/_/     |_____|  |____||____||_____|    /_/     
+                                                
+
+// Equipe //
+
+-Gregory NAM
+-Xavier MAISSE
+-Axel AMGHAR
+-Jonas BOULANGER
+
+
+// SITE URL //
+
+cookandburn-gxaj.alwaysdata.net/index
+
+
+// Présentation du projet //
+
+A REMPLIR
+
+
+// Choix Techniques //
+
+A REMPLIR
+
+
+//Configuration logicielle minimale //
+
+A remplir
+
+
+// Identifiants de connexion //
+
+/!\Présenté sous forme identifiant:motdepasse/!\
+
+	Site :
+		Compte admin :
+			adm:123
+		Compte utilisateur :
+			xavier:1234
+
+	PhpMyAdmin :
+		167602:barbecue2018
+
+	Alwaysdata :
+		gregory2a2a@gmail.com:barbecue2018
+
+	GitHub :
+		//A remplir //
+
+
+// Compte utilisateur //
+
+Pour des raisons de sécurité les mots de passe ne sont pas stockés en clair dans notre base de donnée.
+Il sont hachés via la fonction de hachage SHA1 qui produit un résultat (appelé « hash » ou condensat) de 160 bits.
