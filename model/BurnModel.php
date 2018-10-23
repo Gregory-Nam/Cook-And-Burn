@@ -2,6 +2,10 @@
 
 class BurnModel extends Model
 {
+    /**
+     * @param $aBurn
+     * Insertion du burn dans la BD par rapport à la personne et à la recette
+     */
     public function insertBurn($aBurn)
     {
         try{
@@ -22,6 +26,10 @@ class BurnModel extends Model
         }
     }
 
+    /**
+     * @param $aBurn
+     * Suppresion du burn dans la BD par rapport à la personne et à la recette
+     */
     public function DeleteBurn($aBurn)
     {
         try{
@@ -34,6 +42,11 @@ class BurnModel extends Model
         }
     }
 
+    /**Permet de savoir si oui ou non un utilisateur à déjà mis un burn sur une recette
+     * @param $user
+     * @param $rec
+     * @return bool
+     */
     public function verifAlreadyBurn($user,$rec)
     {
         try {

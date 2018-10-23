@@ -7,9 +7,9 @@ class Burn {
 
     /**
      * Burn constructor.
-     * @param $_idB
-     * @param $_idU
-     * @param $_idR
+     * @param $_idB qui correspond à l'id du burn
+     * @param $_idU qui correspond à qui a mis le burn
+     * @param $_idR correspond sur quelle recette le burn est
      */
     public function __construct($_idU, $_idR)
     {
@@ -18,7 +18,7 @@ class Burn {
     }
 
     /**
-     * @return mixed
+     * @return l'id du burn
      */
     public function getIdB()
     {
@@ -27,6 +27,7 @@ class Burn {
 
     /**
      * @param mixed $idB
+     * Permet de définir l'id du burn
      */
     public function setIdB($idB)
     {
@@ -35,7 +36,7 @@ class Burn {
     }
 
     /**
-     * @return mixed
+     * @return celui qui a mis le burn
      */
     public function getIdU()
     {
@@ -44,6 +45,7 @@ class Burn {
 
     /**
      * @param mixed $idU
+     * Définis qui a mis le burn
      */
     public function setIdU($idU)
     {
@@ -52,7 +54,7 @@ class Burn {
     }
 
     /**
-     * @return mixed
+     * @return sur quelle recette le burn est
      */
     public function getIdR()
     {
@@ -61,6 +63,7 @@ class Burn {
 
     /**
      * @param mixed $idR
+     * Permet de fixer le burn a une recette
      */
     public function setIdR($idR)
     {

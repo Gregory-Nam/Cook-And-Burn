@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $_SESSION['recette'] = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
@@ -154,7 +155,6 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                             <div class="blog-left-bottom">
                                 <p>
                                     <?php echo $marec->getDescriptionDet();?>
-                                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
                                 </p>
                             </div>
                         </div>
@@ -184,7 +184,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
 
                 <div class="col-md-4 blog-top-right-grid">
                     <div class="categories">
-                        <h3> Description </h3>
+                        <h3> Description </h3> <br/>
                         <p><?php echo $marec->getDescription();?></p>
                     </div>
                     <div class="clearfix"> </div>
@@ -194,12 +194,12 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     </div>
                     <div class="clearfix"> </div>
                     <div class="categories">
-                        <h3> Les étapes</h3>
+                        <h3> Les étapes</h3> <br/>
                         <p> <?php
                             $i = 1;
                             foreach(preg_split("/((\r?\n)|(\r\n?))/", $marec->getEtapesNl()) as $line):
 
-                                echo 'Etape '.$i++.' : '.$line.'<br/>';
+                                echo 'Etape '.$i++.' : '.$line.'<br/> <br/>';
                             endforeach;
 
                             ?>

@@ -7,6 +7,14 @@ class Favoris{
     private $_nomUser;
     private $_imageRec;
 
+    /**Ajoute une recette en favori pour un utilisateur donné
+     * Favoris constructor.
+     * @param $idRec
+     * @param $idUser
+     * @param $nomRec
+     * @param $nomUser
+     * @param $imgRec
+     */
     public function __construct($idRec, $idUser, $nomRec, $nomUser, $imgRec)
     {
         $this->_idRec = $idRec;
@@ -85,6 +93,9 @@ class Favoris{
             $this->_nomUser = $nomUser;
     }
 
+    /**
+     * @return mixed
+     */
     public function getImageRec()
     {
         return $this->_imageRec;

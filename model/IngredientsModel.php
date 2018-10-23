@@ -2,6 +2,9 @@
 
 class IngredientsModel extends Model
 {
+    /**Permet d'obtenir la liste de tous les ingrédients
+     * @return array
+     */
     public function getAll()
     {
         $query = 'SELECT * FROM ingredients ORDER BY idL asc';
@@ -20,6 +23,9 @@ class IngredientsModel extends Model
 //        $req->closeCursor();
     }
 
+    /**
+     * Affichage sur forme de table de tous les ingrédients pour l'administrateur
+     */
     public function affichageIngredients(){
         $req= $this->getBdd()->query("SELECT * FROM ingredients")->fetchAll();
             ?>
@@ -53,6 +59,9 @@ class IngredientsModel extends Model
       <?php  
     }
 
+    /**Supprime l'ingrédient passé en parametre
+     * @param $id
+     */
     public function suppIngredient($id)
     {
         $query2 = ('DELETE  FROM ingredients WHERE idL = "'. $id  .'"');
@@ -62,6 +71,9 @@ class IngredientsModel extends Model
            
     }
 
+    /**Créé un nouvel ingrédient
+     * @param $nom
+     */
     public function addIngredient($nom){
         $query = ('INSERT INTO ingredients(nom_ingredient,categorie) VALUES (?,?)');
 

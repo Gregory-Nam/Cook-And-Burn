@@ -43,7 +43,9 @@ class Recette
 	}
 
 
-	// SETTER
+    /**
+     * @param $number
+     */
     public function setId($number)
     {
 
@@ -53,12 +55,18 @@ class Recette
         }
     }
 
+    /**
+     * @param $name
+     */
 	public function setTitre($name)
 	{
 		if(is_string($name))
 			$this->_titre = $name;
 	}
 
+    /**
+     * @param $name
+     */
 	public function setDescription($name)
 	{
 		if(is_string($name))
@@ -66,6 +74,9 @@ class Recette
 
 	}
 
+    /**
+     * @param $name
+     */
 	public function setDescriptionDet($name)
 	{
 		if(is_string($name))
@@ -82,7 +93,9 @@ class Recette
     }
 
 
-
+    /**
+     * @param $name
+     */
 	public function setAuteur($name)
 	{
 		if(is_string($name))
@@ -90,6 +103,9 @@ class Recette
 
 	}
 
+    /**
+     * @param $name
+     */
 	public function setIngredient($name)
 	{
 		if(is_string($name))
@@ -97,6 +113,9 @@ class Recette
 
 	}
 
+    /**
+     * @param $name
+     */
 	public function setImage($name)
 	{
 		if(is_file($name))
@@ -104,6 +123,9 @@ class Recette
 
 	}
 
+    /**
+     * @param $number
+     */
 	public function setNombrePersonne($number)
     {
 
@@ -113,6 +135,9 @@ class Recette
         }
     }
 
+    /**
+     * @param $number
+     */
     public function setNombreBurn($number)
     {
         if(is_numeric($number))
@@ -121,46 +146,73 @@ class Recette
         }
     }
 
-	//GETTER
+    /**
+     * @return mixed
+     */
 	public function getId()
 	{
 		return $this->_id;
 	}
+
+    /**
+     * @return mixed
+     */
 	public function getNombrePersonne()
 	{
 		return $this->_nombrePersonne;
 	}
 
+    /**
+     * @return mixed
+     */
 	public function getTitre()
 	{
 		return $this->_titre;
 	}
 
+    /**
+     * @return mixed
+     */
 	public function getImage()
 	{
 		return $this->_image;
 	}
 
+    /**
+     * @return string
+     */
 	public function getIngredient()
 	{
 		return nl2br($this->_ingredient);
 	}
 
+    /**
+     * @return null|string|string[]
+     */
 	public function getIngredientNl()
     {
         return preg_replace("/\<br\s*\/?\>/i", "\n", $this->_ingredient);
     }
 
+    /**
+     * @return string
+     */
     public function getIngredientBr()
     {
         return nl2br($this->_ingredient);
     }
 
+    /**
+     * @return mixed
+     */
 	public function getDescription()
 	{
 		return $this->_description;
 	}
 
+    /**
+     * @return mixed
+     */
 	public function getDescriptionDet()
 	{
 		return $this->_descriptionDet;
@@ -179,23 +231,36 @@ class Recette
     {
         return nl2br($this->_etapes);
     }
+
+    /**
+     * @return mixed
+     */
     public function getEtapes()
     {
         return $this->_etapes;
     }
 
 
+    /**
+     * @return mixed
+     */
 	public function getAuteur()
 	{
 		return $this->_auteur;
 	}
 
+    /**
+     * @return mixed
+     */
 	public function getNombreBurn()
     {
         return $this->_nombreBurn;
     }
 
 
+    /**
+     * @return string
+     */
 	public function __toString()
 	{
 		return $this->_id.','.$this->_nombrePersonne.','.$this->_titre.','.$this->_image.','.$this->_ingredient.','.$this->_description.','.$this->_auteur;

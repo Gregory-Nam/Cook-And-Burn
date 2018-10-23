@@ -69,6 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="<?php if($t == "Panel") echo "active";?>" href="panel">Panel</a></li>
                                 <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                                 <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
+                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
                                 <li><form method ="post" class = "contact-form">
                                         <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
                                     </form></li>
@@ -99,6 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                                 <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
+                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
                                 <li><form method ="post" class = "contact-form">
                                         <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
                                     </form></li>
@@ -124,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="nav navbar-nav">
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Connexion") echo "active";?>" href="Connexion">Connexion</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
                                 <div class="clearfix"> </div>
                             </ul>
                         </div>
@@ -176,6 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a class="<?php if($t == "Panel") echo "active";?>" href="panel">Panel</a></li>
                         <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                         <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
+                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
                 <?php
                     }
                     elseif(isset($_SESSION['pseudo']))
@@ -184,6 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                         <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                         <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
+                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
                 <?php
                     }
                     else
@@ -191,6 +195,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     ?>
                         <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                         <li><a class="<?php if($t == "Connexion") echo "active";?>" href="Connexion">Connexion</a></li>
+                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
                 <?php
                     }
                     ?>

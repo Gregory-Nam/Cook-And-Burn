@@ -46,22 +46,46 @@ $this->_t = 'Cook And Burn';
 </div>
 
 
+<!--<div class="special">
+    <div class="container">
+        <div class="special-heading">
+            <h3>La meilleure recette !</h3>
+        </div>
+            <div class="special-heading" >
+                <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" >
+                <img  height="300" width="250"src="./files/<?php echo $bestRec->getImage();?>" alt="" ></a>
+            <h4> <?php echo $bestRec->getTitre();?> </h4>
+            </div>
+            </div>
+
+    </div>
+</div>-->
+
 <div class="special">
     <div class="container">
         <div class="special-heading">
-            
             <h3>La meilleure recette !</h3>
         </div>
-        <CENTER>
-            <div class="special-heading" >
-                <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" >
-                <img  height="300" width="250"src="./files/<?php echo $bestRec->getImage();?>" alt="" >
-            </a>
-            <h4> <?php echo $bestRec->getTitre();?> </h4>
+        <div class="w3ls-menu-grids">
+            <div class="menu-top-grids agileinfo">
+                <div class="col-md-8 col-md-offset-4">
+                        <div class="col-md-6 menu-grid">
+                            <div class="agile-menu-grid img-rounded">
+                                <a href="ContenuRecette?id=<?php echo (urlencode($bestRec->getTitre()));?>" />
+                                <img src="./files/<?php echo $bestRec->getImage();?>" alt="" width ="170em" height ="270em" />
+                                <div class="agileits-caption">
+                                    <h4><?php echo $bestRec->getTitre();?> </h4>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                </div>
             </div>
-        </CENTER>
+
+        </div>
     </div>
 </div>
+
 
 
 
@@ -90,15 +114,15 @@ if(isset($_SESSION['pseudo']))
 foreach($recette as $rec) :
 ?>
 <tr>
-<td>
+<td width="400em">
 <a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
-
+<h1><?php echo $rec->getTitre(); ?></h1>
+    <p><?php echo $rec->getDescriptionDet();?> </p>
 </td>
 <td>
-    <h1><?php echo $rec->getTitre(); ?></h1>
-    <p><?php echo $rec->getDescriptionDet();?> </p>
-    <p><?php echo $rec->getIngredient(); ?></p>
-    <p><?php echo $rec->getNombreBurn();?> </p>
+    
+    <p style="color: red"><?php echo $rec->getIngredient();?></p>
+    <button type="button" class="btn btn-danger btn-lg"><p><?php echo $rec->getNombreBurn();?> </p></button>
 
 </td>
 </tr>
@@ -111,9 +135,14 @@ else
     foreach($recForInvit as $rec) :
 ?>
 <tr>
-<td><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a></td>
+<td width="400em"><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
+    <h1><?php echo $rec->getTitre(); ?></h1>
+    <p><?php echo $rec->getDescriptionDet();?> </p>
+</td>
 <td><h1><?php echo $rec->getTitre(); ?></h1>
-    <p><?php echo $rec->getIngredient(); ?></p>
+    <p><?php echo $rec->getDescriptionDet();?> </p>
+    <p style="color: red;"><?php echo $rec->getIngredient();?></p>
+    <button type="button" class="btn btn-danger btn-lg"><p><?php echo $rec->getNombreBurn();?> </p></button>
 </td>
 </tr>
 

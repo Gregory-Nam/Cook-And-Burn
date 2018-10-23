@@ -2,6 +2,9 @@
 class FavorisModel extends Model
 {
 
+    /**Insert dans la bdd une recette en favori pour un utilisateur
+     * @param $aFavoris
+     */
     public function insertFavoris($aFavoris)
     {
         try{
@@ -28,6 +31,9 @@ class FavorisModel extends Model
         }
     }
 
+    /**Supprime dans la bdd une recette en favori pour un utilisateur
+     * @param $aFav
+     */
     public function DeleteFav($aFav)
     {
         try{
@@ -40,6 +46,9 @@ class FavorisModel extends Model
         }
     }
 
+    /**Permet d'obtenir tout les favoris d'un utilisateur
+     * @return array
+     */
     public function getFavorisForUser()
     {
         $var = [];
@@ -63,6 +72,11 @@ class FavorisModel extends Model
 
     }
 
+    /**Permet de verifier si la recette passé en parametre est deja dans les favoris de l'user en parametre
+     * @param $user
+     * @param $rec
+     * @return bool
+     */
     public function verifAlreadyFav($user,$rec)
     {
         try {

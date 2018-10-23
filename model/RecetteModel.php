@@ -41,7 +41,7 @@ class RecetteModel extends Model{
         $req->execute();
         while($data = $req->fetch())
         {
-            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'],$data['etapes'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'],$data['etapes'], $data['auteur'], $data['ingredients'],$data['image'], $data['nombre_de_personne'],$data['burns']);
         }
         return $var;
 //        $req->closeCursor();
@@ -54,7 +54,7 @@ class RecetteModel extends Model{
         $req->execute();
         while($data = $req->fetch())
         {
-            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'],$data['etapes'], $data['auteur'], $data['ingredient'],$data['image'], $data['nombre_de_personne'],$data['burns']);
+            $var[] = new Recette($data['titre'], $data['description'],$data['descriptionDet'],$data['etapes'], $data['auteur'], $data['ingredients'],$data['image'], $data['nombre_de_personne'],$data['burns']);
         }
         return $var;
 //        $req->closeCursor();
@@ -63,17 +63,18 @@ class RecetteModel extends Model{
     public function updateRec($_recette)
     {
         //ADDSLASHES PERMET DE NE PAS POSER DE PROBLEME SI UN DES ATTRIBUTS CONTIENT "'"
+
         $query = "UPDATE recettes SET titre ='". addslashes($_recette->getTitre())
                                                ."', description ='". addslashes($_recette->getDescription())."',
                                                descriptionDet ='". addslashes($_recette->getDescriptionDet()) ."',
                                                etapes = '".addslashes($_recette->getEtapesNl())."',
-                                               ingredients='". addslashes($_recette->getIngredient()) ."',image='".addslashes($_recette->getImage())."',
+                                               ingredients='". addslashes($_recette->getIngredientNl()) ."',image='".addslashes($_recette->getImage())."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
 
+       
         $this->getBdd()->exec($query);
 
         $query2 = "UPDATE favoris SET nom_recette='".addslashes($_recette->getTitre()) ."', image_rec='". addslashes($_recette->getImage())."' WHERE nom_recette='".$_SESSION['recette']."'";
-        
         $this->getBdd()->exec($query2);
 
 

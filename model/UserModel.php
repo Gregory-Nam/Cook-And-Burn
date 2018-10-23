@@ -1,6 +1,10 @@
 <?php
 class UserModel extends Model{
 
+    /**Insertion d'un utilisateur dans la BD
+     * @param $_user
+     * @return bool
+     */
     public function insertUser($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -31,6 +35,10 @@ class UserModel extends Model{
         return true;
     }
 
+    /**Permet de verifier si un le nom d'un utilisateur est déjà utilisé dans la table
+     * @param $_user
+     * @return bool
+     */
     public function verifUser($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -55,6 +63,10 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Permet de verifier si un le mail d'un utilisateur est déjà utilisé dans la table
+     * @param $_user
+     * @return bool
+     */
     public function verifUserEmail($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -80,6 +92,10 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Permet l'activation du compte apres reception du mail
+     * @param $_user
+     * @return bool
+     */
     public function verifUserValid($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -104,6 +120,10 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Permet de valider le compte
+     * @param $_user
+     * @return bool
+     */
     public function confirmUser($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -128,6 +148,10 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Vérifie si le couple nom et mdp correspond
+     * @param $_user
+     * @return bool
+     */
     public function connexion($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -153,6 +177,10 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Renvoi vrai si le compte de l'utilisateut est confirmé , sinon faux
+     * @param $_user
+     * @return bool
+     */
      public function userConfirm($_user)
     {
         if($_user->getNameUser() == "ab")
@@ -178,6 +206,12 @@ class UserModel extends Model{
     }
 
 
+    /**Permet de changer de mail
+     * @param $name
+     * @param $oldmail
+     * @param $Newmail
+     * @return bool
+     */
     public function mailChange($name,$oldmail,$Newmail)
     {
         try{
@@ -207,6 +241,11 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Permet de changer de mdp
+     * @param $name
+     * @param $oldMdp
+     * @param $newMdp
+     */
     public function mdpChange($name, $oldMdp, $newMdp)
     {
         try{
@@ -231,6 +270,10 @@ class UserModel extends Model{
         }
     }
 
+    /** Retourne les informations d'un utilisateur à partir de son nom
+     * @param $name
+     * @return null|User
+     */
     public function getByNom($name)
     {
         try{
@@ -255,6 +298,9 @@ class UserModel extends Model{
         echo $e;
     }}
 
+    /**Retourne le nombre d'utilisateur confirmé
+     * @return mixed
+     */
     public function nbUsers(){
        /* $query = 'SELECT count(*) FROM recettes';
         $sth = $this->getBdd()->exec($query);
@@ -264,6 +310,9 @@ class UserModel extends Model{
         
     }
 
+    /**Permet l'affichage de tous les utilisateurs dans une table pour le panel admin
+     *
+     */
      public function affichageUser(){
         $req= $this->getBdd()->query("SELECT * FROM user WHERE confirme= 1")->fetchAll();
             ?>
@@ -299,6 +348,11 @@ class UserModel extends Model{
       <?php  
     }
 
+    /**Met à jour l'user
+     * @param $id
+     * @param $mail
+     * @param $nom
+     */
     public function UpdateUser($id, $mail, $nom)
     {
         $query2 = ('UPDATE user SET adresse_email = "'.$mail.'" , nom_utilisateur = "'.$nom.'" WHERE id = "'. $id  .'"');
@@ -308,6 +362,9 @@ class UserModel extends Model{
            
     }
 
+    /**Supprime un user de la base
+     * @param $id
+     */
     public function deleteUser($id)
     {
         $query2 = ('DELETE  FROM user WHERE id = "'. $id  .'"');
@@ -317,6 +374,10 @@ class UserModel extends Model{
            
     }
 
+    /**Verifie si l'adresse mail en parametre est déjà prise
+     * @param $mail
+     * @return bool
+     */
     public function validMail($mail)
     {
         try{
@@ -338,6 +399,10 @@ class UserModel extends Model{
         return false;
     }
 
+    /**Permet de changer de mot de passe 
+     * @param $mail
+     * @param $newMdp
+     */
     public function newMdp($mail,$newMdp)
     {
         $query2 = ('UPDATE user SET mot_de_passe = "'.$newMdp.'" WHERE adresse_email = "'. $mail  .'"');

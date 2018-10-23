@@ -37,7 +37,7 @@ class ControllerRecetteAction
                     $ing2 = str_replace(' ','_',$ing);
                     if(isset($_POST[$ing2]))
                     {
-                        $quantiteIng[] = $_POST[$ing2].' '.$_POST['mesure'.$i].' de '.$ing ;
+                        $quantiteIng[] = $_POST[$ing2].' '.$_POST['mesure'.$i].' - '.$ing ;
 
                     }
                     else

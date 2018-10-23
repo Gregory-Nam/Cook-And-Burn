@@ -11,6 +11,13 @@ class User
     private $_avatar;
     private $_confirmkey;
 
+    /**
+     * User constructor.
+     * @param $nom
+     * @param $mdp
+     * @param $mail
+     * @param null $confirmkey
+     */
     public function __construct($nom, $mdp,$mail,$confirmkey = null)
     {
         $this->_nameUser =$nom;
@@ -20,6 +27,8 @@ class User
         //$this->hydrate($data);
     }
 
+    //HYDRATION CE QUI CORRESPOND A APPORTER AU OBJET CE QU'ILS ONT BESOIN
+    //POUR EXISTER
     public function hydrate(array $data)
     {
         foreach($data as $key => $value)
@@ -39,11 +48,17 @@ class User
         return $this->_nameUser;
     }
 
+    /**
+     * @param $number
+     */
     public function setId($number)
     {
         $this->_id = $number;
     }
 
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->_id;
