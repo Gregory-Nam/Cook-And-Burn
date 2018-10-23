@@ -2,7 +2,7 @@
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="./js/pagination.js"></script>
 <script type="text/javascript" src="./js/affichageLettre.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <?php
@@ -114,7 +114,7 @@ if(isset($_SESSION['pseudo']))
 foreach($recette as $rec) :
 ?>
 <tr>
-<td width="400em">
+<td width="800em">
 <a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
 <h1><?php echo $rec->getTitre(); ?></h1>
     <p><?php echo $rec->getDescriptionDet();?> </p>
@@ -122,7 +122,7 @@ foreach($recette as $rec) :
 <td>
     
     <p style="color: red"><?php echo $rec->getIngredient();?></p>
-    <button type="button" class="btn btn-danger btn-lg"><p><?php echo $rec->getNombreBurn();?> </p></button>
+    <button type="button" class="btn btn-danger btn-lg"><?php echo $rec->getNombreBurn();?> burns</button>
 
 </td>
 </tr>
@@ -135,14 +135,14 @@ else
     foreach($recForInvit as $rec) :
 ?>
 <tr>
-<td width="400em"><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
+<td width="800em"><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
     <h1><?php echo $rec->getTitre(); ?></h1>
     <p><?php echo $rec->getDescriptionDet();?> </p>
 </td>
 <td><h1><?php echo $rec->getTitre(); ?></h1>
     <p><?php echo $rec->getDescriptionDet();?> </p>
     <p style="color: red;"><?php echo $rec->getIngredient();?></p>
-    <button type="button" class="btn btn-danger btn-lg"><p><?php echo $rec->getNombreBurn();?> </p></button>
+    <button type="button" class="btn btn-danger btn-lg"><?php echo $rec->getNombreBurn();?> burns</button>
 </td>
 </tr>
 
