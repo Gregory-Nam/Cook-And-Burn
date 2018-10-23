@@ -139,8 +139,7 @@ else
     <h1><?php echo $rec->getTitre(); ?></h1>
     <p><?php echo $rec->getDescriptionDet();?> </p>
 </td>
-<td><h1><?php echo $rec->getTitre(); ?></h1>
-    <p><?php echo $rec->getDescriptionDet();?> </p>
+<td>
     <p style="color: red;"><?php echo $rec->getIngredient();?></p>
     <button type="button" class="btn btn-danger btn-lg"><?php echo $rec->getNombreBurn();?> burns</button>
 </td>

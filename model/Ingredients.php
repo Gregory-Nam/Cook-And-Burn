@@ -4,15 +4,18 @@ class Ingredients
 {
     private $_idL;
     private $_nomIngredient;
+    private $_categorie;
     /**
     * Ingredients constructor.
     * @param $_idL
     * @param $_nomIngredient
+     * @param $_categorie
     */
-    public function __construct($_idL, $_nomIngredient)
+    public function __construct($_idL, $_nomIngredient, $_categorie)
     {
     $this->_idL = $_idL;
     $this->_nomIngredient = $_nomIngredient;
+    $this->_categorie = $_categorie;
     }/**
      * @return mixed
      */
@@ -38,6 +41,24 @@ class Ingredients
     {
         $this->_nomIngredient = $nomIngredient;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCategorie()
+    {
+        return $this->_categorie;
+    }
+
+    /**
+     * @param mixed $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->_categorie = $categorie;
+    }
+
+
 
 
 }

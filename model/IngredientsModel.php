@@ -15,13 +15,44 @@ class IngredientsModel extends Model
         while($data = $req->fetch())
         {
 
-            $var[] = new Ingredients($data['idL'], $data['nom_ingredient']);
+            $var[] = new Ingredients($data['idL'], $data['nom_ingredient'],$data['categories']);
 
         }
 
         return $var;
 //        $req->closeCursor();
     }
+
+    public function getCategories()
+    {
+        $query = "SELECT distinct categorie FROM ingredients";
+        $var = [];
+
+        $req = $this->getBdd()->prepare($query);
+        $req ->execute();
+
+        while($data = $req->fetch())
+        {
+            $var[] = $data['categorie'];
+        }
+        return $var;
+    }
+
+    public function getIngredientByCat($categorie)
+    {
+        $query = "SELECT nom_ingredient FROM ingredients where categorie ='".$categorie."'";
+        $var = [];
+
+        $req = $this->getBdd()->prepare($query);
+        $req->execute();
+
+        while($data = $req->fetch())
+        {
+            $var[] = $data['nom_ingredient'];
+        }
+        return $var;
+    }
+
 
     /**
      * Affichage sur forme de table de tous les ingrédients pour l'administrateur

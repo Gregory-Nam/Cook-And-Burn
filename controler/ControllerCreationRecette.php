@@ -22,9 +22,10 @@ class ControllerCreationRecette
 
         $this->_userModel = new UserModel();
         $this->_ingredientsModel = new IngredientsModel();
+        $categories = $this->_ingredientsModel->getCategories();
         $ingredients = $this->_ingredientsModel->getAll();
         $this->_view = new View('CreationRecette');
-        $this->_view->generate(array("ingredients" => $ingredients));
+        $this->_view->generate(array("ingredients" => $ingredients, "iM" => $this->_ingredientsModel, "categories" => $categories));
 
     }
 }

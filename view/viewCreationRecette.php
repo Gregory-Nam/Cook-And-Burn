@@ -37,20 +37,39 @@
                             <select  name="ingredients[]" onchange='affiche();' id="lesIngredients" multiple >
                                 <?php
                                 $i = 0;
-                                foreach($ingredients as $ingredient) :?>
-                                    <option  name="<?php echo $ingredient->getNomIngredient()?>"> <?php echo $ingredient->getNomIngredient()?> </option>
+                                foreach ($categories as $categorie) :?>
+
+                                    <optgroup  label="<?php echo $categorie;?>">
+                                    <?php foreach($iM->getIngredientByCat($categorie) as $ingredient) :
+                                    ?>
+
+                                    <option name="<?php echo $ingredient;?>"> <?php echo $ingredient;?> </option>
                                     <?php ++$i;
-                                endforeach; ?>
+                                    endforeach; ?>
+                                    </optgroup>
+
+
+                                <?php
+                                endforeach;
+                                ?>
+
+
+
+
+
+
+
 
                             </select>
                             <br/>
                             <script type="text/javascript">
                                 $(document).ready(function() {
                                     $('#lesIngredients').multiselect({ enableFiltering: true,
-                                        includeSelectAllOption: true,
+                                        includeSelectAllOption: false,
                                         nonSelectedText: 'Veuillez selectionner des ingredients',
                                         filterPlaceholder:'Recherche',
                                         maxHeight:200,
+                                        optgroup:false,
                                         buttonWidth:"100%"});
 
                                 });
