@@ -33,11 +33,11 @@ class ControllerModifierRecAction
         print_r($_FILES['imageRecette']);
         echo "<br/>";
 
-
-        if(!isset($_POST['nameRecette']) || !isset($_POST['descriptionRecette']) || !isset($_POST['descriptionRecette2']) || !isset($_POST['nombrePersonne']))
+        var_dump($_POST['descriptionRecette2']);
+        if(empty($_POST['nameRecette']) || empty($_POST['descriptionRecette']) || empty($_POST['descriptionRecette2']) || empty($_POST['nombrePersonne']))
         {
-            echo "champ manquant";
-            exit();
+            $_SESSION['erreur'] = 'Un des champs est vide';
+            header('Location:ModifierRec');
         }
         else
         {
@@ -67,7 +67,8 @@ class ControllerModifierRecAction
 
 
                 if (empty($quantiteIng)) {
-                    echo "une quantité n'a pas été renseigné";
+                    $_SESSION['erreur'] = 'Vous n\'avez pas précisez la quantité';
+                    header('Location:ModifierRec');
                     exit();
                 } else {
                     foreach ($quantiteIng as $quantite) :
@@ -91,19 +92,15 @@ class ControllerModifierRecAction
                     // on verifie si une etape n'a pas été sauté exemple : etape 1 , etape 3
                     if($etape != 'etape '.$i)
                     {
-                        echo 'etape manquante';
-                        echo 'etape '.$i;
-                        echo $etape;
+                        $_SESSION['erreur'] = 'Vous avez oublié une étape.';
+                        header('Location:ModifierRec');
                         exit();
-                        break;
                     }
                     else
                     {
                         //on verifie si l'etape est vide, pour ce cas on vide le tableau et on sort du foreach
                         if(empty($_POST[$etape_]))
                         {
-                            echo "un champ n'a pas été renseigner dans les etapes";
-                            exit();
                             $etapes = array();
                             break;
                         }
