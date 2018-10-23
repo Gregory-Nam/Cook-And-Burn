@@ -27,8 +27,9 @@ class ControllerModifierRec
 
         $recToUpdate = $this->_recetteModel->getByTitre($_SESSION['recette']);
         $ingredients = $this->_ingredientsModel->getAll();
+        $categories = $this->_ingredientsModel->getCategories();
         $this->_view = new View('ModifierRec');
-        $this->_view->generate(array("recToUpdate" => $recToUpdate,"ingredients" => $ingredients));
+        $this->_view->generate(array("categories" => $categories, "iM"=>$this->_ingredientsModel,"recToUpdate" => $recToUpdate,"ingredients" => $ingredients));
 
     }
 }
