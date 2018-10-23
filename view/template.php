@@ -18,7 +18,7 @@ include ('./controler/ControllerConnexionAction.php');?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Tasty Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- bootstrap-css -->
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!--// bootstrap-css -->
@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="./js/jquery-1.11.1.min.js"></script>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/SmoothScroll.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <script src="js/bootstrap-multiselect.js"></script>
 </head>
 <body>
 <script src="./js/jquery.vide.min.js"></script>
@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><form method ="post" class = "contact-form">
                                         <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
                                     </form></li>
-                                <div class="clearfix"> </div>
+                                <br/>
                             </ul>
                             <?php
                                 if(isset($_POST['deco'])) {session_destroy(); header('location:index');}
@@ -104,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><form method ="post" class = "contact-form">
                                         <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
                                     </form></li>
-                                <div class="clearfix"> </div>
+                                <br/>
                             </ul>
                             <?php
                                 if(isset($_POST['deco'])) {session_destroy(); header('location:index');}
@@ -127,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Connexion") echo "active";?>" href="Connexion">Connexion</a></li>
                                 <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
-                                <div class="clearfix"> </div>
+                                <br/>
                             </ul>
                         </div>
                     </nav>
