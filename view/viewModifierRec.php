@@ -11,6 +11,20 @@
 <form action="ModifierRecAction" enctype="multipart/form-data" method="post">
     <div class="contact-form">
         <h3>Modifier ma recette</h3>
+        <br/>
+        <div class="container">
+        <?php if(isset($_SESSION['erreur'])){
+        ?>
+        <div class="alert alert-danger" role="alert">
+        <?php
+            echo '<center><p>'.$_SESSION['erreur'].'</p></center>';
+            unset($_SESSION['erreur']);
+        ?>
+        </div>
+        <?php
+        } ?>
+        </div>
+
         <div class="blog">
             <div class="container">
                 <div class="col-md-8 blog-top-left-grid">
@@ -34,6 +48,9 @@
                 </div>
                 <div class="col-md-4 blog-top-right-grid">
                     <div class="categories">
+                        <div class="alert alert-info" role="alert">
+                            <p> Veuillez ré-inserer vos ingrédients si vous voulez modifiez ces derniers.</p>
+                        </div>
                         <h3> Choix des ingredients </h3>
                         <br/>
                         <select name="ingredients[]" onchange='affiche();' id="lesIngredients" multiple >
@@ -70,7 +87,7 @@
                                         newInput.setAttribute('placeholder', 'quel quantite');
                                         //trim permet d'enlever les espaces au debut et a la fin
                                         document.body.appendChild(newInput);
-                                        span.innerHTML += selectBox[i].innerHTML.trim() +
+                                        span.innerHTML += selectBox[i].innerHTML.trim() + '<br/>'+
                                             '<input type="number" min="0" name="'+selectBox[i].innerHTML.trim()+'"/>' +
                                             //post incrementation pour incrementer apres avoir mis la mesure actuel
                                             '<select name="mesure'+ j++ +'">' +
