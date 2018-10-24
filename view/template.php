@@ -28,6 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--// css -->
     <!-- font-awesome icons -->
     <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/squelette.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
     <!-- //font-awesome icons -->
     <!-- font -->
@@ -208,7 +209,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <p>© 2016 Tasty . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
-
+    
+    <div class="wrapper">
+    <div class="skeleton">
+      <div class="head">
+        <div class="head-hemispheres"></div>
+        <div class="eye-shadow eye-shadow-left"></div>
+        <div class="eye eye-left"></div>
+        <div class="eye-shadow eye-shadow-right"></div>
+        <div class="eye eye-right"></div>
+        <div class="nose"></div>
+        <div class="nose-shadow"></div>
+        <div class="mouth">
+          <div class="teeth teeth-left"></div>
+          <div class="teeth teeth-right"></div>
+        </div>
+      </div>
+      <div class="below-head-container">
+        <div class="backbone"></div>
+        <div class="body">
+          <div class="body-inner">
+            <div class="main-bone"></div>
+            <div class="shoulder"></div>
+            <div class="rib-cage rib-cage-1"></div>
+            <div class="rib-cage rib-cage-2"></div>
+            <div class="kidney-cover"></div>
+            <div class="kidney kidney-left"></div>
+            <div class="kidney kidney-right"></div>
+            <div class="hand hand-left">
+              <div class="hand-top"></div>
+              <div class="arm"></div>
+              <div class="arm-below-container">
+                <div class="forearm"></div>
+                <div class="wrist"></div>
+                <div class="finger finger-pinky"></div>
+                <div class="finger finger-thumb"></div>
+                <div class="finger finger-ring"></div>
+                <div class="finger finger-index"></div>
+              </div>
+            </div>
+            <div class="hand hand-right">
+              <div class="hand-top"></div>
+              <div class="arm"></div>
+              <div class="arm-below-container">
+                <div class="forearm"></div>
+                <div class="wrist"></div>
+                <div class="finger finger-pinky"></div>
+                <div class="finger finger-thumb"></div>
+                <div class="finger finger-ring"></div>
+                <div class="finger finger-index"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feet-container">
+            <div class="foot foot-left">
+              <div class="thigh"></div>
+              <div class="leg leg-left"></div>
+              <div class="shoe"></div>
+            </div>
+            <div class="foot foot-right">
+              <div class="thigh"></div>
+              <div class="leg leg-right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </div>
 
 </div>
 
