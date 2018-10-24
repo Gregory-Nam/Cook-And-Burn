@@ -1,6 +1,9 @@
 <?php
 class RecetteModel extends Model{
-
+    /**
+     * @param $_recette
+     * @return bool
+     */
     public function insertRecette($_recette)
     {
         try{
@@ -15,7 +18,7 @@ class RecetteModel extends Model{
             $stmt->bindValue(7, $_recette->getImage(), PDO::PARAM_STR);
             $stmt->bindValue(8, $_recette->getNombrePersonne(), PDO::PARAM_STR);
             $stmt->bindValue(9, $_recette->getNombreBurn(), PDO::PARAM_STR);
-
+            
             $ret =$stmt->execute();
         }
         catch (Exception $e)
@@ -24,16 +27,23 @@ class RecetteModel extends Model{
         }
         return true;
     }
-
+    /**
+     * @param $_recette
+     * recette que l'on veut supprimer
+     *
+     *
+     */
     public function deleteRecette($_recette)
     {
         $query = "DELETE FROM recettes WHERE id=".$_recette->getId();
         $this->getBdd()->exec($query);
-
         $query2 = "DELETE FROM favoris WHERE id_rec=".$_recette->getId();
         $this->getBdd()->exec($query2);
     }
-
+    /**
+     * @return array
+     * tableau contenant toutes les recettes
+     */
     public function getAllRecette()
     {
         $var = [];
@@ -46,7 +56,10 @@ class RecetteModel extends Model{
         return $var;
 //        $req->closeCursor();
     }
-
+    /**
+     * @return array
+     * tableau contenant les recettes ayant plus de 10 burns (pour les non-membres)
+     */
     public function getRecetteForInvit()
     {
         $var = [];
@@ -59,46 +72,45 @@ class RecetteModel extends Model{
         return $var;
 //        $req->closeCursor();
     }
-
+    /**
+     * @param $_recette
+     * recette que l'on souhaite modifier
+     */
     public function updateRec($_recette)
     {
         //ADDSLASHES PERMET DE NE PAS POSER DE PROBLEME SI UN DES ATTRIBUTS CONTIENT "'"
-
         $query = "UPDATE recettes SET titre ='". addslashes($_recette->getTitre())
                                                ."', description ='". addslashes($_recette->getDescription())."',
                                                descriptionDet ='". addslashes($_recette->getDescriptionDet()) ."',
                                                etapes = '".addslashes($_recette->getEtapesNl())."',
                                                ingredients='". addslashes($_recette->getIngredientNl()) ."',image='".addslashes($_recette->getImage())."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
-
-       
+       echo $_recette->getIngredient();
         $this->getBdd()->exec($query);
-
         $query2 = "UPDATE favoris SET nom_recette='".addslashes($_recette->getTitre()) ."', image_rec='". addslashes($_recette->getImage())."' WHERE nom_recette='".$_SESSION['recette']."'";
         $this->getBdd()->exec($query2);
-
-
     }
-
-
+    /**
+     * @param $_titre
+     * titre de la recette que l'on souhaite recuperer
+     * @return null|Recette
+     *  null si la recette n'existe pas
+     *  sinon renvoie la recette
+     */
     public function getByTitre($_titre)
     {
         $titreDecodee = str_replace('+', ' ', urldecode($_titre));
         try{
             $query = 'SELECT * FROM recettes WHERE titre ="'.$titreDecodee.'"';
-
             $stmt = $this->getBdd()->query($query);
-
             if($rec = $stmt->fetch())
             {
-
                 $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'],$rec['etapes'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
                 $aRec->setId($rec['id']);
             }
             else{
                 echo "pas de recette de ce nom";
                 echo $titreDecodee;
-
                 return null;
             }
             return $aRec;
@@ -108,7 +120,15 @@ class RecetteModel extends Model{
             echo $e;
         }
     }
-
+    /**
+     * @param $commentaire
+     * le commentaire que l'on veut inserer
+     * @param $auteur
+     * l'auteur du commentaire
+     * @param $recette
+     * la recette ou le commentaire est ajouté
+     * @return bool
+     */
     public function postCommentaire($commentaire,$auteur,$recette)
     {
         try{
@@ -126,7 +146,11 @@ class RecetteModel extends Model{
         }
         return true;
     }
-
+    /**
+     * @param $titre
+     * titre de la recette dont on veut recuperer les commentaires
+     * @return string
+     */
     public function getCommentaire($titre)
     {
         try{
@@ -144,12 +168,14 @@ class RecetteModel extends Model{
             echo $e;
         }
     }
-
+    /**
+     * @return null|Recette
+     * la meilleure recette (celle avec le plus de burns
+     */
     public function getBestRec()
     {
         $query = "SELECT * FROM recettes where burns in (SELECT MAX(burns) FROM recettes)";
         $stmt = $this->getBdd()->query($query);
-
         if($rec = $stmt->fetch())
         {
             $aRec = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'],$rec['etapes'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
@@ -157,39 +183,50 @@ class RecetteModel extends Model{
             return $aRec;
         }
         return null;
-
-
     }
+    /**
+     * @param $rec
+     * recette a laquelle on veut rajouter un burn
+     */
     public function addOneBurn($rec)
     {
         $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." + 1 WHERE id =".$rec->getId();
         print_r($rec->getNombreBurn(),$rec->getId());
         $this->getBdd()->exec($query);
     }
-
+    /**
+     * @param $rec
+     * recette a laquelle on veut supprimer un burn
+     */
     public function RemoveOneBurn($rec)
     {
         $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." - 1 WHERE id =".$rec->getId();
         $this->getBdd()->exec($query);
     }
-
+    /**
+     * @return mixed
+     * le nombre de recettes
+     */
     public function nbRecettes(){
        /* $query = 'SELECT count(*) FROM recettes';
         $sth = $this->getBdd()->exec($query);
         print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
         return $this->getBdd()->query("SELECT COUNT(*) FROM recettes")->fetchColumn();
-
     }
-
+    /**
+     * @return mixed
+     * le nombre de commentaire
+     */
     public function nbCom(){
        /* $query = 'SELECT count(*) FROM recettes';
         $sth = $this->getBdd()->exec($query);
         print_r($sth->fetchAll(PDO::FETCH_OBJ));*/
         return $this->getBdd()->query("SELECT COUNT(*) FROM commentaire")->fetchColumn();
-
         
     }
-
+    /**
+     * affichage des recettes pour le pannel
+     */
     public function affichageRecette(){
         $req= $this->getBdd()->query("SELECT * FROM recettes")->fetchAll();
             ?>
@@ -235,7 +272,12 @@ class RecetteModel extends Model{
       </div>
       <?php  
     }
-
+    /**
+     * @param $user
+     * utilisateur dont on veut recuperer les recettes qu'il a crée
+     * @return array
+     * tableau des recettes crées par l'utilisateur passé en paramètre
+     */
     public function getCreatedRecByUser($user)
     {
         $query = "SELECT * FROM recettes WHERE auteur ='".$user->getNameUser()."'";
@@ -244,11 +286,19 @@ class RecetteModel extends Model{
         while($rec =  $stmt->fetch())
         {
             $var[] = new Recette($rec['titre'], $rec['description'],$rec['descriptionDet'],$rec['etapes'], $rec['auteur'], $rec['ingredients'], $rec['image'],$rec['nombre_personne'],$rec['burns']);
-
         }
         return $var;
     }
-
+    /**
+     * @param $id
+     * @param $nom
+     * @param $description
+     * @param $descriptiondet
+     * @param $etapes
+     * @param $auteur
+     * @param $ingredients
+     * @param $nombre
+     */
     public function updateRecette($id,$nom,$description,$descriptiondet,$etapes,$auteur,$ingredients,$nombre)
     {
         $query = "UPDATE recettes SET titre ='".$nom
@@ -258,28 +308,16 @@ class RecetteModel extends Model{
                                                auteur = '".$auteur."',
                                                ingredients='".$ingredients."',
                                                nombre_personne=".$nombre." WHERE id=". $id;
-
-
         $stmt2 = $this->getBdd()->prepare($query);
         $stmt2->execute();
-
     }
-
     public function suppRecette($id)
     {
         $query2 = ('DELETE  FROM recettes WHERE id = "'. $id  .'"');
         $stmt2 = $this->getBdd()->prepare($query2);
-
         $stmt2->execute();
-
     }
-
     //inverse de nl2br
-
-
-
-
-
-
 }
+    
 
