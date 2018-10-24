@@ -155,7 +155,8 @@ $_SESSION['profilSup'] = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
 												<input type="text" name="ingredients" placeholder="name"><br/><br/>
 
 												<label>Etapes</label><br/>
-												<input type="textarea" name="etapes" placeholder="name"><br/><br/>
+												<textarea class="form-control" name="etapes" placeholder="Description de la recette"></textarea>
+												<p> Aller à la ligne pour chaque étapes ! </p><br/><br/>
 
 												<label>Nombre de personne</label><br/>
 												<input type="number" name="nombre" placeholder="name"><br/><br/>
