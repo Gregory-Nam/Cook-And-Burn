@@ -6,6 +6,11 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerAjoutIngredient
+ *
+ */
+
 class ControllerAjoutIngredient
 {
     public function __construct()

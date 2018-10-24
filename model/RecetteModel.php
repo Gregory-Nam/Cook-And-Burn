@@ -1,6 +1,10 @@
 <?php
 class RecetteModel extends Model{
 
+    /**
+     * @param $_recette
+     * @return bool
+     */
     public function insertRecette($_recette)
     {
         try{
@@ -25,6 +29,12 @@ class RecetteModel extends Model{
         return true;
     }
 
+    /**
+     * @param $_recette
+     * recette que l'on veut supprimer
+     *
+     *
+     */
     public function deleteRecette($_recette)
     {
         $query = "DELETE FROM recettes WHERE id=".$_recette->getId();
@@ -34,6 +44,10 @@ class RecetteModel extends Model{
         $this->getBdd()->exec($query2);
     }
 
+    /**
+     * @return array
+     * tableau contenant toutes les recettes
+     */
     public function getAllRecette()
     {
         $var = [];
@@ -47,6 +61,10 @@ class RecetteModel extends Model{
 //        $req->closeCursor();
     }
 
+    /**
+     * @return array
+     * tableau contenant les recettes ayant plus de 10 burns (pour les non-membres)
+     */
     public function getRecetteForInvit()
     {
         $var = [];
@@ -60,6 +78,10 @@ class RecetteModel extends Model{
 //        $req->closeCursor();
     }
 
+    /**
+     * @param $_recette
+     * recette que l'on souhaite modifier
+     */
     public function updateRec($_recette)
     {
         //ADDSLASHES PERMET DE NE PAS POSER DE PROBLEME SI UN DES ATTRIBUTS CONTIENT "'"
@@ -80,6 +102,14 @@ class RecetteModel extends Model{
 
     }
 
+
+    /**
+     * @param $_titre
+     * titre de la recette que l'on souhaite recuperer
+     * @return null|Recette
+     *  null si la recette n'existe pas
+     *  sinon renvoie la recette
+     */
 
     public function getByTitre($_titre)
     {
@@ -109,6 +139,15 @@ class RecetteModel extends Model{
         }
     }
 
+    /**
+     * @param $commentaire
+     * le commentaire que l'on veut inserer
+     * @param $auteur
+     * l'auteur du commentaire
+     * @param $recette
+     * la recette ou le commentaire est ajouté
+     * @return bool
+     */
     public function postCommentaire($commentaire,$auteur,$recette)
     {
         try{
@@ -127,6 +166,11 @@ class RecetteModel extends Model{
         return true;
     }
 
+    /**
+     * @param $titre
+     * titre de la recette dont on veut recuperer les commentaires
+     * @return string
+     */
     public function getCommentaire($titre)
     {
         try{
@@ -145,6 +189,10 @@ class RecetteModel extends Model{
         }
     }
 
+    /**
+     * @return null|Recette
+     * la meilleure recette (celle avec le plus de burns
+     */
     public function getBestRec()
     {
         $query = "SELECT * FROM recettes where burns in (SELECT MAX(burns) FROM recettes)";
@@ -160,6 +208,11 @@ class RecetteModel extends Model{
 
 
     }
+
+    /**
+     * @param $rec
+     * recette a laquelle on veut rajouter un burn
+     */
     public function addOneBurn($rec)
     {
         $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." + 1 WHERE id =".$rec->getId();
@@ -167,12 +220,21 @@ class RecetteModel extends Model{
         $this->getBdd()->exec($query);
     }
 
+
+    /**
+     * @param $rec
+     * recette a laquelle on veut supprimer un burn
+     */
     public function RemoveOneBurn($rec)
     {
         $query = "UPDATE recettes SET burns =".$rec->getNombreBurn()." - 1 WHERE id =".$rec->getId();
         $this->getBdd()->exec($query);
     }
 
+    /**
+     * @return mixed
+     * le nombre de recettes
+     */
     public function nbRecettes(){
        /* $query = 'SELECT count(*) FROM recettes';
         $sth = $this->getBdd()->exec($query);
@@ -181,6 +243,10 @@ class RecetteModel extends Model{
 
     }
 
+    /**
+     * @return mixed
+     * le nombre de commentaire
+     */
     public function nbCom(){
        /* $query = 'SELECT count(*) FROM recettes';
         $sth = $this->getBdd()->exec($query);
@@ -190,6 +256,9 @@ class RecetteModel extends Model{
         
     }
 
+    /**
+     * affichage des recettes pour le pannel
+     */
     public function affichageRecette(){
         $req= $this->getBdd()->query("SELECT * FROM recettes")->fetchAll();
             ?>
@@ -235,6 +304,12 @@ class RecetteModel extends Model{
       <?php  
     }
 
+    /**
+     * @param $user
+     * utilisateur dont on veut recuperer les recettes qu'il a crée
+     * @return array
+     * tableau des recettes crées par l'utilisateur passé en paramètre
+     */
     public function getCreatedRecByUser($user)
     {
         $query = "SELECT * FROM recettes WHERE auteur ='".$user->getNameUser()."'";
@@ -248,6 +323,16 @@ class RecetteModel extends Model{
         return $var;
     }
 
+    /**
+     * @param $id
+     * @param $nom
+     * @param $description
+     * @param $descriptiondet
+     * @param $etapes
+     * @param $auteur
+     * @param $ingredients
+     * @param $nombre
+     */
     public function updateRecette($id,$nom,$description,$descriptiondet,$etapes,$auteur,$ingredients,$nombre)
     {
         $query = "UPDATE recettes SET titre ='".$nom

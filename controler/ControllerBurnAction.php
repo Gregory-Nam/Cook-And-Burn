@@ -29,6 +29,7 @@ class ControllerBurnAction
     /**
      * ControllerBurnAction constructor.
      * Initialisation des variables
+     * appel de la fonction addOrRemoveBurn()
      */
 
     function __construct()
@@ -39,6 +40,11 @@ class ControllerBurnAction
         $this->addOrRemoveBurn();
 
     }
+
+    /**
+     * Fonction addOrRemoveBurn()
+     *  Permet de d'ajouter ou d'enlever un burn selon la valeur de retour de la fonction verifAlreadyBurn()
+     */
 
     function addOrRemoveBurn()
     {

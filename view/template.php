@@ -24,7 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--// bootstrap-css -->
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
-    <!--<link rel="stylesheet" href="./css/halloween.css" type="text/css" media="all" />-->
+    <link rel="stylesheet" href="./css/halloween.css" type="text/css" media="all" />
     <!--// css -->
     <!-- font-awesome icons -->
     <link href="./css/font-awesome.css" rel="stylesheet">
@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="footer-icons">
                 <ul>
                     <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><span>Twitter</span></li>
-                    <li><a href="https://www.facebook.com/Cook-And-Burn-2083965681934223/" class="twitter facebook"><i class="fa fa-facebook"></i></a><span>Facebook</span></li>
+                    <li><a href="#" class="twitter facebook"><i class="fa fa-facebook"></i></a><span>Facebook</span></li>
                     <li><a href="#" class="twitter chrome"><i class="fa fa-google-plus"></i></a><span>Google +</span></li>
                     <li><a href="#" class="twitter dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a><span>Dribbble</span></li>
                 </ul>
@@ -202,12 +202,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     ?>
 
             </ul>
+            
         </div>
         <div class="agileinfo">
             <p>© 2016 Tasty . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
-        
+
 
 </div>
 

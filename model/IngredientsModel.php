@@ -23,6 +23,10 @@ class IngredientsModel extends Model
 //        $req->closeCursor();
     }
 
+    /**
+     * @return array
+     *      Un tableau contenant les categoris des ingrédients.
+     */
     public function getCategories()
     {
         $query = "SELECT distinct categorie FROM ingredients";
@@ -38,6 +42,13 @@ class IngredientsModel extends Model
         return $var;
     }
 
+
+    /**
+     * @param $categorie
+     *  catégorie dont on veut les ingrédients
+     * @return array
+     *  Tableau contenant le nom des ingrédients de la catégories passé en paramètre.
+     */
     public function getIngredientByCat($categorie)
     {
         $query = "SELECT nom_ingredient FROM ingredients where categorie ='".$categorie."'";
@@ -92,6 +103,7 @@ class IngredientsModel extends Model
 
     /**Supprime l'ingrédient passé en parametre
      * @param $id
+     *  id de l'ingredient que l'on souhaite supprimé
      */
     public function suppIngredient($id)
     {
