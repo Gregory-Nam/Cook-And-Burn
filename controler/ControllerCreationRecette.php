@@ -3,7 +3,7 @@ require_once('view/View.php');
 include('./model/Recette.php');
 include ('./model/RecetteModel.php');
 require_once ('./model/reCaptcha/autoload.php');
-
+session_start();
 class ControllerCreationRecette
 {
     private $_userModel;
@@ -24,7 +24,12 @@ class ControllerCreationRecette
         $this->_ingredientsModel = new IngredientsModel();
         $categories = $this->_ingredientsModel->getCategories();
         $ingredients = $this->_ingredientsModel->getAll();
-        $this->_view = new View('CreationRecette');
+        if(isset($_SESSION['pseudo'])){
+           $this->_view = new View('CreationRecette'); 
+        }
+        else{
+            header('Location:Error');
+        }
         $this->_view->generate(array("ingredients" => $ingredients, "iM" => $this->_ingredientsModel, "categories" => $categories));
 
     }
