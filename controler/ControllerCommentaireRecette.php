@@ -18,7 +18,8 @@ class ControllerCommentaireRecette
     {;
         if(empty($_SESSION['pseudo']))
         {
-            echo 'Vous devez vous connecter';
+            $_SESSION['erreur2'] = "Vous devez vous connecter !";
+            header('Location:ContenuRecette?id='.$_SESSION['recette']);
         }
         else
         {
