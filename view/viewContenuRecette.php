@@ -172,7 +172,12 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     <div class ="opinion">
                         <h2> Ecriver un commentaire </h2>
                         <form method="post" action="CommentaireRecette">
-                            <textarea class="form-control" name="commentaireRecette">Ecrivez un commentaire</textarea>
+                            <textarea class="form-control" name="commentaireRecette">Ecrivez un commentaire</textarea><br/>
+                            <?php if(isset($_SESSION['erreur2'])){
+                            echo '<p><span class="label label-danger">'.$_SESSION['erreur2'].'</span>';
+                            unset($_SESSION['erreur2']);
+                            } ?>
+                            <br/>
                             <input class="btn" type="submit" name="action" value="Poster"/>
                         </form>
                     </div>
