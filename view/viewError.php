@@ -1,11 +1,18 @@
-<?php echo $errorMsg; ?>
-
+<!--<?php echo $errorMsg; ?>-->
 <link rel="stylesheet" href="./css/404.css" type="text/css" media="all" />
-<div class="board">
-  <p id="error">
-    error
-  </p>
-  <p id="code">
-    404
-  </p>
-</div>
+
+ <div id="clouds">
+            <div class="cloud x1"></div>
+            <div class="cloud x1_5"></div>
+            <div class="cloud x2"></div>
+            <div class="cloud x3"></div>
+            <div class="cloud x4"></div>
+            <div class="cloud x5"></div>
+        </div>
+        <div class='c'>
+            <div class='_404'>404</div>
+            <hr>
+            <div class='_1'>PAGE</div>
+            <div class='_2'>INTROUVABLE</div>
+            <a class='btn' href='index'>Retour au site !</a>
+        </div>

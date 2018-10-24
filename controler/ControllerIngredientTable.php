@@ -3,7 +3,7 @@ require_once('view/View.php');
 include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
-
+session_start();
 class ControllerIngredientTable
 {
     private $_userModel;
@@ -23,7 +23,12 @@ class ControllerIngredientTable
         $this->_recetteModel = new RecetteModel();
 
         $this->_ingredientModel = new IngredientsModel();
-        $this->_view = new View('ingredientsTable');
+        if(isset($_SESSION['pseudo']) AND $_SESSION['pseudo']=='adm'){
+           $this->_view = new View('ingredientsTable'); 
+        }
+        else{
+            header('Location:Error');
+        }
         $this->_view->generate(array("uM" => $this->_userModel, "rM" => $this->_recetteModel, "in"=> $this->_ingredientModel));
 
 

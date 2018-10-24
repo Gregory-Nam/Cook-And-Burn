@@ -1,11 +1,35 @@
 <?php
 session_start();
+
+/**
+ * Class ControllerBurnAction
+ *
+ */
 class ControllerBurnAction
 {
 
+    /**
+     * @var RecetteModel
+     */
+
     private $_rModel;
+
+    /**
+     * @var BurnModel
+     */
+
     private $_bModel;
+
+    /**
+     * @var UserModel
+     */
+
     private $_uModel;
+
+    /**
+     * ControllerBurnAction constructor.
+     * Initialisation des variables
+     */
 
     function __construct()
     {

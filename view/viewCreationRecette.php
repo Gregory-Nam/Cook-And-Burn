@@ -98,7 +98,7 @@
                                                 '<option value ="millilitre"> millilitre </option>'+
                                                 '<option value ="cuillère a café"> cuillère à café </option>'+
                                                 '<option value ="cuillère"> cuillère </option>'+
-                                                '<option value ="ccuillère a soupe"> cuillère à soupe </option>'+
+                                                '<option value ="cuillère a soupe"> cuillère à soupe </option>'+
                                                 '</select> <br><br>';
                                         }
                                     }

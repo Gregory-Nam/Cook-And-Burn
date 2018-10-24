@@ -136,7 +136,8 @@ class ControllerRecetteAction
                     {
                     move_uploaded_file($file_tmp_name, $destination);
                     $rM->insertRecette($aRecette);
-                    echo 'Recette ajouté';
+                    header("location:ContenuRecette?id=".urlencode($aRecette->getTitre()));
+
 
                     }
                     else{

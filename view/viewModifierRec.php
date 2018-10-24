@@ -104,10 +104,10 @@
                                             '<select name="mesure'+ j++ +'">' +
                                             '<option value ="gramme"> gramme </option>'+
                                             '<option value ="litre"> litre </option>'+
-                                            '<option value ="ml"> millilitre </option>'+
-                                            '<option value ="cc"> cuillère à café </option>'+
-                                            '<option value ="c"> cuillère </option>'+
-                                            '<option value ="cs"> cuillère à soupe </option>'+
+                                            '<option value ="millilitre"> millilitre </option>'+
+                                            '<option value ="cuillère à café"> cuillère à café </option>'+
+                                            '<option value ="cuillère"> cuillère </option>'+
+                                            '<option value ="cuillère à soupe"> cuillère à soupe </option>'+
                                             '</select> <br><br>'
 
 

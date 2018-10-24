@@ -116,14 +116,14 @@ foreach($recette as $rec) :
 <tr>
 <td width="800em">
 <a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
-    <h1><?php echo $rec->getTitre(); ?></h1>  <br/>
-    <p><?php echo $rec->getDescriptionDet();?> </p> <br/> </br>
-    <button type="button" class="btn btn-danger btn-lg" disabled="disabled"><?php echo $rec->getNombreBurn();?> burns</button>
+    <h1><?php echo $rec->getTitre(); ?></h1><br/>
+    <p><?php echo $rec->getDescription();?> </p> <br/> <br/>
 
 </td>
 <td>
     
-    <p style="color: red"><?php echo $rec->getIngredient();?></p>
+    <p style="color: red"><?php echo $rec->getIngredientBr();?></p> <br/>
+    <button type="button" class="btn btn-danger btn-lg" disabled="disabled"><?php echo $rec->getNombreBurn();?> burns</button>
 
 </td>
 </tr>
@@ -137,14 +137,15 @@ else
 ?>
 <tr>
 <td width="800em" ><a href="ContenuRecette?id=<?php print_r(urlencode($rec->getTitre()));?>"> <img src="./files/<?php echo $rec->getImage();?>" alt="" width ="170em" height ="200em"  /></a>
-    <h1><?php echo $rec->getTitre(); ?></h1>
-    <p><?php echo $rec->getDescriptionDet();?> bite</p>
-    <button type="button" class="btn btn-danger btn-lg"><?php echo $rec->getNombreBurn();?> burns</button>
+    <h1><?php echo $rec->getTitre(); ?></h1><br/>
+    <p><?php echo $rec->getDescription();?></p><br/> <br/><br/>
 
 
 </td>
 <td width="400em">
-    <p style="color: red;"><?php echo $rec->getIngredient();?></p> <br/>
+    <p style="color: red;"><?php echo $rec->getIngredientBr();?></p> <br/>
+    <button type="button" class="btn btn-danger btn-lg" disabled="disabled"><?php echo $rec->getNombreBurn();?> burns</button>
+
 </td>
 </tr>
 
