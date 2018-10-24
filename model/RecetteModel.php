@@ -15,7 +15,7 @@ class RecetteModel extends Model{
             $stmt->bindValue(7, $_recette->getImage(), PDO::PARAM_STR);
             $stmt->bindValue(8, $_recette->getNombrePersonne(), PDO::PARAM_STR);
             $stmt->bindValue(9, $_recette->getNombreBurn(), PDO::PARAM_STR);
-
+            
             $ret =$stmt->execute();
         }
         catch (Exception $e)
@@ -71,7 +71,7 @@ class RecetteModel extends Model{
                                                ingredients='". addslashes($_recette->getIngredientNl()) ."',image='".addslashes($_recette->getImage())."',
                                                nombre_personne=".$_recette->getNombrePersonne()." WHERE id=".$_recette->getId();
 
-       
+       echo $_recette->getIngredient();
         $this->getBdd()->exec($query);
 
         $query2 = "UPDATE favoris SET nom_recette='".addslashes($_recette->getTitre()) ."', image_rec='". addslashes($_recette->getImage())."' WHERE nom_recette='".$_SESSION['recette']."'";

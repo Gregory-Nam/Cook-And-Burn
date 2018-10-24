@@ -183,7 +183,7 @@ class Recette
      */
 	public function getIngredient()
 	{
-		return nl2br($this->_ingredient);
+		return $this->_ingredient;
 	}
 
     /**

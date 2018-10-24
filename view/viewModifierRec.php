@@ -62,7 +62,7 @@
                                     <?php foreach($iM->getIngredientByCat($categorie) as $ingredient) :
                                         ?>
 
-                                        <option name="<?php echo $ingredient;?>"> <?php echo $ingredient;?> </option>
+                                        <option name="<?php echo $ingredient;?>"><?php echo $ingredient;?> </option>
                                         <?php ++$i;
                                     endforeach; ?>
                                 </optgroup>

@@ -195,7 +195,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     <div class="clearfix"> </div>
                     <div class="categories">
                         <h3> Ingredients - <?php echo $marec->getNombrePersonne()?> personnes</h3>
-                        <p> <?php echo $marec->getIngredient();?> </p>
+                        <p> <?php echo $marec->getIngredientBr();?> </p>
                     </div>
                     <div class="clearfix"> </div>
                     <div class="categories">

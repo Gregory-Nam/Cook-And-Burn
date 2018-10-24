@@ -24,6 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--// bootstrap-css -->
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
+    <!--<link rel="stylesheet" href="./css/halloween.css" type="text/css" media="all" />-->
     <!--// css -->
     <!-- font-awesome icons -->
     <link href="./css/font-awesome.css" rel="stylesheet">
@@ -206,7 +207,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <p>© 2016 Tasty . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
+        
+
 </div>
+
 <!-- //copyright -->
 </body>
 </html>

@@ -72,7 +72,7 @@ class ControllerModifierRecAction
                     exit();
                 } else {
                     foreach ($quantiteIng as $quantite) :
-                        $ingredientEtQuantite .= $quantite . "\n";
+                        $ingredientEtQuantite .= $quantite;
                     endforeach;
                 }
             }
