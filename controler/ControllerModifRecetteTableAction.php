@@ -17,7 +17,7 @@ class ControllerModifRecetteTableAction
     public function verif()
     {
         $idPro = $_SESSION['profilSup'];
-        if(empty($_POST['nom']) or empty($_POST['description']) or empty($_POST['descriptiondet']) or empty($_POST['auteur']) or empty($_POST['ingredients']) or empty($_POST['nombre']))
+        if(empty($_POST['nom']) or empty($_POST['description']) or empty($_POST['descriptiondet']) or empty($_POST['auteur']) or empty($_POST['ingredients']) or empty($_POST['nombre'] or empty($_POST['etapes'])))
         {
 
             $_SESSION['erreur'] = 'Remplir tout les champs !';
@@ -25,6 +25,7 @@ class ControllerModifRecetteTableAction
         }
         else
         {
+            $etapes = htmlspecialchars($_POST['etapes']);
             $nom = htmlspecialchars($_POST['nom']);
             $description = htmlspecialchars($_POST['description']);
             $descriptiondet = htmlspecialchars($_POST['descriptiondet']);
@@ -36,7 +37,7 @@ class ControllerModifRecetteTableAction
             {
 
                 //Tout est bon
-                $test->UpdateRecette($idPro,$nom,$description,$descriptiondet,$auteur,$ingredients,$nombre);
+                $test->UpdateRecette($idPro,$nom,$description,$descriptiondet,$etapes,$auteur,$ingredients,$nombre);
                 $_SESSION['reussi'] = 'Modifié !';
                 header("Location:ModifUserRecette?id=$idPro");
             }
