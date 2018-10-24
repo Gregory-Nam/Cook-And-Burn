@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="<?php if($t == "Panel") echo "active";?>" href="panel">Panel</a></li>
                                 <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                                 <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
-                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
+                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les tutos</a></li>
                                 <li><form method ="post" class = "contact-form">
                                         <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
                                     </form></li>
@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                                 <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                                 <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
-                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
+                                <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les tutos</a></li>
                                 <li><form method ="post" class = "contact-form">
                                         <a><input type="submit" style="margin-top:-15%" type="submit" name="deco" value ="Déconnexion"/></a>
                                     </form></li>
@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="footer-icons">
                 <ul>
                     <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><span>Twitter</span></li>
-                    <li><a href="#" class="twitter facebook"><i class="fa fa-facebook"></i></a><span>Facebook</span></li>
+                    <li><a href="https://www.facebook.com/Cook-And-Burn-2083965681934223/" target=_blank class="twitter facebook"><i class="fa fa-facebook"></i></a><span>Facebook</span></li>
                     <li><a href="#" class="twitter chrome"><i class="fa fa-google-plus"></i></a><span>Google +</span></li>
                     <li><a href="#" class="twitter dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a><span>Dribbble</span></li>
                 </ul>
@@ -179,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a class="<?php if($t == "Panel") echo "active";?>" href="panel">Panel</a></li>
                         <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                         <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
-                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
+                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les tutos</a></li>
                 <?php
                     }
                     elseif(isset($_SESSION['pseudo']))
@@ -188,7 +188,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                         <li><a class="<?php if($t == "Profil") echo "active";?>" href="profil">Mon profil</a></li>
                         <li><a class="<?php if($t == "Création recette") echo "active";?>" href="creationRecette">Créer une recette</a></li>
-                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
+                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les tutos</a></li>
                 <?php
                     }
                     else
@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     ?>
                         <li><a class="<?php if($t == "Cook And Burn") echo "active";?>" href="index">Accueil</a></li>
                         <li><a class="<?php if($t == "Connexion") echo "active";?>" href="Connexion">Connexion</a></li>
-                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les Tutos</a></li>
+                        <li><a class="<?php if($t == "Tutos") echo "active";?>" href="tuto">Les tutos</a></li>
                 <?php
                     }
                     ?>

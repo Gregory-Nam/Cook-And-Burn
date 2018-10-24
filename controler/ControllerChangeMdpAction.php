@@ -6,6 +6,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerChangeMdpAction
+ */
 class ControllerChangeMdpAction
 {
     public function __construct()
@@ -13,6 +16,9 @@ class ControllerChangeMdpAction
         $this->changeMdp();
     }
 
+    /**
+     * fonction pour changer de mdp
+     */
     public function changeMdp()
     {
         if(empty($_POST['oldMdp']) || empty($_POST['newMdp']) || empty($_POST['confirmMdp']))

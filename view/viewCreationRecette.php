@@ -82,11 +82,7 @@
                                     {
                                         if (selectBox[i].selected)
                                         {
-                                            var newInput = document.createElement('input');
-                                            newInput.setAttribute('type', 'number');
-                                            newInput.setAttribute('placeholder', 'quel quantite');
                                             //trim permet d'enlever les espaces au debut et a la fin
-                                            document.body.appendChild(newInput);
                                             span.innerHTML += "<br/> <p>" +selectBox[i].innerHTML.trim()+ "</p>"+
                                                 '<input type="number" min="0" name="'+selectBox[i].innerHTML.trim()+'"/>' +
                                                 //post incrementation pour incrementer apres avoir mis la mesure actuel
@@ -128,7 +124,7 @@
                         <script type="text/javascript">
                             $(document).ready(function() {
                                 $('#lesEtapes').multiselect({ enableFiltering: false,
-                                    includeSelectAllOption: true,
+                                    includeSelectAllOption: false,
                                     nonSelectedText: 'Selectionnez les étapes que vous souhaitez écrire',
                                     maxHeight:200,
                                     buttonWidth:"100%"});
@@ -143,11 +139,7 @@
                                 {
                                     if (selectBox[i].selected)
                                     {
-                                        var newTextArea = document.createElement('textarea');
-                                        newTextArea.setAttribute('type', 'text');
-                                        newTextArea.setAttribute('placeholder', 'quel quantite');
                                         //trim permet d'enlever les espaces au debut et a la fin
-                                        document.body.appendChild(newTextArea);
                                         span.innerHTML += "<p>" +selectBox[i].innerHTML.trim() +"</p>" +
                                             '<textarea name="'+selectBox[i].innerHTML.trim()+'"> </textarea> <br/> <br/>';
                                         //post incrementation pour incrementer apres avoir mis la mesure actuel

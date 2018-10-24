@@ -1,12 +1,17 @@
 
 <?php
 session_start();
-$_SESSION['recette'] = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
-$titre = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
-$this->_t = $titre;
+if(strpos($_SERVER['REQUEST_URI'], "fbclid"))
+    $_SESSION['recette'] = strstr(substr(strstr($_SERVER['REQUEST_URI'], '='), 1),'&', true);
+else
+    $_SESSION['recette'] = substr(strstr($_SERVER['REQUEST_URI'], '='), 1);
 
-$marec = $rM->getByTitre($_SESSION['recette']);
+
+$titre = substr(strstr($_SERVER['REQUEST_URI'], '='), 1);
+
+$marec = $rM->getByTitre(urldecode($_SESSION['recette']));
 $mescom = $rM->getCommentaire($_SESSION['recette']);
+$this->_t = $marec->getTitre();
 
 
 ?>
@@ -170,7 +175,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                     </div>
 
                     <div class ="opinion">
-                        <h2> Ecriver un commentaire </h2>
+                        <h2> Ecrivez un commentaire </h2>
                         <form method="post" action="CommentaireRecette">
                             <textarea class="form-control" name="commentaireRecette">Ecrivez un commentaire</textarea><br/>
                             <?php if(isset($_SESSION['erreur2'])){
@@ -211,7 +216,7 @@ $mescom = $rM->getCommentaire($_SESSION['recette']);
                         </p>
                     </div>
                     <div class="categories">
-                        <h3> Partager </h3><br/>
+                        <h3> Partagez </h3><br/>
                         <div class="fb-share-button" data-size="large" data-href="http://cookandburn-gxaj.alwaysdata.net/ContenuRecette?id=<?php echo $_SESSION['recette']?>" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcookandburn-gxaj.alwaysdata.net%2FContenuRecette%3Fid%3D<?php echo $_SESSION['recette']?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
                     </div>
                 </div>

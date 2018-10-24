@@ -6,14 +6,24 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerChangeMailAction
+ */
 class ControllerChangeMailAction
 {
     private $test;
+
+    /**
+     * ControllerChangeMailAction constructor.
+     */
     public function __construct()
     {
         $this->changeMail();
     }
 
+    /**
+     * fonction pour changer son mail.
+     */
     public function changeMail()
     {
         if(empty($_POST['oldMail']) || empty($_POST['newMail']) || empty($_POST['newMail2']))

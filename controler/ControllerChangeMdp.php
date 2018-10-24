@@ -5,10 +5,18 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerChangeMdp
+ */
 class ControllerChangeMdp
 {
     private $_userModel;
     private $_view;
+
+    /**
+     * ControllerChangeMdp constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))

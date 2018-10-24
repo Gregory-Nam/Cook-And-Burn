@@ -4,6 +4,48 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+table img {
+    float: left;
+    margin-right: 0.5em;
+}
+
+
+table h1{
+    display:inline;
+    color:#d9534f;
+}
+
+table p{
+    display:inline
+}
+
+select optgroup{
+
+    text-align:center;
+}
+#affichage{
+    text-align: center;
+}
+
+#affichage p{
+    font-weight:bold;
+}
+
+#affichage2{
+    align: center;
+}
+.categories{
+    text-align:center;
+}
+
+.contact-form .single-left-left input[type="text"]{
+    width:100%;
+
+}
+#affichageEtapes p{
+    font-weight:bold;
+}
 #bg-video {
     top: 0px;
     left: 0px;
@@ -21,6 +63,13 @@ html, body{
     font-size: 100%;
 	font-family: 'Roboto Condensed', sans-serif;
 }
+.face {
+border-radius: 100%;}
+
+.circleborder {
+border: 5px solid #ff675b;
+border-radius: 100%;
+display: inline-block;}
 /*-- banner --*/
 .banner{
     background: rgba(0, 0, 0, 0.38);
@@ -1224,22 +1273,22 @@ h2.typoh2{
 
 .contact-form input[type="number"]
 {
-    width: 5%;
+    width: 25%;
     color: #898888;
     background: none;
     outline: none;
     font-size: 1em;
-    padding: 1em;
+    padding: 1em 0.5em;
     margin: 0 .5em 1em 0;
     border: solid 2px #3C3C3C;
     -webkit-appearance: none;
 }
 
 .contact-form input[type="number"]:nth-child(3) {
-    margin-right: 0;
+    margin-right: 0.5em;
 }
 .contact-form textarea {
-    width: 32.6%;
+    width: 100%;
     margin-bottom:20px;
     resize:vertical;
     color: #898888;
@@ -1266,11 +1315,12 @@ ul li .contact-form input[type="submit"] {
     color: #ffffff;
     font-size: 1em;
     font-weight: 600;
-    padding: .7em 1em;
+    padding: 0em 1em;
     text-decoration: none;
     letter-spacing: 1px;
     background: none;
     margin:1em 0 0 0;
+    width:100%;
     -webkit-appearance:none;
 }
 .contact-form input[type="submit"]:hover {
@@ -1552,7 +1602,7 @@ ul li .contact-form  {
 		margin-top: 2em;
 	}
 	.contact-form input[type="text"] {
-		width: 32.5%;
+		width: 32.6%;
 	}
     .contact-form input[type="password"] {
         width: 32.5%;
@@ -1665,7 +1715,7 @@ ul li .contact-form  {
 		margin: 0 0 1em 0;
 	}
 	.contact-form input[type="text"] {
-		width: 32.2%;
+		width: 100%;
 	}
     .contact-form input[type="password"] {
         width: 32.2%;
@@ -1756,7 +1806,7 @@ ul li .contact-form  {
 		width: 17%;
 	}
 	.contact-form input[type="text"] {
-		width: 32%;
+		width:100%;
 	}
     .contact-form input[type="password"] {
         width: 32%;
@@ -2286,7 +2336,7 @@ ul li .contact-form  {
 }
 
 #myTable tr.header, #myTable tr:hover {
-  border: 12px solid #99003d;
+  border: 6px solid #99003d;
   border-radius: 10px;
 }
 

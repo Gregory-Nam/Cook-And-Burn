@@ -6,6 +6,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerCommentaireRecette
+ */
 class ControllerCommentaireRecette
 {
     private $test;

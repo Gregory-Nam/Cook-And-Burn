@@ -30,7 +30,7 @@ $this->_t = 'Cook And Burn';
     <div class="col-md-4 banner-grad">
       <div class="banner-grad-img">
             <img src="images/b2.jpg" alt="" />
-            <h4>Rafinée</h4>
+            <h4>Raffinée</h4>
        </div>
     </div>
     <div class="col-md-4 banner-grad">
@@ -162,7 +162,7 @@ else
          <script>
          $(document).ready(function(){
 $('#myTable').dataTable({
-"lengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]]
+"lengthMenu": [[2, 5, 10, -1], [2, 5, 10, "Toutes"]]
 })
 
 });

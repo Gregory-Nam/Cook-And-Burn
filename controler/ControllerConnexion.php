@@ -4,6 +4,9 @@ include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 
+/**
+ * Class ControllerConnexion
+ */
 class ControllerConnexion
 {
     private $_userModel;

@@ -3036,10 +3036,9 @@ select[multiple].form-group-lg .form-control {
 fieldset[disabled] .btn {
   pointer-events: none;
   cursor: not-allowed;
-  filter: alpha(opacity=65);
   -webkit-box-shadow: none;
           box-shadow: none;
-  opacity: .65;
+  opacity: 1;
 }
 .btn-default {
   color: #333;
@@ -4985,6 +4984,7 @@ a.thumbnail.active {
 .alert-warning .alert-link {
   color: #66512c;
 }
+
 .alert-danger {
   color: #a94442;
   background-color: #f2dede;

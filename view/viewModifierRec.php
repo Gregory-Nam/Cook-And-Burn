@@ -93,11 +93,8 @@
                                 {
                                     if (selectBox[i].selected)
                                     {
-                                        var newInput = document.createElement('input');
-                                        newInput.setAttribute('type', 'number');
-                                        newInput.setAttribute('placeholder', 'quel quantite');
+
                                         //trim permet d'enlever les espaces au debut et a la fin
-                                        document.body.appendChild(newInput);
                                         span.innerHTML += selectBox[i].innerHTML.trim() + '<br/>'+
                                             '<input type="number" min="0" name="'+selectBox[i].innerHTML.trim()+'"/>' +
                                             //post incrementation pour incrementer apres avoir mis la mesure actuel
@@ -170,10 +167,7 @@
                                     {
                                         if (selectBox[i].selected)
                                         {
-                                            var newTextArea = document.createElement('textarea');
-                                            newTextArea.setAttribute('type', 'text');
                                             //trim permet d'enlever les espaces au debut et a la fin
-                                            document.body.appendChild(newTextArea);
                                             span.innerHTML += selectBox[i].innerHTML.trim() +
                                                 '<textarea name="'+selectBox[i].innerHTML.trim()+'"></textarea><br/><br/>';
                                             //post incrementation pour incrementer apres avoir mis la mesure actuel
