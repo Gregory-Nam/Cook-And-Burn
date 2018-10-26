@@ -44,7 +44,6 @@ session_start();
                     </a>
                     <ul class="sub">
                         <li><a href="userTable">User Table</a></li>
-                        <li><a href="recetteTable">Recette Table</a></li>
                         <li><a href="ingredientTable">Ingredients Table</a></li>
                     </ul>
                 </li>
