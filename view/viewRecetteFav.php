@@ -19,7 +19,7 @@ include("viewProfil.php");
         <div class="special-heading">
             <h3>Vous n'avez pas de recettes favorites !</h3>
         </div>
-        <?php 
+        <?php
             }
         ?>
 
