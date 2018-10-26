@@ -34,7 +34,8 @@ compte.
 
 // Choix Techniques //
 
-A REMPLIR
+Orientation vers PDO et non MySqli en raison d'une programmation orientée objet.
+Utilisation d'une architecture MVC (Model View Controller).
 
 
 //Configuration logicielle minimale //
@@ -70,3 +71,10 @@ A REMPLIR
 
 Pour des raisons de sécurité les mots de passe ne sont pas stockés en clair dans notre base de donnée.
 Il sont hachés via la fonction de hachage SHA1 qui produit un résultat (appelé « hash » ou condensat) de 160 bits.
+
+// Sécurité //
+
+Certains caractères ont des significations spéciales en HTML, et doivent être remplacés par des entités HTML pour conserver leurs significations. Par sécurité nous avons donc utilisé htmlspecialchars() pour tous les POST de nos formulaires. Ainsi on sécurisé un peu plus les formulaires.
+De plus chaque données des formulaires récupérés sont filtrées , du côté client comme du côté serveur avec des filtres de variable.
+
+
