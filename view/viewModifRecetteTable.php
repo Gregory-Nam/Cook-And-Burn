@@ -152,7 +152,74 @@ $_SESSION['profilSup'] = substr(strrchr($_SERVER['REQUEST_URI'], '='), 1);
 												<input type="text" name="auteur" placeholder="name"><br/><br/>
 
 												<label>Ingredients</label><br/>
-												<input type="text" name="ingredients" placeholder="name"><br/><br/>
+												<select  name="ingredients[]" onchange='affiche();' id="lesIngredients" multiple >
+                                <?php
+                                $i = 0;
+                                foreach ($categories as $categorie) :?>
+
+                                    <optgroup  label="<?php echo $categorie;?>">
+                                    <?php foreach($iM->getIngredientByCat($categorie) as $ingredient) :
+                                    ?>
+
+                                    <option name="<?php echo $ingredient;?>"> <?php echo $ingredient;?> </option>
+                                    <?php ++$i;
+                                    endforeach; ?>
+                                    </optgroup>
+
+
+                                <?php
+                                endforeach;
+                                ?>
+
+
+
+
+
+
+
+
+                            </select>
+                            <br/>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $('#lesIngredients').multiselect({ enableFiltering: true,
+                                        includeSelectAllOption: false,
+                                        nonSelectedText: 'Veuillez selectionner des ingredients',
+                                        filterPlaceholder:'Recherche',
+                                        maxHeight:200,
+                                        optgroup:false,
+                                        buttonWidth:"100%"});
+
+                                });
+
+                                function affiche() {
+                                    var selectBox =document.getElementById("lesIngredients"),i, span = document.getElementById('affichage');
+                                    span.innerHTML=''
+                                    var j=0
+                                    for (i=0; i < selectBox.length; i++)
+                                    {
+                                        if (selectBox[i].selected)
+                                        {
+                                            //trim permet d'enlever les espaces au debut et a la fin
+                                            span.innerHTML += "<br/> <p>" +selectBox[i].innerHTML.trim()+ "</p>"+
+                                                '<input type="number" min="0" name="'+selectBox[i].innerHTML.trim()+'"/>' +
+                                                //post incrementation pour incrementer apres avoir mis la mesure actuel
+                                                '<select name="mesure'+ j++ +'">' +
+                                                '<option value ="gramme"> gramme </option>'+
+                                                '<option value ="litre"> litre </option>'+
+                                                '<option value ="centilitre"> centilitre </option>'+
+                                                '<option value =""> unité </option>'+
+                                                '<option value ="millilitre"> millilitre </option>'+
+                                                '<option value ="cuillère a café"> cuillère à café </option>'+
+                                                '<option value ="cuillère"> cuillère </option>'+
+                                                '<option value ="cuillère a soupe"> cuillère à soupe </option>'+
+                                                '</select> <br><br>';
+                                        }
+                                    }
+                                }
+                            </script>
+                            <div id="affichage"> </div>
+                            <br/><br/>
 
 												<label>Etapes</label><br/>
 												<textarea class="form-control" name="etapes" placeholder="Description de la recette"></textarea>

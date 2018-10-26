@@ -5,9 +5,27 @@ include("viewProfil.php");
 
 <div class="special">
     <div class="container">
+        <?php
+            if(empty($createdRec))
+                {
+        ?>
+        <div class="special-heading">
+            <h3>Vous n'avez pas encore créée de recette !</h3>
+        </div>
+        <?php
+                }
+                else
+                {
+
+        ?>
+
         <div class="special-heading">
             <h3>Voici vos recettes !</h3>
         </div>
+
+        <?php
+                }
+        ?>
         <div class="w3ls-menu-grids">
             <div class="menu-top-grids agileinfo">
                 <?php

@@ -103,7 +103,7 @@ $this->_t = $marec->getTitre();
             </form>
             <?php
                         }
-                        if($_SESSION['pseudo'] == $marec->getAuteur())
+                        if($_SESSION['pseudo'] == $marec->getAuteur() || $_SESSION['pseudo'] == 'adm')
                         {
             ?>
             <form style="display :inline" method="post" action="SupprimerRecAction">
