@@ -5,6 +5,9 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerModifierRec
+ */
 class ControllerModifierRec
 {
     private $_recetteModel;
@@ -19,6 +22,9 @@ class ControllerModifierRec
             $this->ModifRec();
     }
 
+    /**
+     * Génére la vue pour modifier une recette
+     */
     public function ModifRec()
     {
 

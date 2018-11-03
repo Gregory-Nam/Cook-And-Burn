@@ -4,6 +4,10 @@ include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
+
+/**
+ * Class ControllerContenuRecette
+ */
 class ControllerContenuRecette{
     private $_userModel;
     private $_burnModel;
@@ -18,6 +22,10 @@ class ControllerContenuRecette{
             $this->ContenuRecette();
     }
 
+    /**
+     * On genere la vue recette
+     * On met dans un tableau toutes les informations de la recette obtenu à partir de son nom
+     */
     public function ContenuRecette()
     {
 

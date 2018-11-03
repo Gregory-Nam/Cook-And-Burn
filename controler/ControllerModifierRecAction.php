@@ -6,6 +6,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerModifierRecAction
+ */
 class ControllerModifierRecAction
 {
     private $test;
@@ -15,6 +18,9 @@ class ControllerModifierRecAction
     }
 
 
+    /**
+     * Fonction qui permet de modifier chaque attribut de la recette
+     */
     public function ModifRec()
     {
 

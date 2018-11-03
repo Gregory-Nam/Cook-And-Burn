@@ -5,6 +5,9 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerMdpOublie
+ */
 class ControllerMdpOublie
 {
     private $_userModel;
@@ -17,6 +20,9 @@ class ControllerMdpOublie
             $this->mdpOublie();
     }
 
+    /**
+     * Genere la vue pour le mot de passe oublié
+     */
     public function mdpOublie()
     {
 

@@ -5,6 +5,9 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerCreatedRec
+ */
 class ControllerCreatedRec
 {
     private $_recetteModel;
@@ -18,6 +21,9 @@ class ControllerCreatedRec
             $this->CreatedRec();
     }
 
+    /**
+     * On génére la vue CreateRec qui permet de créer une recette
+     */
     public function CreatedRec()
     {
 

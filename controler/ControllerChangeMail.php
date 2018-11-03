@@ -5,6 +5,10 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerChangeMail
+ * Génére la vue pour changer de mail et fait passer par un tableau les informations de l'utilisateur
+ */
 class ControllerChangeMail
 {
     private $_userModel;
@@ -17,6 +21,9 @@ class ControllerChangeMail
             $this->ChangeMail();
     }
 
+    /**
+     * On récupere toutes les informations de l'utilisateur à partir de son nom
+     */
     public function ChangeMail()
     {
 

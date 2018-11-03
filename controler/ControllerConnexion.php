@@ -19,6 +19,10 @@ class ControllerConnexion
             $this->connexion();
     }
 
+    /**
+     * On génére la vue Connexion
+     *
+     */
     public function connexion()
     {
 

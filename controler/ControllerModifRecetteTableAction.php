@@ -6,6 +6,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerModifRecetteTableAction
+ */
 class ControllerModifRecetteTableAction
 {
     private $test;
@@ -14,6 +17,9 @@ class ControllerModifRecetteTableAction
         $this->verif();
     }
 
+    /**
+     * Permet de modifier une recette à partir du panel Admin
+     */
     public function verif()
     {
         $idPro = $_SESSION['profilSup'];

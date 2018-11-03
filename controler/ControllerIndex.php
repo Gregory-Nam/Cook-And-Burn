@@ -2,6 +2,10 @@
 require_once('view/View.php');
 include('./model/User.php');
 include ('./model/UserModel.php');
+
+/**
+ * Class ControllerIndex
+ */
 class ControllerIndex
 {
 	private $_recetteModel;
@@ -16,6 +20,10 @@ class ControllerIndex
 			$this->recette();
 	}
 
+    /**
+     * Dans l'index on afichage la meilleure recette, toutes les recettes si l'utilisateur est connecté
+     * Sinon les recettes visible pour les invités
+     */
 	public function recette()
 	{
 		$this->_recetteModel = new RecetteModel();

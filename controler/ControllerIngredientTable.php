@@ -4,6 +4,10 @@ include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
+
+/**
+ * Class ControllerIngredientTable
+ */
 class ControllerIngredientTable
 {
     private $_userModel;
@@ -17,6 +21,10 @@ class ControllerIngredientTable
             $this->ingredientTable();
     }
 
+    /**
+     * Affiche la vue pour gérer les ingrédients
+     * On verifie que l'utilisateur connecté soit bien l'administrateur
+     */
     public function ingredientTable()
     {
         $this->_userModel = new UserModel();

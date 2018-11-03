@@ -25,6 +25,9 @@ class ControllerChangeMdp
             $this->ChangeMdp();
     }
 
+    /**
+     * On recupere toutes les informations de l'utilisateur
+     */
     public function ChangeMdp()
     {
 

@@ -4,6 +4,10 @@ include('./model/Recette.php');
 include ('./model/RecetteModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
+
+/**
+ * Class ControllerCreationRecette
+ */
 class ControllerCreationRecette
 {
     private $_userModel;
@@ -17,6 +21,10 @@ class ControllerCreationRecette
             $this->creationRecette();
     }
 
+    /**
+     * On genere la vue de Creation de recette
+     * On passe dans un tableau , tous les ingrédients et toutes les catégories
+     */
     public function creationRecette()
     {
 

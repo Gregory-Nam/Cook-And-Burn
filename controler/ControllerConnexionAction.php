@@ -6,6 +6,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerConnexionAction
+ */
 class ControllerConnexionAction
 {
     private $test;
@@ -14,6 +17,11 @@ class ControllerConnexionAction
         $this->verif();
     }
 
+    /**
+     * Dans cette fonction on vérifie le couple mdp/pseudo
+     * Et si le captcha est bon
+     * Ensuite on redirige l'utilisateur sur la page d'Acceuil
+     */
     public function verif()
     {
     	if(empty($_POST['name']) || empty($_POST['password'])){

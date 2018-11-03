@@ -5,6 +5,9 @@
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerConfirmationAction
+ */
 class ControllerConfirmationAction
 {
     private $test;
@@ -13,6 +16,10 @@ class ControllerConfirmationAction
         $this->verif();
     }
 
+    /**
+     * Si la cle secrete correspond au mail , alors le compte est validé.
+     * Activation par mail
+     */
     public function verif()
     {
     	if(empty($_POST['pseudo']) || empty($_POST['cleSecrete'])){

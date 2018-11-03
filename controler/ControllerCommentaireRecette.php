@@ -17,6 +17,9 @@ class ControllerCommentaireRecette
         $this->verif();
     }
 
+    /**
+     * Ajout du commentaire si tout est ok
+     */
     public function verif()
     {;
         if(empty($_SESSION['pseudo']))

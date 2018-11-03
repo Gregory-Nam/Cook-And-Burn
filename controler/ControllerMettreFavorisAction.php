@@ -2,6 +2,10 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
+
+/**
+ * Class ControllerMettreFavorisAction
+ */
 class ControllerMettreFavorisAction
 {
 private $_favorisModel;
@@ -10,6 +14,9 @@ public function __construct()
     $this->tfavoris();
 }
 
+    /**
+     * Permet d'ajouter une recette au favoris
+     */
 public function tfavoris()
 {
 

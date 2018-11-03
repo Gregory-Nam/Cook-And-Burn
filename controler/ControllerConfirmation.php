@@ -19,6 +19,9 @@ class ControllerConfirmation
             $this->confirmation();
     }
 
+    /**
+     * Génére la vue de comfirmation par mail
+     */
     public function confirmation()
     {
 
