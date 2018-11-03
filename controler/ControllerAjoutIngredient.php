@@ -8,6 +8,7 @@ ini_set('display-errors','on');
 
 /**
  * Class ControllerAjoutIngredient
+ * Permet l'ajout d'un ingrédient dans la BDD
  *
  */
 
