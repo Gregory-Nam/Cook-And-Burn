@@ -154,7 +154,8 @@ class ControllerModifierRecAction
                             //on verifie si l'etape est vide, pour ce cas on vide le tableau et on sort du foreach
                             if(empty($_POST[$etape_]))
                             {
-                                echo "etape vide";
+                                $_SESSION['erreur'] = 'Une ou plusieurs étapes sont vides';
+                                header('Location:ModifierRec');
                                 exit();
                                 $etapes = array();
                                 break;
