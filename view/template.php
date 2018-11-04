@@ -205,7 +205,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
         </div>
         <div class="agileinfo">
-            <p>© 2016 Tasty . All Rights Reserved . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            <p>© 2018 Cook And Burn . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
     
