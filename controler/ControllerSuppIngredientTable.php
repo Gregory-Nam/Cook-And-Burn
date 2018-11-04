@@ -6,6 +6,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerSuppIngredientTable
+ */
 class ControllerSuppIngredientTable
 {
     private $test;
@@ -14,6 +17,10 @@ class ControllerSuppIngredientTable
         $this->verif();
     }
 
+    /**
+     * Permet de supprimer un ingrédient de la BDD
+     * Seulement accessible pour l'admin
+     */
     public function verif()
     {
         echo 'coucuo';

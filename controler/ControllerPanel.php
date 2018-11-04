@@ -5,11 +5,28 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerPanel
+ */
 class ControllerPanel
 {
+    /**
+     * @var
+     */
     private $_userModel;
+    /**
+     * @var
+     */
     private $_view;
+    /**
+     * @var
+     */
     private $_recetteModel;
+
+    /**
+     * ControllerPanel constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))
@@ -18,6 +35,9 @@ class ControllerPanel
             $this->panel();
     }
 
+    /**
+     * Affichage du panel pour l'admin
+     */
     public function panel()
     {
 

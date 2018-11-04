@@ -10,10 +10,27 @@ session_start();
  */
 class ControllerModifierRec
 {
+    /**
+     * @var
+     */
     private $_recetteModel;
+    /**
+     * @var
+     */
     private $_ingredientsModel;
+    /**
+     * @var
+     */
     private $_userModel;
+    /**
+     * @var
+     */
     private $_view;
+
+    /**
+     * ControllerModifierRec constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))

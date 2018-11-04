@@ -4,6 +4,10 @@ include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
+
+/**
+ * Class ControllerRecetteTable
+ */
 class ControllerRecetteTable
 {
     private $_userModel;
@@ -17,6 +21,9 @@ class ControllerRecetteTable
             $this->recetteTable();
     }
 
+    /**
+     * Permet l'affichage de toutes les recettes pour l'admin
+     */
     public function recetteTable()
     {
 

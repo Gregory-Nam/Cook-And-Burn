@@ -6,14 +6,27 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerModifUserTableAction
+ */
 class ControllerModifUserTableAction
 {
+    /**
+     * @var
+     */
     private $test;
+
+    /**
+     * ControllerModifUserTableAction constructor.
+     */
     public function __construct()
     {
         $this->verif();
     }
 
+    /**
+     * Permet de modifier les informations d'un utilisateur
+     */
     public function verif()
     {
         $idPro = $_SESSION['profilSup'];

@@ -10,9 +10,23 @@ session_start();
  */
 class ControllerIngredientTable
 {
+    /**
+     * @var
+     */
     private $_userModel;
+    /**
+     * @var
+     */
     private $_view;
+    /**
+     * @var
+     */
     private $_recetteModel;
+
+    /**
+     * ControllerIngredientTable constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))

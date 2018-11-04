@@ -4,11 +4,29 @@ include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
+
+/**
+ * Class ControllerModifUserTable
+ */
 class ControllerModifUserTable
 {
+    /**
+     * @var
+     */
     private $_userModel;
+    /**
+     * @var
+     */
     private $_recetteModel;
+    /**
+     * @var
+     */
     private $_view;
+
+    /**
+     * ControllerModifUserTable constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))
@@ -17,6 +35,9 @@ class ControllerModifUserTable
             $this->modifTable();
     }
 
+    /**
+     * Affichage la vue pour modifier un compte
+     */
     public function modifTable()
     {
 

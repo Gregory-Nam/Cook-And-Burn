@@ -6,12 +6,33 @@ include('./model/Recette.php');
 include ('./model/RecetteModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
+
+/**
+ * Class ControllerModifUserRecette
+ */
 class ControllerModifUserRecette
 {
+    /**
+     * @var
+     */
     private $_userModel;
+    /**
+     * @var
+     */
     private $_recetteModel;
+    /**
+     * @var
+     */
     private $_ingredientsModel;
+    /**
+     * @var
+     */
     private $_view;
+
+    /**
+     * ControllerModifUserRecette constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))
@@ -20,6 +41,9 @@ class ControllerModifUserRecette
             $this->modifTable();
     }
 
+    /**
+     * Affiche la vue pour modifier les recettes
+     */
     public function modifTable()
     {
 
