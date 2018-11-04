@@ -6,14 +6,23 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerMotDePasseOublie
+ */
 class ControllerMotDePasseOublie
 {
-    private $test;
+    /**
+     * ControllerMotDePasseOublie constructor.
+     */
     public function __construct()
     {
         $this->verif();
     }
 
+    /**
+     * fonction verif
+     * verification du mail, envoie du mail
+     */
     public function verif()
     {
         if(empty($_POST['mail']))

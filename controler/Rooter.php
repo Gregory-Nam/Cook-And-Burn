@@ -1,9 +1,16 @@
 <?php
+
+/**
+ * Class Rooter
+ */
 class Rooter
 {
 	private $_ctrl;
 	private $_view;
 
+    /**
+     * fonction routereq
+     */
 	public function routeReq()
 	{
 		try

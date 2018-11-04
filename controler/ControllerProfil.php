@@ -5,10 +5,24 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerProfil
+ */
 class ControllerProfil
 {
+    /**
+     * @var UserModel
+     */
     private $_userModel;
+    /**
+     * @var View
+     */
     private $_view;
+
+    /**
+     * ControllerProfil constructor.
+     * @throws Exception
+     */
     public function __construct()
     {
         if(isset($url))
@@ -17,6 +31,11 @@ class ControllerProfil
             $this->profil();
     }
 
+    /**
+     * Fonction profil
+     * initialisation de userModel
+     * Generation de la vue
+     */
     public function profil()
     {
 

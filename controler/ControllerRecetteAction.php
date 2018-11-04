@@ -6,14 +6,23 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerRecetteAction
+ */
 class ControllerRecetteAction
 {
-    private $test;
+    /**
+     * ControllerRecetteAction constructor.
+     */
     public function __construct()
     {
         $this->ajoutRecette();
     }
 
+    /**
+     * Fonction AjoutRecette
+     * Recuperation de tous les champs recuperer dans la vue Ajouter une recette
+     */
     public function ajoutRecette()
     {
         if(!empty($_FILES))

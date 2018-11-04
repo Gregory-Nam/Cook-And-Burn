@@ -7,6 +7,10 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display-errors','on');
 
+/**
+ * Class ControllerSignUpAction
+ * controller créer lorsque nous avions développer un système d'inscription, fonctionnalité à été supprimée
+ */
 class ControllerSignUpAction
 {
     private $test;

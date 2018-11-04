@@ -5,11 +5,29 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerRecetteFav
+ */
 class ControllerRecetteFav
 {
+    /**
+     * @var FavorisModel
+     */
     private $_favorisModel;
+    /**
+     * @var UserModel
+     */
     private $_userModel;
+    /**
+     * @var View
+     */
     private $_view;
+
+    /**
+     * ControllerRecetteFav constructor.
+     * @throws Exception
+     * appel de recFav
+     */
     public function __construct()
     {
         if(isset($url))
@@ -18,6 +36,11 @@ class ControllerRecetteFav
             $this->recFav();
     }
 
+    /**
+     * @fonction recFav
+     * Initialisation de favorisModel, userModel
+     * Generation de la vue
+     */
     public function recFav()
     {
 

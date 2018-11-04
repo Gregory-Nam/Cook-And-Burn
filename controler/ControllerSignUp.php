@@ -4,6 +4,10 @@ include('./model/User.php');
 include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 
+/**
+ * Class ControllerSignUp
+ * controller créer lorsque nous avions développer un système d'inscription, fonctionnalité à été supprimée
+ */
 class ControllerSignUp
 {
     private $_userModel;

@@ -5,9 +5,11 @@ include ('./model/UserModel.php');
 require_once ('./model/reCaptcha/autoload.php');
 session_start();
 
+/**
+ * Class ControllerTuto
+ */
 class ControllerTuto
 {
-    private $_userModel;
     private $_view;
     public function __construct()
     {
@@ -20,7 +22,7 @@ class ControllerTuto
     public function tuto()
     {
         $this->_view = new View('tuto');
-        $this->_view->generate(array("user" => $user));
+        $this->_view->generate(array());
 
     }
 }
