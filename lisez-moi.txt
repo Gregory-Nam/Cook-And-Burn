@@ -92,3 +92,8 @@ De plus chaque données des formulaires récupérés sont filtrées , du côté 
 // Base de donnée //
 
 Dans la table user, nous avons mis les attributs date_inscription et avatar car nous avons envisagé par la suite d'offrir la possibilité aux utilisateurs d'avoir une photo de profil. Et il peut être intéressant pour l'administrateur de savoir quand tel individu s'est inscrit (Possibilité de recompenser la fidelité, organiser des concours , etc .. )
+
+// Panel Administrateur //
+ 
+Tout est ok. Sauf le compteur total de partages, impossible de trouver comment comptabiliser la somme total de tous nos partages.
+Il nous faudrait plus de temps pour se renseigner sur la documentation de l'API Facebook Dev.
