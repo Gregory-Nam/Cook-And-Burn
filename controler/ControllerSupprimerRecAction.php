@@ -19,6 +19,9 @@ class ControllerSupprimerRecAction
     function suppRec()
     {
         $rec = $this->_rModel->getByTitre($_SESSION['recette']);
+
+        $this->_rModel->deleteCommentaire($_SESSION['recette']);
+
         $this->_rModel->deleteRecette($rec);
         unlink("./files/".$rec->getImage());
         header("location:index");

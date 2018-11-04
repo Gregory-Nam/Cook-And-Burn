@@ -168,6 +168,12 @@ class RecetteModel extends Model{
             echo $e;
         }
     }
+
+    public function deleteCommentaire($titre)
+    {
+        $query = 'DELETE FROM commentaire WHERE id_recette = "'.$titre.'"';
+        $this->getBdd()->exec($query);
+    }
     /**
      * @return null|Recette
      * la meilleure recette (celle avec le plus de burns
