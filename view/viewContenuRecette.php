@@ -59,11 +59,7 @@ $this->_t = $marec->getTitre();
                 <input type="submit" action="BurnAction" value="Ajouter un burn"/>
             </form>
                 <?php
-                        if(isset($_SESSION['erreur']))
-                        {
-                            echo '<p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
-                            unset($_SESSION['erreur']);
-                        }
+
                     }
                     else
                     {
@@ -124,7 +120,12 @@ $this->_t = $marec->getTitre();
 
             </span>
             <button type="button" class="btn btn-danger btn-lg"><?php echo $marec->getNombreBurn();?> burns</button>
-         
+            <?php if(isset($_SESSION['erreur']))
+            {
+                echo ' <br/> <br/><p><span class="label label-danger">'.$_SESSION['erreur'].'</span>';
+                unset($_SESSION['erreur']);
+            }
+            ?>
 
 
          </div>
