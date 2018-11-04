@@ -89,4 +89,6 @@ Il sont hachés via la fonction de hachage SHA1 qui produit un résultat (appel�
 Certains caractères ont des significations spéciales en HTML, et doivent être remplacés par des entités HTML pour conserver leurs significations. Par sécurité nous avons donc utilisé htmlspecialchars() pour tous les POST de nos formulaires. Ainsi on sécurisé un peu plus les formulaires.
 De plus chaque données des formulaires récupérés sont filtrées , du côté client comme du côté serveur avec des filtres de variable.
 
+// Base de donnée //
 
+Dans la table user, nous avons mis les attributs date_inscription et avatar car nous avons envisagé par la suite d'offrir la possibilité aux utilisateurs d'avoir une photo de profil. Et il peut être intéressant pour l'administrateur de savoir quand tel individu s'est inscrit (Possibilité de recompenser la fidelité, organiser des concours , etc .. )
