@@ -44,41 +44,6 @@ Utilisation d'une architecture MVC (Model View Controller).
 -MySQL 10.2(mariadb)
 
 
-// Identifiants de connexion //
-
-/!\Présenté sous forme identifiant:motdepasse/!\
-
-	Site :
-		Compte admin :
-			adm:1234
-		Compte utilisateur :
-			xavier:1234
-			gregory:monmdp
-			jonas:juljul
-			axel:123
-			tristan:552
-			jean:367
-			julien:864
-			alexis:491
-			juliette:884
-			morgan:322
-			hugo:762
-			charlotte:020
-			sandra:804
-			pierre:927
-			vincent:376
-			emile:203
-
-	PhpMyAdmin :
-		167602:barbecue2018
-
-	Alwaysdata :
-		gregory2a2a@gmail.com:barbecue2018
-
-	GitHub :
-		gregory-nam:2018cookandburn
-
-
 // Compte utilisateur //
 
 Pour des raisons de sécurité les mots de passe ne sont pas stockés en clair dans notre base de donnée.
